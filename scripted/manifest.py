@@ -9,24 +9,69 @@ kManifestHubNodeName = "manifestHub"
 kManifestHubNodeId = OpenMaya.MTypeId(0x10000) # Must be < 0x80000
 
 class manifestHub(OpenMayaMPx.MPxNode):
-	stamp = OpenMaya.MObject()
+	aStamp = OpenMaya.MObject()
+	aPositions = OpenMaya.MObject()
+	aSpawned = OpenMaya.MObject()
+	aTranslate = OpenMaya.MObject()
 	
 	def __init__(self):
 		OpenMayaMPx.MPxNode.__init__(self)
 		
 	def compute(self, plug, data):
-		return OpenMaya.kUnknownParameter
+		if plug == manifestHub.aTranslate:
+			positionsArray = OpenMaya.MFnVectorArrayData( data.inputValue(manifestHub.aPositions).data() )
+			
+			index = plug.logicalIndex()
+			sys.stdout.write( "manifestHub: Plug %s\n" % plug.name() )
+			
+			pos = OpenMaya.MVector(0,0,0)
+			if index < positionsArray.length():
+				pos = positionsArray.array()[index] # MFNVectorArrayData -> MVectorArray -> MVector
+				sys.stdout.write( "position[%d] = (%d, %d, %d)\n" % (index, pos.x, pos.y, pos.z) )
+				
+			outputTranslate = data.outputValue(plug)
+			outputTranslate.set3Float(pos.x, pos.y, pos.z)
+			#outputTranslate.setMVector(pos)
+			outputTranslate.setClean()
+		else:
+			return OpenMaya.kUnknownParameter
 		
 def nodeCreator():
 	return OpenMayaMPx.asMPxPtr( manifestHub() )
 	
 def nodeInitializer():
 	msgAttr = OpenMaya.MFnMessageAttribute()
+	typedAttr = OpenMaya.MFnTypedAttribute()
+	numericAttr = OpenMaya.MFnNumericAttribute()
 	
-	manifestHub.stamp = msgAttr.create("stamp", "st")
+	manifestHub.aStamp = msgAttr.create("stamp", "st")
+	msgAttr.setWritable(True)
+	msgAttr.setReadable(False)
 	msgAttr.setArray(True)
+	msgAttr.setDisconnectBehavior(OpenMaya.MFnAttribute.kDelete)
+	manifestHub.addAttribute(manifestHub.aStamp)
 	
-	manifestHub.addAttribute(manifestHub.stamp)
+	manifestHub.aSpawned = msgAttr.create("spawned", "sp")
+	msgAttr.setWritable(False)
+	msgAttr.setReadable(True)
+	msgAttr.setArray(True)
+	msgAttr.setDisconnectBehavior(OpenMaya.MFnAttribute.kDelete)
+	manifestHub.addAttribute(manifestHub.aSpawned)
+	
+	manifestHub.aPositions = typedAttr.create("positions", "pos", OpenMaya.MFnData.kVectorArray)
+	typedAttr.setWritable(True)
+	typedAttr.setReadable(False)
+	typedAttr.setDisconnectBehavior(OpenMaya.MFnAttribute.kReset)
+	manifestHub.addAttribute(manifestHub.aPositions)
+	
+	manifestHub.aTranslate = numericAttr.createPoint("translate", "t")
+	numericAttr.setWritable(False)
+	numericAttr.setArray(True)
+	numericAttr.setDisconnectBehavior(OpenMaya.MFnAttribute.kReset)
+	manifestHub.addAttribute(manifestHub.aTranslate)
+	
+	manifestHub.attributeAffects(manifestHub.aPositions, manifestHub.aTranslate)
+	
 	
 # Plug-in initialization and uninitialization
 def initializePlugin(mobject):
