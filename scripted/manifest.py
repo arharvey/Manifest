@@ -19,19 +19,20 @@ class manifestHub(OpenMayaMPx.MPxNode):
 		
 	def compute(self, plug, data):
 		if plug == manifestHub.aTranslate:
-			positionsArray = OpenMaya.MFnVectorArrayData( data.inputValue(manifestHub.aPositions).data() )
 			
-			index = plug.logicalIndex()
-			sys.stdout.write( "manifestHub: Plug %s\n" % plug.name() )
-			
-			pos = OpenMaya.MVector(0,0,0)
-			if index < positionsArray.length():
-				pos = positionsArray.array()[index] # MFNVectorArrayData -> MVectorArray -> MVector
-				sys.stdout.write( "position[%d] = (%d, %d, %d)\n" % (index, pos.x, pos.y, pos.z) )
-				
 			outputTranslate = data.outputValue(plug)
-			outputTranslate.set3Float(pos.x, pos.y, pos.z)
-			#outputTranslate.setMVector(pos)
+			
+			try:
+				positionsArray = OpenMaya.MFnVectorArrayData( data.inputValue(manifestHub.aPositions).data() )
+			except:
+				# sys.stderr.write( "manifestHub: No positions found" )
+				pass
+			else:	
+				index = plug.logicalIndex()
+				if index < positionsArray.length():
+					pos = positionsArray.array()[index] # MFNVectorArrayData -> MVectorArray -> MVector
+					outputTranslate.set3Float(pos.x, pos.y, pos.z)	
+				
 			outputTranslate.setClean()
 		else:
 			return OpenMaya.kUnknownParameter
