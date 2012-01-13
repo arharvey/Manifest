@@ -1,6 +1,6 @@
 //Maya ASCII 2012 scene
 //Name: manifestSimple.ma
-//Last modified: Fri, Jan 13, 2012 01:17:59 AM
+//Last modified: Fri, Jan 13, 2012 06:51:45 PM
 //Codeset: UTF-8
 requires maya "2012";
 requires "manifest.py" "Unknown";
@@ -119,7 +119,7 @@ createNode nurbsCurve -n "spawnCurveShape" -p "spawnCurve";
 		;
 createNode pointEmitter -n "spawnEmitter1" -p "spawnCurve";
 	setAttr ".emt" 3;
-	setAttr ".rat" 0;
+	setAttr ".rat" 23.026316003922961;
 	setAttr ".sro" no;
 	setAttr -l on ".urpp";
 	setAttr ".d" -type "double3" 0 -1 0 ;
@@ -232,8 +232,7 @@ createNode nParticle -n "nParticleShape1" -p "nParticle1";
 	setAttr ".irax" -type "string" "";
 	setAttr ".icx" -type "string" "";
 	setAttr ".fiw" no;
-	setAttr ".cts" 1;
-	setAttr ".chw" 150;
+	setAttr ".chw" 300;
 	setAttr ".prt" 8;
 	setAttr ".cofl" 1;
 	setAttr ".cold" no;
@@ -312,6 +311,2189 @@ createNode transform -n "cubeStampScale";
 	setAttr ".s" -type "double3" 0.83917837854691302 0.83917837854691302 0.83917837854691302 ;
 createNode locator -n "cubeStampScaleShape" -p "cubeStampScale";
 	setAttr -k off ".v";
+createNode transform -n "cube1";
+createNode mesh -n "cube1Shape" -p "cube1";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube2";
+createNode mesh -n "cube2Shape" -p "cube2";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube3";
+createNode mesh -n "cube3Shape" -p "cube3";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube4";
+createNode mesh -n "cube4Shape" -p "cube4";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube5";
+createNode mesh -n "cube5Shape" -p "cube5";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube6";
+createNode mesh -n "cube6Shape" -p "cube6";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube7";
+createNode mesh -n "cube7Shape" -p "cube7";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube8";
+createNode mesh -n "cube8Shape" -p "cube8";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube9";
+createNode mesh -n "cube9Shape" -p "cube9";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube10";
+createNode mesh -n "cube10Shape" -p "cube10";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube11";
+createNode mesh -n "cube11Shape" -p "cube11";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube12";
+createNode mesh -n "cube12Shape" -p "cube12";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube13";
+createNode mesh -n "cube13Shape" -p "cube13";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube14";
+createNode mesh -n "cube14Shape" -p "cube14";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube15";
+createNode mesh -n "cube15Shape" -p "cube15";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube16";
+createNode mesh -n "cube16Shape" -p "cube16";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube17";
+createNode mesh -n "cube17Shape" -p "cube17";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube18";
+createNode mesh -n "cube18Shape" -p "cube18";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube19";
+createNode mesh -n "cube19Shape" -p "cube19";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube20";
+createNode mesh -n "cube20Shape" -p "cube20";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube21";
+createNode mesh -n "cube21Shape" -p "cube21";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube22";
+createNode mesh -n "cube22Shape" -p "cube22";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube23";
+createNode mesh -n "cube23Shape" -p "cube23";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube24";
+createNode mesh -n "cube24Shape" -p "cube24";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube25";
+createNode mesh -n "cube25Shape" -p "cube25";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube26";
+createNode mesh -n "cube26Shape" -p "cube26";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube27";
+createNode mesh -n "cube27Shape" -p "cube27";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube28";
+createNode mesh -n "cube28Shape" -p "cube28";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube29";
+createNode mesh -n "cube29Shape" -p "cube29";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube30";
+createNode mesh -n "cube30Shape" -p "cube30";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube31";
+createNode mesh -n "cube31Shape" -p "cube31";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube32";
+createNode mesh -n "cube32Shape" -p "cube32";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube33";
+createNode mesh -n "cube33Shape" -p "cube33";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube34";
+createNode mesh -n "cube34Shape" -p "cube34";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube35";
+createNode mesh -n "cube35Shape" -p "cube35";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube36";
+createNode mesh -n "cube36Shape" -p "cube36";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube37";
+createNode mesh -n "cube37Shape" -p "cube37";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube38";
+createNode mesh -n "cube38Shape" -p "cube38";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube39";
+createNode mesh -n "cube39Shape" -p "cube39";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube40";
+createNode mesh -n "cube40Shape" -p "cube40";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube41";
+createNode mesh -n "cube41Shape" -p "cube41";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube42";
+createNode mesh -n "cube42Shape" -p "cube42";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube43";
+createNode mesh -n "cube43Shape" -p "cube43";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube44";
+createNode mesh -n "cube44Shape" -p "cube44";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube45";
+createNode mesh -n "cube45Shape" -p "cube45";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube46";
+createNode mesh -n "cube46Shape" -p "cube46";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube47";
+createNode mesh -n "cube47Shape" -p "cube47";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube48";
+createNode mesh -n "cube48Shape" -p "cube48";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube49";
+createNode mesh -n "cube49Shape" -p "cube49";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube50";
+createNode mesh -n "cube50Shape" -p "cube50";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube51";
+createNode mesh -n "cube51Shape" -p "cube51";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube52";
+createNode mesh -n "cube52Shape" -p "cube52";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube53";
+createNode mesh -n "cube53Shape" -p "cube53";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube54";
+createNode mesh -n "cube54Shape" -p "cube54";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube55";
+createNode mesh -n "cube55Shape" -p "cube55";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube56";
+createNode mesh -n "cube56Shape" -p "cube56";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube57";
+createNode mesh -n "cube57Shape" -p "cube57";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube58";
+createNode mesh -n "cube58Shape" -p "cube58";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "cube59";
+createNode mesh -n "cube59Shape" -p "cube59";
+	addAttr -ci true -sn "mso" -ln "miShadingSamplesOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "msh" -ln "miShadingSamples" -min 0 -smx 8 -at "float";
+	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
+	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25
+		 0.25 0.25 0.25 -0.25 0.25 -0.25 0.25 0.25 -0.25 -0.25 -0.25 -0.25 0.25 -0.25 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
@@ -450,38 +2632,37 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n"
 		+ "\t\t\t$panelName = `scriptedPanel -unParent  -type \"clipEditorPanel\" -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -manageSequencer 0 \n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n"
 		+ "                -snapValue \"none\" \n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"sequenceEditorPanel\" -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -manageSequencer 1 \n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph InputOutput1\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"hyperGraphPanel\" -l (localizedPanelLabel(\"Hypergraph InputOutput1\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 1\n"
-		+ "                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 1\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph InputOutput1\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n"
-		+ "            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 1\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"hyperShadePanel\" -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"visorPanel\" -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"createNodePanel\" -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Texture Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"polyTexturePlacementPanel\" -l (localizedPanelLabel(\"UV Texture Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Texture Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"renderWindowPanel\" -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"blendShapePanel\" (localizedPanelLabel(\"Blend Shape\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\tblendShapePanel -unParent -l (localizedPanelLabel(\"Blend Shape\")) -mbv $menusOkayInPanels ;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tblendShapePanel -edit -l (localizedPanelLabel(\"Blend Shape\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"dynRelEdPanel\" -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"relationshipPanel\" -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"referenceEditorPanel\" -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"componentEditorPanel\" -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"dynPaintScriptedPanelType\" -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"scriptEditorPanel\" -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\tif ($useSceneConfig) {\n\t\tscriptedPanel -e -to $panelName;\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"Stereo\" -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels `;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n"
-		+ "                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 8192\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -maxConstantTransparency 1\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n"
-		+ "                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
-		+ "                -shadows 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                $editorName;\nstereoCameraView -e -viewSelected 0 $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n"
-		+ "                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 8192\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -maxConstantTransparency 1\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n"
-		+ "                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -shadows 0\n                -displayMode \"centerEye\" \n"
-		+ "                -viewColor 0 0 0 1 \n                $editorName;\nstereoCameraView -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph InputOutput2\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"hyperGraphPanel\" -l (localizedPanelLabel(\"Hypergraph InputOutput2\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n"
-		+ "                -opaqueContainers 0\n                -freeform 1\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph InputOutput2\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n"
-		+ "                -showExpressions 0\n                -showConstraints 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 1\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph InputOutput3\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"hyperGraphPanel\" -l (localizedPanelLabel(\"Hypergraph InputOutput3\")) -mbv $menusOkayInPanels `;\n"
+		+ "\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"hyperShadePanel\" -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n"
+		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"visorPanel\" -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"createNodePanel\" -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Texture Editor\")) `;\n"
+		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"polyTexturePlacementPanel\" -l (localizedPanelLabel(\"UV Texture Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Texture Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"renderWindowPanel\" -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"blendShapePanel\" (localizedPanelLabel(\"Blend Shape\")) `;\n"
+		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\tblendShapePanel -unParent -l (localizedPanelLabel(\"Blend Shape\")) -mbv $menusOkayInPanels ;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tblendShapePanel -edit -l (localizedPanelLabel(\"Blend Shape\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"dynRelEdPanel\" -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n"
+		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"relationshipPanel\" -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"referenceEditorPanel\" -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n"
+		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"componentEditorPanel\" -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"dynPaintScriptedPanelType\" -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n"
+		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"scriptEditorPanel\" -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\tif ($useSceneConfig) {\n\t\tscriptedPanel -e -to $panelName;\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"Stereo\" -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels `;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n"
+		+ "                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 8192\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -maxConstantTransparency 1\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n"
+		+ "                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n"
+		+ "                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -shadows 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                $editorName;\nstereoCameraView -e -viewSelected 0 $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n"
+		+ "                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 8192\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -maxConstantTransparency 1\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n"
+		+ "                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n"
+		+ "                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -shadows 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                $editorName;\nstereoCameraView -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph InputOutput1\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"hyperGraphPanel\" -l (localizedPanelLabel(\"Hypergraph InputOutput1\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n"
+		+ "                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 1\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"largeIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph InputOutput1\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n"
+		+ "            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 1\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"largeIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph InputOutput2\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"hyperGraphPanel\" -l (localizedPanelLabel(\"Hypergraph InputOutput2\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 1\n                -imagePosition 0 0 \n                -imageScale 1\n"
+		+ "                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph InputOutput2\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showUnderworld 0\n                -showInvisible 0\n"
+		+ "                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 1\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph InputOutput3\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"hyperGraphPanel\" -l (localizedPanelLabel(\"Hypergraph InputOutput3\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n"
+		+ "                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 1\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph InputOutput3\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 1\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n"
-		+ "                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph InputOutput3\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 1\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n"
-		+ "                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-defaultImage \"\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"vertical2\\\" -ps 1 20 100 -ps 2 80 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Outliner\")) \n\t\t\t\t\t\"outlinerPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `outlinerPanel -unParent -l (localizedPanelLabel(\\\"Outliner\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\noutlinerEditor -e \\n    -showShapes 1\\n    -showAttributes 0\\n    -showConnected 0\\n    -showAnimCurvesOnly 0\\n    -showMuteInfo 0\\n    -organizeByLayer 1\\n    -showAnimLayerWeight 1\\n    -autoExpandLayers 1\\n    -autoExpand 0\\n    -showDagOnly 1\\n    -showAssets 1\\n    -showContainedOnly 1\\n    -showPublishedAsConnected 0\\n    -showContainerContents 1\\n    -ignoreDagHierarchy 0\\n    -expandConnections 0\\n    -showUpstreamCurves 1\\n    -showUnitlessCurves 1\\n    -showCompounds 1\\n    -showLeafs 1\\n    -showNumericAttrsOnly 0\\n    -highlightActive 1\\n    -autoSelectNewObjects 0\\n    -doNotSelectNewObjects 0\\n    -dropIsParent 1\\n    -transmitFilters 0\\n    -setFilter \\\"defaultSetFilter\\\" \\n    -showSetMembers 1\\n    -allowMultiSelection 1\\n    -alwaysToggleSelect 0\\n    -directSelect 0\\n    -displayMode \\\"DAG\\\" \\n    -expandObjects 0\\n    -setsIgnoreFilters 1\\n    -containersIgnoreFilters 0\\n    -editAttrName 0\\n    -showAttrValues 0\\n    -highlightSecondary 0\\n    -showUVAttrsOnly 0\\n    -showTextureNodesOnly 0\\n    -attrAlphaOrder \\\"default\\\" \\n    -animLayerFilterOptions \\\"allAffecting\\\" \\n    -sortOrder \\\"none\\\" \\n    -longNames 0\\n    -niceNames 1\\n    -showNamespace 1\\n    -showPinIcons 0\\n    -mapMotionTrails 0\\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"outlinerPanel -edit -l (localizedPanelLabel(\\\"Outliner\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\noutlinerEditor -e \\n    -showShapes 1\\n    -showAttributes 0\\n    -showConnected 0\\n    -showAnimCurvesOnly 0\\n    -showMuteInfo 0\\n    -organizeByLayer 1\\n    -showAnimLayerWeight 1\\n    -autoExpandLayers 1\\n    -autoExpand 0\\n    -showDagOnly 1\\n    -showAssets 1\\n    -showContainedOnly 1\\n    -showPublishedAsConnected 0\\n    -showContainerContents 1\\n    -ignoreDagHierarchy 0\\n    -expandConnections 0\\n    -showUpstreamCurves 1\\n    -showUnitlessCurves 1\\n    -showCompounds 1\\n    -showLeafs 1\\n    -showNumericAttrsOnly 0\\n    -highlightActive 1\\n    -autoSelectNewObjects 0\\n    -doNotSelectNewObjects 0\\n    -dropIsParent 1\\n    -transmitFilters 0\\n    -setFilter \\\"defaultSetFilter\\\" \\n    -showSetMembers 1\\n    -allowMultiSelection 1\\n    -alwaysToggleSelect 0\\n    -directSelect 0\\n    -displayMode \\\"DAG\\\" \\n    -expandObjects 0\\n    -setsIgnoreFilters 1\\n    -containersIgnoreFilters 0\\n    -editAttrName 0\\n    -showAttrValues 0\\n    -highlightSecondary 0\\n    -showUVAttrsOnly 0\\n    -showTextureNodesOnly 0\\n    -attrAlphaOrder \\\"default\\\" \\n    -animLayerFilterOptions \\\"allAffecting\\\" \\n    -sortOrder \\\"none\\\" \\n    -longNames 0\\n    -niceNames 1\\n    -showNamespace 1\\n    -showPinIcons 0\\n    -mapMotionTrails 0\\n    $editorName\"\n"
-		+ "\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-defaultImage \"\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
 		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 1\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 8192\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -maxConstantTransparency 1\\n    -rendererName \\\"base_OpenGL_Renderer\\\" \\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -shadows 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
 		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 1\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 8192\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -maxConstantTransparency 1\\n    -rendererName \\\"base_OpenGL_Renderer\\\" \\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -shadows 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        setFocus `paneLayout -q -p1 $gMainPane`;\n        sceneUIReplacement -deleteRemaining;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
-	setAttr ".b" -type "string" "playbackOptions -min 1 -max 150 -ast 1 -aet 150 ";
+	setAttr ".b" -type "string" "playbackOptions -min 1 -max 300 -ast 1 -aet 300 ";
 	setAttr ".st" 6;
 createNode manifestHub -n "manifestHub1";
+	setAttr -s 59 ".sp";
+	setAttr -s 59 ".t";
 createNode hyperView -n "hyperView3";
 	setAttr ".p" -type "double2" 1196 172 ;
 	setAttr ".vl" -type "double2" 233.9774570446736 -363.14235967926766 ;
@@ -507,13 +2688,1373 @@ createNode hyperLayout -n "hyperLayout4";
 	setAttr ".hyp[8].y" 52;
 	setAttr ".anf" yes;
 createNode manifestHub -n "manifestHub2";
+	setAttr ".pos" -type "vectorArray" 0 ;
 createNode manifestHub -n "manifestHub3";
+	setAttr ".pos" -type "vectorArray" 0 ;
+createNode container -n "cubeStamp1";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout5";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp2";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout6";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp3";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout7";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp4";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout8";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp5";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout9";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp6";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout10";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp7";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout11";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp8";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout12";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp9";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout13";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp10";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout14";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp11";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout15";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp12";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout16";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp13";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout17";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp14";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout18";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp15";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout19";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp16";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout20";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp17";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout21";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp18";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout22";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp19";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout23";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp20";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout24";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp21";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout25";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp22";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout26";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp23";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout27";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp24";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout28";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp25";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout29";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp26";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout30";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp27";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout31";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp28";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout32";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp29";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout33";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp30";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout34";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp31";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout35";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp32";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout36";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp33";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout37";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp34";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout38";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp35";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout39";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp36";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout40";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp37";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout41";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp38";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout42";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp39";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout43";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp40";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout44";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp41";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout45";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp42";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout46";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp43";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout47";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp44";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout48";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp45";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout49";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp46";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout50";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp47";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout51";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp48";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout52";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp49";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout53";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp50";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout54";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp51";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout55";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp52";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout56";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp53";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout57";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp54";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout58";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp55";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout59";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp56";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout60";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp57";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout61";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp58";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout62";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
+createNode container -n "cubeStamp59";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+	setAttr ".isc" yes;
+	setAttr -s 12 ".boc";
+	setAttr ".ctor" -type "string" "andrewharvey";
+	setAttr ".cdat" -type "string" "2012/01/12 11:39:58";
+	setAttr ".aal" -type "attributeAlias" {"translate","borderConnections[0]","scaleY"
+		,"borderConnections[10]","scaleZ","borderConnections[11]","translateX","borderConnections[1]"
+		,"translateY","borderConnections[2]","translateZ","borderConnections[3]","rotate"
+		,"borderConnections[4]","rotateX","borderConnections[5]","rotateY","borderConnections[6]"
+		,"rotateZ","borderConnections[7]","scale","borderConnections[8]","scaleX","borderConnections[9]"
+		} ;
+createNode hyperLayout -n "hyperLayout63";
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".hyp";
+	setAttr ".hyp[0].x" 253;
+	setAttr ".hyp[0].y" -201;
+	setAttr ".hyp[0].isf" yes;
+	setAttr ".hyp[1].x" 518;
+	setAttr ".hyp[1].y" -270;
+	setAttr ".hyp[1].isf" yes;
+	setAttr ".anf" yes;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
 select -ne :renderPartition;
 	setAttr -s 3 ".st";
 select -ne :initialShadingGroup;
+	setAttr -s 60 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -563,6 +4104,124 @@ connectAttr "nParticleShape1.inrr" "nParticleShape1.radiusPP";
 connectAttr ":time1.o" "nucleus1.cti";
 connectAttr "nParticleShape1.cust" "nucleus1.niao[0]";
 connectAttr "nParticleShape1.stst" "nucleus1.nias[0]";
+connectAttr "cubeStampScale.s" "cube1.s";
+connectAttr "manifestHub1.t[0]" "cube1.t";
+connectAttr "cubeStampScale.s" "cube2.s";
+connectAttr "manifestHub1.t[1]" "cube2.t";
+connectAttr "cubeStampScale.s" "cube3.s";
+connectAttr "manifestHub1.t[2]" "cube3.t";
+connectAttr "cubeStampScale.s" "cube4.s";
+connectAttr "manifestHub1.t[3]" "cube4.t";
+connectAttr "cubeStampScale.s" "cube5.s";
+connectAttr "manifestHub1.t[4]" "cube5.t";
+connectAttr "cubeStampScale.s" "cube6.s";
+connectAttr "manifestHub1.t[5]" "cube6.t";
+connectAttr "cubeStampScale.s" "cube7.s";
+connectAttr "manifestHub1.t[6]" "cube7.t";
+connectAttr "cubeStampScale.s" "cube8.s";
+connectAttr "manifestHub1.t[7]" "cube8.t";
+connectAttr "cubeStampScale.s" "cube9.s";
+connectAttr "manifestHub1.t[8]" "cube9.t";
+connectAttr "cubeStampScale.s" "cube10.s";
+connectAttr "manifestHub1.t[9]" "cube10.t";
+connectAttr "cubeStampScale.s" "cube11.s";
+connectAttr "manifestHub1.t[10]" "cube11.t";
+connectAttr "cubeStampScale.s" "cube12.s";
+connectAttr "manifestHub1.t[11]" "cube12.t";
+connectAttr "cubeStampScale.s" "cube13.s";
+connectAttr "manifestHub1.t[12]" "cube13.t";
+connectAttr "cubeStampScale.s" "cube14.s";
+connectAttr "manifestHub1.t[13]" "cube14.t";
+connectAttr "cubeStampScale.s" "cube15.s";
+connectAttr "manifestHub1.t[14]" "cube15.t";
+connectAttr "cubeStampScale.s" "cube16.s";
+connectAttr "manifestHub1.t[15]" "cube16.t";
+connectAttr "cubeStampScale.s" "cube17.s";
+connectAttr "manifestHub1.t[16]" "cube17.t";
+connectAttr "cubeStampScale.s" "cube18.s";
+connectAttr "manifestHub1.t[17]" "cube18.t";
+connectAttr "cubeStampScale.s" "cube19.s";
+connectAttr "manifestHub1.t[18]" "cube19.t";
+connectAttr "cubeStampScale.s" "cube20.s";
+connectAttr "manifestHub1.t[19]" "cube20.t";
+connectAttr "cubeStampScale.s" "cube21.s";
+connectAttr "manifestHub1.t[20]" "cube21.t";
+connectAttr "cubeStampScale.s" "cube22.s";
+connectAttr "manifestHub1.t[21]" "cube22.t";
+connectAttr "cubeStampScale.s" "cube23.s";
+connectAttr "manifestHub1.t[22]" "cube23.t";
+connectAttr "cubeStampScale.s" "cube24.s";
+connectAttr "manifestHub1.t[23]" "cube24.t";
+connectAttr "cubeStampScale.s" "cube25.s";
+connectAttr "manifestHub1.t[24]" "cube25.t";
+connectAttr "cubeStampScale.s" "cube26.s";
+connectAttr "manifestHub1.t[25]" "cube26.t";
+connectAttr "cubeStampScale.s" "cube27.s";
+connectAttr "manifestHub1.t[26]" "cube27.t";
+connectAttr "cubeStampScale.s" "cube28.s";
+connectAttr "manifestHub1.t[27]" "cube28.t";
+connectAttr "cubeStampScale.s" "cube29.s";
+connectAttr "manifestHub1.t[28]" "cube29.t";
+connectAttr "cubeStampScale.s" "cube30.s";
+connectAttr "manifestHub1.t[29]" "cube30.t";
+connectAttr "cubeStampScale.s" "cube31.s";
+connectAttr "manifestHub1.t[30]" "cube31.t";
+connectAttr "cubeStampScale.s" "cube32.s";
+connectAttr "manifestHub1.t[31]" "cube32.t";
+connectAttr "cubeStampScale.s" "cube33.s";
+connectAttr "manifestHub1.t[32]" "cube33.t";
+connectAttr "cubeStampScale.s" "cube34.s";
+connectAttr "manifestHub1.t[33]" "cube34.t";
+connectAttr "cubeStampScale.s" "cube35.s";
+connectAttr "manifestHub1.t[34]" "cube35.t";
+connectAttr "cubeStampScale.s" "cube36.s";
+connectAttr "manifestHub1.t[35]" "cube36.t";
+connectAttr "cubeStampScale.s" "cube37.s";
+connectAttr "manifestHub1.t[36]" "cube37.t";
+connectAttr "cubeStampScale.s" "cube38.s";
+connectAttr "manifestHub1.t[37]" "cube38.t";
+connectAttr "cubeStampScale.s" "cube39.s";
+connectAttr "manifestHub1.t[38]" "cube39.t";
+connectAttr "cubeStampScale.s" "cube40.s";
+connectAttr "manifestHub1.t[39]" "cube40.t";
+connectAttr "cubeStampScale.s" "cube41.s";
+connectAttr "manifestHub1.t[40]" "cube41.t";
+connectAttr "cubeStampScale.s" "cube42.s";
+connectAttr "manifestHub1.t[41]" "cube42.t";
+connectAttr "cubeStampScale.s" "cube43.s";
+connectAttr "manifestHub1.t[42]" "cube43.t";
+connectAttr "cubeStampScale.s" "cube44.s";
+connectAttr "manifestHub1.t[43]" "cube44.t";
+connectAttr "cubeStampScale.s" "cube45.s";
+connectAttr "manifestHub1.t[44]" "cube45.t";
+connectAttr "cubeStampScale.s" "cube46.s";
+connectAttr "manifestHub1.t[45]" "cube46.t";
+connectAttr "cubeStampScale.s" "cube47.s";
+connectAttr "manifestHub1.t[46]" "cube47.t";
+connectAttr "cubeStampScale.s" "cube48.s";
+connectAttr "manifestHub1.t[47]" "cube48.t";
+connectAttr "cubeStampScale.s" "cube49.s";
+connectAttr "manifestHub1.t[48]" "cube49.t";
+connectAttr "cubeStampScale.s" "cube50.s";
+connectAttr "manifestHub1.t[49]" "cube50.t";
+connectAttr "cubeStampScale.s" "cube51.s";
+connectAttr "manifestHub1.t[50]" "cube51.t";
+connectAttr "cubeStampScale.s" "cube52.s";
+connectAttr "manifestHub1.t[51]" "cube52.t";
+connectAttr "cubeStampScale.s" "cube53.s";
+connectAttr "manifestHub1.t[52]" "cube53.t";
+connectAttr "cubeStampScale.s" "cube54.s";
+connectAttr "manifestHub1.t[53]" "cube54.t";
+connectAttr "cubeStampScale.s" "cube55.s";
+connectAttr "manifestHub1.t[54]" "cube55.t";
+connectAttr "cubeStampScale.s" "cube56.s";
+connectAttr "manifestHub1.t[55]" "cube56.t";
+connectAttr "cubeStampScale.s" "cube57.s";
+connectAttr "manifestHub1.t[56]" "cube57.t";
+connectAttr "cubeStampScale.s" "cube58.s";
+connectAttr "manifestHub1.t[57]" "cube58.t";
+connectAttr "cubeStampScale.s" "cube59.s";
+connectAttr "manifestHub1.t[58]" "cube59.t";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "nParticleCloudSE.message" ":defaultLightSet.message";
@@ -621,8 +4280,1011 @@ connectAttr "manifestHub1.msg" "hyperLayout4.hyp[5].dn";
 connectAttr ":initialShadingGroup.msg" "hyperLayout4.hyp[6].dn";
 connectAttr "cubeStamp.msg" "hyperLayout4.hyp[7].dn";
 connectAttr "nParticleShape1.msg" "hyperLayout4.hyp[8].dn";
+connectAttr "cube1.t" "cubeStamp1.boc[0]";
+connectAttr "cube1.tx" "cubeStamp1.boc[1]";
+connectAttr "cube1.ty" "cubeStamp1.boc[2]";
+connectAttr "cube1.tz" "cubeStamp1.boc[3]";
+connectAttr "cube1.r" "cubeStamp1.boc[4]";
+connectAttr "cube1.rx" "cubeStamp1.boc[5]";
+connectAttr "cube1.ry" "cubeStamp1.boc[6]";
+connectAttr "cube1.rz" "cubeStamp1.boc[7]";
+connectAttr "cube1.s" "cubeStamp1.boc[8]";
+connectAttr "cube1.sx" "cubeStamp1.boc[9]";
+connectAttr "cube1.sy" "cubeStamp1.boc[10]";
+connectAttr "cube1.sz" "cubeStamp1.boc[11]";
+connectAttr "hyperLayout5.msg" "cubeStamp1.hl";
+connectAttr "manifestHub1.sp[0]" "cubeStamp1.spawnedBy";
+connectAttr "cube1.msg" "hyperLayout5.hyp[0].dn";
+connectAttr "cube1Shape.msg" "hyperLayout5.hyp[1].dn";
+connectAttr "cube2.t" "cubeStamp2.boc[0]";
+connectAttr "cube2.tx" "cubeStamp2.boc[1]";
+connectAttr "cube2.ty" "cubeStamp2.boc[2]";
+connectAttr "cube2.tz" "cubeStamp2.boc[3]";
+connectAttr "cube2.r" "cubeStamp2.boc[4]";
+connectAttr "cube2.rx" "cubeStamp2.boc[5]";
+connectAttr "cube2.ry" "cubeStamp2.boc[6]";
+connectAttr "cube2.rz" "cubeStamp2.boc[7]";
+connectAttr "cube2.s" "cubeStamp2.boc[8]";
+connectAttr "cube2.sx" "cubeStamp2.boc[9]";
+connectAttr "cube2.sy" "cubeStamp2.boc[10]";
+connectAttr "cube2.sz" "cubeStamp2.boc[11]";
+connectAttr "hyperLayout6.msg" "cubeStamp2.hl";
+connectAttr "manifestHub1.sp[1]" "cubeStamp2.spawnedBy";
+connectAttr "cube2.msg" "hyperLayout6.hyp[0].dn";
+connectAttr "cube2Shape.msg" "hyperLayout6.hyp[1].dn";
+connectAttr "cube3.t" "cubeStamp3.boc[0]";
+connectAttr "cube3.tx" "cubeStamp3.boc[1]";
+connectAttr "cube3.ty" "cubeStamp3.boc[2]";
+connectAttr "cube3.tz" "cubeStamp3.boc[3]";
+connectAttr "cube3.r" "cubeStamp3.boc[4]";
+connectAttr "cube3.rx" "cubeStamp3.boc[5]";
+connectAttr "cube3.ry" "cubeStamp3.boc[6]";
+connectAttr "cube3.rz" "cubeStamp3.boc[7]";
+connectAttr "cube3.s" "cubeStamp3.boc[8]";
+connectAttr "cube3.sx" "cubeStamp3.boc[9]";
+connectAttr "cube3.sy" "cubeStamp3.boc[10]";
+connectAttr "cube3.sz" "cubeStamp3.boc[11]";
+connectAttr "hyperLayout7.msg" "cubeStamp3.hl";
+connectAttr "manifestHub1.sp[2]" "cubeStamp3.spawnedBy";
+connectAttr "cube3.msg" "hyperLayout7.hyp[0].dn";
+connectAttr "cube3Shape.msg" "hyperLayout7.hyp[1].dn";
+connectAttr "cube4.t" "cubeStamp4.boc[0]";
+connectAttr "cube4.tx" "cubeStamp4.boc[1]";
+connectAttr "cube4.ty" "cubeStamp4.boc[2]";
+connectAttr "cube4.tz" "cubeStamp4.boc[3]";
+connectAttr "cube4.r" "cubeStamp4.boc[4]";
+connectAttr "cube4.rx" "cubeStamp4.boc[5]";
+connectAttr "cube4.ry" "cubeStamp4.boc[6]";
+connectAttr "cube4.rz" "cubeStamp4.boc[7]";
+connectAttr "cube4.s" "cubeStamp4.boc[8]";
+connectAttr "cube4.sx" "cubeStamp4.boc[9]";
+connectAttr "cube4.sy" "cubeStamp4.boc[10]";
+connectAttr "cube4.sz" "cubeStamp4.boc[11]";
+connectAttr "hyperLayout8.msg" "cubeStamp4.hl";
+connectAttr "manifestHub1.sp[3]" "cubeStamp4.spawnedBy";
+connectAttr "cube4.msg" "hyperLayout8.hyp[0].dn";
+connectAttr "cube4Shape.msg" "hyperLayout8.hyp[1].dn";
+connectAttr "cube5.t" "cubeStamp5.boc[0]";
+connectAttr "cube5.tx" "cubeStamp5.boc[1]";
+connectAttr "cube5.ty" "cubeStamp5.boc[2]";
+connectAttr "cube5.tz" "cubeStamp5.boc[3]";
+connectAttr "cube5.r" "cubeStamp5.boc[4]";
+connectAttr "cube5.rx" "cubeStamp5.boc[5]";
+connectAttr "cube5.ry" "cubeStamp5.boc[6]";
+connectAttr "cube5.rz" "cubeStamp5.boc[7]";
+connectAttr "cube5.s" "cubeStamp5.boc[8]";
+connectAttr "cube5.sx" "cubeStamp5.boc[9]";
+connectAttr "cube5.sy" "cubeStamp5.boc[10]";
+connectAttr "cube5.sz" "cubeStamp5.boc[11]";
+connectAttr "hyperLayout9.msg" "cubeStamp5.hl";
+connectAttr "manifestHub1.sp[4]" "cubeStamp5.spawnedBy";
+connectAttr "cube5.msg" "hyperLayout9.hyp[0].dn";
+connectAttr "cube5Shape.msg" "hyperLayout9.hyp[1].dn";
+connectAttr "cube6.t" "cubeStamp6.boc[0]";
+connectAttr "cube6.tx" "cubeStamp6.boc[1]";
+connectAttr "cube6.ty" "cubeStamp6.boc[2]";
+connectAttr "cube6.tz" "cubeStamp6.boc[3]";
+connectAttr "cube6.r" "cubeStamp6.boc[4]";
+connectAttr "cube6.rx" "cubeStamp6.boc[5]";
+connectAttr "cube6.ry" "cubeStamp6.boc[6]";
+connectAttr "cube6.rz" "cubeStamp6.boc[7]";
+connectAttr "cube6.s" "cubeStamp6.boc[8]";
+connectAttr "cube6.sx" "cubeStamp6.boc[9]";
+connectAttr "cube6.sy" "cubeStamp6.boc[10]";
+connectAttr "cube6.sz" "cubeStamp6.boc[11]";
+connectAttr "hyperLayout10.msg" "cubeStamp6.hl";
+connectAttr "manifestHub1.sp[5]" "cubeStamp6.spawnedBy";
+connectAttr "cube6.msg" "hyperLayout10.hyp[0].dn";
+connectAttr "cube6Shape.msg" "hyperLayout10.hyp[1].dn";
+connectAttr "cube7.t" "cubeStamp7.boc[0]";
+connectAttr "cube7.tx" "cubeStamp7.boc[1]";
+connectAttr "cube7.ty" "cubeStamp7.boc[2]";
+connectAttr "cube7.tz" "cubeStamp7.boc[3]";
+connectAttr "cube7.r" "cubeStamp7.boc[4]";
+connectAttr "cube7.rx" "cubeStamp7.boc[5]";
+connectAttr "cube7.ry" "cubeStamp7.boc[6]";
+connectAttr "cube7.rz" "cubeStamp7.boc[7]";
+connectAttr "cube7.s" "cubeStamp7.boc[8]";
+connectAttr "cube7.sx" "cubeStamp7.boc[9]";
+connectAttr "cube7.sy" "cubeStamp7.boc[10]";
+connectAttr "cube7.sz" "cubeStamp7.boc[11]";
+connectAttr "hyperLayout11.msg" "cubeStamp7.hl";
+connectAttr "manifestHub1.sp[6]" "cubeStamp7.spawnedBy";
+connectAttr "cube7.msg" "hyperLayout11.hyp[0].dn";
+connectAttr "cube7Shape.msg" "hyperLayout11.hyp[1].dn";
+connectAttr "cube8.t" "cubeStamp8.boc[0]";
+connectAttr "cube8.tx" "cubeStamp8.boc[1]";
+connectAttr "cube8.ty" "cubeStamp8.boc[2]";
+connectAttr "cube8.tz" "cubeStamp8.boc[3]";
+connectAttr "cube8.r" "cubeStamp8.boc[4]";
+connectAttr "cube8.rx" "cubeStamp8.boc[5]";
+connectAttr "cube8.ry" "cubeStamp8.boc[6]";
+connectAttr "cube8.rz" "cubeStamp8.boc[7]";
+connectAttr "cube8.s" "cubeStamp8.boc[8]";
+connectAttr "cube8.sx" "cubeStamp8.boc[9]";
+connectAttr "cube8.sy" "cubeStamp8.boc[10]";
+connectAttr "cube8.sz" "cubeStamp8.boc[11]";
+connectAttr "hyperLayout12.msg" "cubeStamp8.hl";
+connectAttr "manifestHub1.sp[7]" "cubeStamp8.spawnedBy";
+connectAttr "cube8.msg" "hyperLayout12.hyp[0].dn";
+connectAttr "cube8Shape.msg" "hyperLayout12.hyp[1].dn";
+connectAttr "cube9.t" "cubeStamp9.boc[0]";
+connectAttr "cube9.tx" "cubeStamp9.boc[1]";
+connectAttr "cube9.ty" "cubeStamp9.boc[2]";
+connectAttr "cube9.tz" "cubeStamp9.boc[3]";
+connectAttr "cube9.r" "cubeStamp9.boc[4]";
+connectAttr "cube9.rx" "cubeStamp9.boc[5]";
+connectAttr "cube9.ry" "cubeStamp9.boc[6]";
+connectAttr "cube9.rz" "cubeStamp9.boc[7]";
+connectAttr "cube9.s" "cubeStamp9.boc[8]";
+connectAttr "cube9.sx" "cubeStamp9.boc[9]";
+connectAttr "cube9.sy" "cubeStamp9.boc[10]";
+connectAttr "cube9.sz" "cubeStamp9.boc[11]";
+connectAttr "hyperLayout13.msg" "cubeStamp9.hl";
+connectAttr "manifestHub1.sp[8]" "cubeStamp9.spawnedBy";
+connectAttr "cube9.msg" "hyperLayout13.hyp[0].dn";
+connectAttr "cube9Shape.msg" "hyperLayout13.hyp[1].dn";
+connectAttr "cube10.t" "cubeStamp10.boc[0]";
+connectAttr "cube10.tx" "cubeStamp10.boc[1]";
+connectAttr "cube10.ty" "cubeStamp10.boc[2]";
+connectAttr "cube10.tz" "cubeStamp10.boc[3]";
+connectAttr "cube10.r" "cubeStamp10.boc[4]";
+connectAttr "cube10.rx" "cubeStamp10.boc[5]";
+connectAttr "cube10.ry" "cubeStamp10.boc[6]";
+connectAttr "cube10.rz" "cubeStamp10.boc[7]";
+connectAttr "cube10.s" "cubeStamp10.boc[8]";
+connectAttr "cube10.sx" "cubeStamp10.boc[9]";
+connectAttr "cube10.sy" "cubeStamp10.boc[10]";
+connectAttr "cube10.sz" "cubeStamp10.boc[11]";
+connectAttr "hyperLayout14.msg" "cubeStamp10.hl";
+connectAttr "manifestHub1.sp[9]" "cubeStamp10.spawnedBy";
+connectAttr "cube10.msg" "hyperLayout14.hyp[0].dn";
+connectAttr "cube10Shape.msg" "hyperLayout14.hyp[1].dn";
+connectAttr "cube11.t" "cubeStamp11.boc[0]";
+connectAttr "cube11.tx" "cubeStamp11.boc[1]";
+connectAttr "cube11.ty" "cubeStamp11.boc[2]";
+connectAttr "cube11.tz" "cubeStamp11.boc[3]";
+connectAttr "cube11.r" "cubeStamp11.boc[4]";
+connectAttr "cube11.rx" "cubeStamp11.boc[5]";
+connectAttr "cube11.ry" "cubeStamp11.boc[6]";
+connectAttr "cube11.rz" "cubeStamp11.boc[7]";
+connectAttr "cube11.s" "cubeStamp11.boc[8]";
+connectAttr "cube11.sx" "cubeStamp11.boc[9]";
+connectAttr "cube11.sy" "cubeStamp11.boc[10]";
+connectAttr "cube11.sz" "cubeStamp11.boc[11]";
+connectAttr "hyperLayout15.msg" "cubeStamp11.hl";
+connectAttr "manifestHub1.sp[10]" "cubeStamp11.spawnedBy";
+connectAttr "cube11.msg" "hyperLayout15.hyp[0].dn";
+connectAttr "cube11Shape.msg" "hyperLayout15.hyp[1].dn";
+connectAttr "cube12.t" "cubeStamp12.boc[0]";
+connectAttr "cube12.tx" "cubeStamp12.boc[1]";
+connectAttr "cube12.ty" "cubeStamp12.boc[2]";
+connectAttr "cube12.tz" "cubeStamp12.boc[3]";
+connectAttr "cube12.r" "cubeStamp12.boc[4]";
+connectAttr "cube12.rx" "cubeStamp12.boc[5]";
+connectAttr "cube12.ry" "cubeStamp12.boc[6]";
+connectAttr "cube12.rz" "cubeStamp12.boc[7]";
+connectAttr "cube12.s" "cubeStamp12.boc[8]";
+connectAttr "cube12.sx" "cubeStamp12.boc[9]";
+connectAttr "cube12.sy" "cubeStamp12.boc[10]";
+connectAttr "cube12.sz" "cubeStamp12.boc[11]";
+connectAttr "hyperLayout16.msg" "cubeStamp12.hl";
+connectAttr "manifestHub1.sp[11]" "cubeStamp12.spawnedBy";
+connectAttr "cube12.msg" "hyperLayout16.hyp[0].dn";
+connectAttr "cube12Shape.msg" "hyperLayout16.hyp[1].dn";
+connectAttr "cube13.t" "cubeStamp13.boc[0]";
+connectAttr "cube13.tx" "cubeStamp13.boc[1]";
+connectAttr "cube13.ty" "cubeStamp13.boc[2]";
+connectAttr "cube13.tz" "cubeStamp13.boc[3]";
+connectAttr "cube13.r" "cubeStamp13.boc[4]";
+connectAttr "cube13.rx" "cubeStamp13.boc[5]";
+connectAttr "cube13.ry" "cubeStamp13.boc[6]";
+connectAttr "cube13.rz" "cubeStamp13.boc[7]";
+connectAttr "cube13.s" "cubeStamp13.boc[8]";
+connectAttr "cube13.sx" "cubeStamp13.boc[9]";
+connectAttr "cube13.sy" "cubeStamp13.boc[10]";
+connectAttr "cube13.sz" "cubeStamp13.boc[11]";
+connectAttr "hyperLayout17.msg" "cubeStamp13.hl";
+connectAttr "manifestHub1.sp[12]" "cubeStamp13.spawnedBy";
+connectAttr "cube13.msg" "hyperLayout17.hyp[0].dn";
+connectAttr "cube13Shape.msg" "hyperLayout17.hyp[1].dn";
+connectAttr "cube14.t" "cubeStamp14.boc[0]";
+connectAttr "cube14.tx" "cubeStamp14.boc[1]";
+connectAttr "cube14.ty" "cubeStamp14.boc[2]";
+connectAttr "cube14.tz" "cubeStamp14.boc[3]";
+connectAttr "cube14.r" "cubeStamp14.boc[4]";
+connectAttr "cube14.rx" "cubeStamp14.boc[5]";
+connectAttr "cube14.ry" "cubeStamp14.boc[6]";
+connectAttr "cube14.rz" "cubeStamp14.boc[7]";
+connectAttr "cube14.s" "cubeStamp14.boc[8]";
+connectAttr "cube14.sx" "cubeStamp14.boc[9]";
+connectAttr "cube14.sy" "cubeStamp14.boc[10]";
+connectAttr "cube14.sz" "cubeStamp14.boc[11]";
+connectAttr "hyperLayout18.msg" "cubeStamp14.hl";
+connectAttr "manifestHub1.sp[13]" "cubeStamp14.spawnedBy";
+connectAttr "cube14.msg" "hyperLayout18.hyp[0].dn";
+connectAttr "cube14Shape.msg" "hyperLayout18.hyp[1].dn";
+connectAttr "cube15.t" "cubeStamp15.boc[0]";
+connectAttr "cube15.tx" "cubeStamp15.boc[1]";
+connectAttr "cube15.ty" "cubeStamp15.boc[2]";
+connectAttr "cube15.tz" "cubeStamp15.boc[3]";
+connectAttr "cube15.r" "cubeStamp15.boc[4]";
+connectAttr "cube15.rx" "cubeStamp15.boc[5]";
+connectAttr "cube15.ry" "cubeStamp15.boc[6]";
+connectAttr "cube15.rz" "cubeStamp15.boc[7]";
+connectAttr "cube15.s" "cubeStamp15.boc[8]";
+connectAttr "cube15.sx" "cubeStamp15.boc[9]";
+connectAttr "cube15.sy" "cubeStamp15.boc[10]";
+connectAttr "cube15.sz" "cubeStamp15.boc[11]";
+connectAttr "hyperLayout19.msg" "cubeStamp15.hl";
+connectAttr "manifestHub1.sp[14]" "cubeStamp15.spawnedBy";
+connectAttr "cube15.msg" "hyperLayout19.hyp[0].dn";
+connectAttr "cube15Shape.msg" "hyperLayout19.hyp[1].dn";
+connectAttr "cube16.t" "cubeStamp16.boc[0]";
+connectAttr "cube16.tx" "cubeStamp16.boc[1]";
+connectAttr "cube16.ty" "cubeStamp16.boc[2]";
+connectAttr "cube16.tz" "cubeStamp16.boc[3]";
+connectAttr "cube16.r" "cubeStamp16.boc[4]";
+connectAttr "cube16.rx" "cubeStamp16.boc[5]";
+connectAttr "cube16.ry" "cubeStamp16.boc[6]";
+connectAttr "cube16.rz" "cubeStamp16.boc[7]";
+connectAttr "cube16.s" "cubeStamp16.boc[8]";
+connectAttr "cube16.sx" "cubeStamp16.boc[9]";
+connectAttr "cube16.sy" "cubeStamp16.boc[10]";
+connectAttr "cube16.sz" "cubeStamp16.boc[11]";
+connectAttr "hyperLayout20.msg" "cubeStamp16.hl";
+connectAttr "manifestHub1.sp[15]" "cubeStamp16.spawnedBy";
+connectAttr "cube16.msg" "hyperLayout20.hyp[0].dn";
+connectAttr "cube16Shape.msg" "hyperLayout20.hyp[1].dn";
+connectAttr "cube17.t" "cubeStamp17.boc[0]";
+connectAttr "cube17.tx" "cubeStamp17.boc[1]";
+connectAttr "cube17.ty" "cubeStamp17.boc[2]";
+connectAttr "cube17.tz" "cubeStamp17.boc[3]";
+connectAttr "cube17.r" "cubeStamp17.boc[4]";
+connectAttr "cube17.rx" "cubeStamp17.boc[5]";
+connectAttr "cube17.ry" "cubeStamp17.boc[6]";
+connectAttr "cube17.rz" "cubeStamp17.boc[7]";
+connectAttr "cube17.s" "cubeStamp17.boc[8]";
+connectAttr "cube17.sx" "cubeStamp17.boc[9]";
+connectAttr "cube17.sy" "cubeStamp17.boc[10]";
+connectAttr "cube17.sz" "cubeStamp17.boc[11]";
+connectAttr "hyperLayout21.msg" "cubeStamp17.hl";
+connectAttr "manifestHub1.sp[16]" "cubeStamp17.spawnedBy";
+connectAttr "cube17.msg" "hyperLayout21.hyp[0].dn";
+connectAttr "cube17Shape.msg" "hyperLayout21.hyp[1].dn";
+connectAttr "cube18.t" "cubeStamp18.boc[0]";
+connectAttr "cube18.tx" "cubeStamp18.boc[1]";
+connectAttr "cube18.ty" "cubeStamp18.boc[2]";
+connectAttr "cube18.tz" "cubeStamp18.boc[3]";
+connectAttr "cube18.r" "cubeStamp18.boc[4]";
+connectAttr "cube18.rx" "cubeStamp18.boc[5]";
+connectAttr "cube18.ry" "cubeStamp18.boc[6]";
+connectAttr "cube18.rz" "cubeStamp18.boc[7]";
+connectAttr "cube18.s" "cubeStamp18.boc[8]";
+connectAttr "cube18.sx" "cubeStamp18.boc[9]";
+connectAttr "cube18.sy" "cubeStamp18.boc[10]";
+connectAttr "cube18.sz" "cubeStamp18.boc[11]";
+connectAttr "hyperLayout22.msg" "cubeStamp18.hl";
+connectAttr "manifestHub1.sp[17]" "cubeStamp18.spawnedBy";
+connectAttr "cube18.msg" "hyperLayout22.hyp[0].dn";
+connectAttr "cube18Shape.msg" "hyperLayout22.hyp[1].dn";
+connectAttr "cube19.t" "cubeStamp19.boc[0]";
+connectAttr "cube19.tx" "cubeStamp19.boc[1]";
+connectAttr "cube19.ty" "cubeStamp19.boc[2]";
+connectAttr "cube19.tz" "cubeStamp19.boc[3]";
+connectAttr "cube19.r" "cubeStamp19.boc[4]";
+connectAttr "cube19.rx" "cubeStamp19.boc[5]";
+connectAttr "cube19.ry" "cubeStamp19.boc[6]";
+connectAttr "cube19.rz" "cubeStamp19.boc[7]";
+connectAttr "cube19.s" "cubeStamp19.boc[8]";
+connectAttr "cube19.sx" "cubeStamp19.boc[9]";
+connectAttr "cube19.sy" "cubeStamp19.boc[10]";
+connectAttr "cube19.sz" "cubeStamp19.boc[11]";
+connectAttr "hyperLayout23.msg" "cubeStamp19.hl";
+connectAttr "manifestHub1.sp[18]" "cubeStamp19.spawnedBy";
+connectAttr "cube19.msg" "hyperLayout23.hyp[0].dn";
+connectAttr "cube19Shape.msg" "hyperLayout23.hyp[1].dn";
+connectAttr "cube20.t" "cubeStamp20.boc[0]";
+connectAttr "cube20.tx" "cubeStamp20.boc[1]";
+connectAttr "cube20.ty" "cubeStamp20.boc[2]";
+connectAttr "cube20.tz" "cubeStamp20.boc[3]";
+connectAttr "cube20.r" "cubeStamp20.boc[4]";
+connectAttr "cube20.rx" "cubeStamp20.boc[5]";
+connectAttr "cube20.ry" "cubeStamp20.boc[6]";
+connectAttr "cube20.rz" "cubeStamp20.boc[7]";
+connectAttr "cube20.s" "cubeStamp20.boc[8]";
+connectAttr "cube20.sx" "cubeStamp20.boc[9]";
+connectAttr "cube20.sy" "cubeStamp20.boc[10]";
+connectAttr "cube20.sz" "cubeStamp20.boc[11]";
+connectAttr "hyperLayout24.msg" "cubeStamp20.hl";
+connectAttr "manifestHub1.sp[19]" "cubeStamp20.spawnedBy";
+connectAttr "cube20.msg" "hyperLayout24.hyp[0].dn";
+connectAttr "cube20Shape.msg" "hyperLayout24.hyp[1].dn";
+connectAttr "cube21.t" "cubeStamp21.boc[0]";
+connectAttr "cube21.tx" "cubeStamp21.boc[1]";
+connectAttr "cube21.ty" "cubeStamp21.boc[2]";
+connectAttr "cube21.tz" "cubeStamp21.boc[3]";
+connectAttr "cube21.r" "cubeStamp21.boc[4]";
+connectAttr "cube21.rx" "cubeStamp21.boc[5]";
+connectAttr "cube21.ry" "cubeStamp21.boc[6]";
+connectAttr "cube21.rz" "cubeStamp21.boc[7]";
+connectAttr "cube21.s" "cubeStamp21.boc[8]";
+connectAttr "cube21.sx" "cubeStamp21.boc[9]";
+connectAttr "cube21.sy" "cubeStamp21.boc[10]";
+connectAttr "cube21.sz" "cubeStamp21.boc[11]";
+connectAttr "hyperLayout25.msg" "cubeStamp21.hl";
+connectAttr "manifestHub1.sp[20]" "cubeStamp21.spawnedBy";
+connectAttr "cube21.msg" "hyperLayout25.hyp[0].dn";
+connectAttr "cube21Shape.msg" "hyperLayout25.hyp[1].dn";
+connectAttr "cube22.t" "cubeStamp22.boc[0]";
+connectAttr "cube22.tx" "cubeStamp22.boc[1]";
+connectAttr "cube22.ty" "cubeStamp22.boc[2]";
+connectAttr "cube22.tz" "cubeStamp22.boc[3]";
+connectAttr "cube22.r" "cubeStamp22.boc[4]";
+connectAttr "cube22.rx" "cubeStamp22.boc[5]";
+connectAttr "cube22.ry" "cubeStamp22.boc[6]";
+connectAttr "cube22.rz" "cubeStamp22.boc[7]";
+connectAttr "cube22.s" "cubeStamp22.boc[8]";
+connectAttr "cube22.sx" "cubeStamp22.boc[9]";
+connectAttr "cube22.sy" "cubeStamp22.boc[10]";
+connectAttr "cube22.sz" "cubeStamp22.boc[11]";
+connectAttr "hyperLayout26.msg" "cubeStamp22.hl";
+connectAttr "manifestHub1.sp[21]" "cubeStamp22.spawnedBy";
+connectAttr "cube22.msg" "hyperLayout26.hyp[0].dn";
+connectAttr "cube22Shape.msg" "hyperLayout26.hyp[1].dn";
+connectAttr "cube23.t" "cubeStamp23.boc[0]";
+connectAttr "cube23.tx" "cubeStamp23.boc[1]";
+connectAttr "cube23.ty" "cubeStamp23.boc[2]";
+connectAttr "cube23.tz" "cubeStamp23.boc[3]";
+connectAttr "cube23.r" "cubeStamp23.boc[4]";
+connectAttr "cube23.rx" "cubeStamp23.boc[5]";
+connectAttr "cube23.ry" "cubeStamp23.boc[6]";
+connectAttr "cube23.rz" "cubeStamp23.boc[7]";
+connectAttr "cube23.s" "cubeStamp23.boc[8]";
+connectAttr "cube23.sx" "cubeStamp23.boc[9]";
+connectAttr "cube23.sy" "cubeStamp23.boc[10]";
+connectAttr "cube23.sz" "cubeStamp23.boc[11]";
+connectAttr "hyperLayout27.msg" "cubeStamp23.hl";
+connectAttr "manifestHub1.sp[22]" "cubeStamp23.spawnedBy";
+connectAttr "cube23.msg" "hyperLayout27.hyp[0].dn";
+connectAttr "cube23Shape.msg" "hyperLayout27.hyp[1].dn";
+connectAttr "cube24.t" "cubeStamp24.boc[0]";
+connectAttr "cube24.tx" "cubeStamp24.boc[1]";
+connectAttr "cube24.ty" "cubeStamp24.boc[2]";
+connectAttr "cube24.tz" "cubeStamp24.boc[3]";
+connectAttr "cube24.r" "cubeStamp24.boc[4]";
+connectAttr "cube24.rx" "cubeStamp24.boc[5]";
+connectAttr "cube24.ry" "cubeStamp24.boc[6]";
+connectAttr "cube24.rz" "cubeStamp24.boc[7]";
+connectAttr "cube24.s" "cubeStamp24.boc[8]";
+connectAttr "cube24.sx" "cubeStamp24.boc[9]";
+connectAttr "cube24.sy" "cubeStamp24.boc[10]";
+connectAttr "cube24.sz" "cubeStamp24.boc[11]";
+connectAttr "hyperLayout28.msg" "cubeStamp24.hl";
+connectAttr "manifestHub1.sp[23]" "cubeStamp24.spawnedBy";
+connectAttr "cube24.msg" "hyperLayout28.hyp[0].dn";
+connectAttr "cube24Shape.msg" "hyperLayout28.hyp[1].dn";
+connectAttr "cube25.t" "cubeStamp25.boc[0]";
+connectAttr "cube25.tx" "cubeStamp25.boc[1]";
+connectAttr "cube25.ty" "cubeStamp25.boc[2]";
+connectAttr "cube25.tz" "cubeStamp25.boc[3]";
+connectAttr "cube25.r" "cubeStamp25.boc[4]";
+connectAttr "cube25.rx" "cubeStamp25.boc[5]";
+connectAttr "cube25.ry" "cubeStamp25.boc[6]";
+connectAttr "cube25.rz" "cubeStamp25.boc[7]";
+connectAttr "cube25.s" "cubeStamp25.boc[8]";
+connectAttr "cube25.sx" "cubeStamp25.boc[9]";
+connectAttr "cube25.sy" "cubeStamp25.boc[10]";
+connectAttr "cube25.sz" "cubeStamp25.boc[11]";
+connectAttr "hyperLayout29.msg" "cubeStamp25.hl";
+connectAttr "manifestHub1.sp[24]" "cubeStamp25.spawnedBy";
+connectAttr "cube25.msg" "hyperLayout29.hyp[0].dn";
+connectAttr "cube25Shape.msg" "hyperLayout29.hyp[1].dn";
+connectAttr "cube26.t" "cubeStamp26.boc[0]";
+connectAttr "cube26.tx" "cubeStamp26.boc[1]";
+connectAttr "cube26.ty" "cubeStamp26.boc[2]";
+connectAttr "cube26.tz" "cubeStamp26.boc[3]";
+connectAttr "cube26.r" "cubeStamp26.boc[4]";
+connectAttr "cube26.rx" "cubeStamp26.boc[5]";
+connectAttr "cube26.ry" "cubeStamp26.boc[6]";
+connectAttr "cube26.rz" "cubeStamp26.boc[7]";
+connectAttr "cube26.s" "cubeStamp26.boc[8]";
+connectAttr "cube26.sx" "cubeStamp26.boc[9]";
+connectAttr "cube26.sy" "cubeStamp26.boc[10]";
+connectAttr "cube26.sz" "cubeStamp26.boc[11]";
+connectAttr "hyperLayout30.msg" "cubeStamp26.hl";
+connectAttr "manifestHub1.sp[25]" "cubeStamp26.spawnedBy";
+connectAttr "cube26.msg" "hyperLayout30.hyp[0].dn";
+connectAttr "cube26Shape.msg" "hyperLayout30.hyp[1].dn";
+connectAttr "cube27.t" "cubeStamp27.boc[0]";
+connectAttr "cube27.tx" "cubeStamp27.boc[1]";
+connectAttr "cube27.ty" "cubeStamp27.boc[2]";
+connectAttr "cube27.tz" "cubeStamp27.boc[3]";
+connectAttr "cube27.r" "cubeStamp27.boc[4]";
+connectAttr "cube27.rx" "cubeStamp27.boc[5]";
+connectAttr "cube27.ry" "cubeStamp27.boc[6]";
+connectAttr "cube27.rz" "cubeStamp27.boc[7]";
+connectAttr "cube27.s" "cubeStamp27.boc[8]";
+connectAttr "cube27.sx" "cubeStamp27.boc[9]";
+connectAttr "cube27.sy" "cubeStamp27.boc[10]";
+connectAttr "cube27.sz" "cubeStamp27.boc[11]";
+connectAttr "hyperLayout31.msg" "cubeStamp27.hl";
+connectAttr "manifestHub1.sp[26]" "cubeStamp27.spawnedBy";
+connectAttr "cube27.msg" "hyperLayout31.hyp[0].dn";
+connectAttr "cube27Shape.msg" "hyperLayout31.hyp[1].dn";
+connectAttr "cube28.t" "cubeStamp28.boc[0]";
+connectAttr "cube28.tx" "cubeStamp28.boc[1]";
+connectAttr "cube28.ty" "cubeStamp28.boc[2]";
+connectAttr "cube28.tz" "cubeStamp28.boc[3]";
+connectAttr "cube28.r" "cubeStamp28.boc[4]";
+connectAttr "cube28.rx" "cubeStamp28.boc[5]";
+connectAttr "cube28.ry" "cubeStamp28.boc[6]";
+connectAttr "cube28.rz" "cubeStamp28.boc[7]";
+connectAttr "cube28.s" "cubeStamp28.boc[8]";
+connectAttr "cube28.sx" "cubeStamp28.boc[9]";
+connectAttr "cube28.sy" "cubeStamp28.boc[10]";
+connectAttr "cube28.sz" "cubeStamp28.boc[11]";
+connectAttr "hyperLayout32.msg" "cubeStamp28.hl";
+connectAttr "manifestHub1.sp[27]" "cubeStamp28.spawnedBy";
+connectAttr "cube28.msg" "hyperLayout32.hyp[0].dn";
+connectAttr "cube28Shape.msg" "hyperLayout32.hyp[1].dn";
+connectAttr "cube29.t" "cubeStamp29.boc[0]";
+connectAttr "cube29.tx" "cubeStamp29.boc[1]";
+connectAttr "cube29.ty" "cubeStamp29.boc[2]";
+connectAttr "cube29.tz" "cubeStamp29.boc[3]";
+connectAttr "cube29.r" "cubeStamp29.boc[4]";
+connectAttr "cube29.rx" "cubeStamp29.boc[5]";
+connectAttr "cube29.ry" "cubeStamp29.boc[6]";
+connectAttr "cube29.rz" "cubeStamp29.boc[7]";
+connectAttr "cube29.s" "cubeStamp29.boc[8]";
+connectAttr "cube29.sx" "cubeStamp29.boc[9]";
+connectAttr "cube29.sy" "cubeStamp29.boc[10]";
+connectAttr "cube29.sz" "cubeStamp29.boc[11]";
+connectAttr "hyperLayout33.msg" "cubeStamp29.hl";
+connectAttr "manifestHub1.sp[28]" "cubeStamp29.spawnedBy";
+connectAttr "cube29.msg" "hyperLayout33.hyp[0].dn";
+connectAttr "cube29Shape.msg" "hyperLayout33.hyp[1].dn";
+connectAttr "cube30.t" "cubeStamp30.boc[0]";
+connectAttr "cube30.tx" "cubeStamp30.boc[1]";
+connectAttr "cube30.ty" "cubeStamp30.boc[2]";
+connectAttr "cube30.tz" "cubeStamp30.boc[3]";
+connectAttr "cube30.r" "cubeStamp30.boc[4]";
+connectAttr "cube30.rx" "cubeStamp30.boc[5]";
+connectAttr "cube30.ry" "cubeStamp30.boc[6]";
+connectAttr "cube30.rz" "cubeStamp30.boc[7]";
+connectAttr "cube30.s" "cubeStamp30.boc[8]";
+connectAttr "cube30.sx" "cubeStamp30.boc[9]";
+connectAttr "cube30.sy" "cubeStamp30.boc[10]";
+connectAttr "cube30.sz" "cubeStamp30.boc[11]";
+connectAttr "hyperLayout34.msg" "cubeStamp30.hl";
+connectAttr "manifestHub1.sp[29]" "cubeStamp30.spawnedBy";
+connectAttr "cube30.msg" "hyperLayout34.hyp[0].dn";
+connectAttr "cube30Shape.msg" "hyperLayout34.hyp[1].dn";
+connectAttr "cube31.t" "cubeStamp31.boc[0]";
+connectAttr "cube31.tx" "cubeStamp31.boc[1]";
+connectAttr "cube31.ty" "cubeStamp31.boc[2]";
+connectAttr "cube31.tz" "cubeStamp31.boc[3]";
+connectAttr "cube31.r" "cubeStamp31.boc[4]";
+connectAttr "cube31.rx" "cubeStamp31.boc[5]";
+connectAttr "cube31.ry" "cubeStamp31.boc[6]";
+connectAttr "cube31.rz" "cubeStamp31.boc[7]";
+connectAttr "cube31.s" "cubeStamp31.boc[8]";
+connectAttr "cube31.sx" "cubeStamp31.boc[9]";
+connectAttr "cube31.sy" "cubeStamp31.boc[10]";
+connectAttr "cube31.sz" "cubeStamp31.boc[11]";
+connectAttr "hyperLayout35.msg" "cubeStamp31.hl";
+connectAttr "manifestHub1.sp[30]" "cubeStamp31.spawnedBy";
+connectAttr "cube31.msg" "hyperLayout35.hyp[0].dn";
+connectAttr "cube31Shape.msg" "hyperLayout35.hyp[1].dn";
+connectAttr "cube32.t" "cubeStamp32.boc[0]";
+connectAttr "cube32.tx" "cubeStamp32.boc[1]";
+connectAttr "cube32.ty" "cubeStamp32.boc[2]";
+connectAttr "cube32.tz" "cubeStamp32.boc[3]";
+connectAttr "cube32.r" "cubeStamp32.boc[4]";
+connectAttr "cube32.rx" "cubeStamp32.boc[5]";
+connectAttr "cube32.ry" "cubeStamp32.boc[6]";
+connectAttr "cube32.rz" "cubeStamp32.boc[7]";
+connectAttr "cube32.s" "cubeStamp32.boc[8]";
+connectAttr "cube32.sx" "cubeStamp32.boc[9]";
+connectAttr "cube32.sy" "cubeStamp32.boc[10]";
+connectAttr "cube32.sz" "cubeStamp32.boc[11]";
+connectAttr "hyperLayout36.msg" "cubeStamp32.hl";
+connectAttr "manifestHub1.sp[31]" "cubeStamp32.spawnedBy";
+connectAttr "cube32.msg" "hyperLayout36.hyp[0].dn";
+connectAttr "cube32Shape.msg" "hyperLayout36.hyp[1].dn";
+connectAttr "cube33.t" "cubeStamp33.boc[0]";
+connectAttr "cube33.tx" "cubeStamp33.boc[1]";
+connectAttr "cube33.ty" "cubeStamp33.boc[2]";
+connectAttr "cube33.tz" "cubeStamp33.boc[3]";
+connectAttr "cube33.r" "cubeStamp33.boc[4]";
+connectAttr "cube33.rx" "cubeStamp33.boc[5]";
+connectAttr "cube33.ry" "cubeStamp33.boc[6]";
+connectAttr "cube33.rz" "cubeStamp33.boc[7]";
+connectAttr "cube33.s" "cubeStamp33.boc[8]";
+connectAttr "cube33.sx" "cubeStamp33.boc[9]";
+connectAttr "cube33.sy" "cubeStamp33.boc[10]";
+connectAttr "cube33.sz" "cubeStamp33.boc[11]";
+connectAttr "hyperLayout37.msg" "cubeStamp33.hl";
+connectAttr "manifestHub1.sp[32]" "cubeStamp33.spawnedBy";
+connectAttr "cube33.msg" "hyperLayout37.hyp[0].dn";
+connectAttr "cube33Shape.msg" "hyperLayout37.hyp[1].dn";
+connectAttr "cube34.t" "cubeStamp34.boc[0]";
+connectAttr "cube34.tx" "cubeStamp34.boc[1]";
+connectAttr "cube34.ty" "cubeStamp34.boc[2]";
+connectAttr "cube34.tz" "cubeStamp34.boc[3]";
+connectAttr "cube34.r" "cubeStamp34.boc[4]";
+connectAttr "cube34.rx" "cubeStamp34.boc[5]";
+connectAttr "cube34.ry" "cubeStamp34.boc[6]";
+connectAttr "cube34.rz" "cubeStamp34.boc[7]";
+connectAttr "cube34.s" "cubeStamp34.boc[8]";
+connectAttr "cube34.sx" "cubeStamp34.boc[9]";
+connectAttr "cube34.sy" "cubeStamp34.boc[10]";
+connectAttr "cube34.sz" "cubeStamp34.boc[11]";
+connectAttr "hyperLayout38.msg" "cubeStamp34.hl";
+connectAttr "manifestHub1.sp[33]" "cubeStamp34.spawnedBy";
+connectAttr "cube34.msg" "hyperLayout38.hyp[0].dn";
+connectAttr "cube34Shape.msg" "hyperLayout38.hyp[1].dn";
+connectAttr "cube35.t" "cubeStamp35.boc[0]";
+connectAttr "cube35.tx" "cubeStamp35.boc[1]";
+connectAttr "cube35.ty" "cubeStamp35.boc[2]";
+connectAttr "cube35.tz" "cubeStamp35.boc[3]";
+connectAttr "cube35.r" "cubeStamp35.boc[4]";
+connectAttr "cube35.rx" "cubeStamp35.boc[5]";
+connectAttr "cube35.ry" "cubeStamp35.boc[6]";
+connectAttr "cube35.rz" "cubeStamp35.boc[7]";
+connectAttr "cube35.s" "cubeStamp35.boc[8]";
+connectAttr "cube35.sx" "cubeStamp35.boc[9]";
+connectAttr "cube35.sy" "cubeStamp35.boc[10]";
+connectAttr "cube35.sz" "cubeStamp35.boc[11]";
+connectAttr "hyperLayout39.msg" "cubeStamp35.hl";
+connectAttr "manifestHub1.sp[34]" "cubeStamp35.spawnedBy";
+connectAttr "cube35.msg" "hyperLayout39.hyp[0].dn";
+connectAttr "cube35Shape.msg" "hyperLayout39.hyp[1].dn";
+connectAttr "cube36.t" "cubeStamp36.boc[0]";
+connectAttr "cube36.tx" "cubeStamp36.boc[1]";
+connectAttr "cube36.ty" "cubeStamp36.boc[2]";
+connectAttr "cube36.tz" "cubeStamp36.boc[3]";
+connectAttr "cube36.r" "cubeStamp36.boc[4]";
+connectAttr "cube36.rx" "cubeStamp36.boc[5]";
+connectAttr "cube36.ry" "cubeStamp36.boc[6]";
+connectAttr "cube36.rz" "cubeStamp36.boc[7]";
+connectAttr "cube36.s" "cubeStamp36.boc[8]";
+connectAttr "cube36.sx" "cubeStamp36.boc[9]";
+connectAttr "cube36.sy" "cubeStamp36.boc[10]";
+connectAttr "cube36.sz" "cubeStamp36.boc[11]";
+connectAttr "hyperLayout40.msg" "cubeStamp36.hl";
+connectAttr "manifestHub1.sp[35]" "cubeStamp36.spawnedBy";
+connectAttr "cube36.msg" "hyperLayout40.hyp[0].dn";
+connectAttr "cube36Shape.msg" "hyperLayout40.hyp[1].dn";
+connectAttr "cube37.t" "cubeStamp37.boc[0]";
+connectAttr "cube37.tx" "cubeStamp37.boc[1]";
+connectAttr "cube37.ty" "cubeStamp37.boc[2]";
+connectAttr "cube37.tz" "cubeStamp37.boc[3]";
+connectAttr "cube37.r" "cubeStamp37.boc[4]";
+connectAttr "cube37.rx" "cubeStamp37.boc[5]";
+connectAttr "cube37.ry" "cubeStamp37.boc[6]";
+connectAttr "cube37.rz" "cubeStamp37.boc[7]";
+connectAttr "cube37.s" "cubeStamp37.boc[8]";
+connectAttr "cube37.sx" "cubeStamp37.boc[9]";
+connectAttr "cube37.sy" "cubeStamp37.boc[10]";
+connectAttr "cube37.sz" "cubeStamp37.boc[11]";
+connectAttr "hyperLayout41.msg" "cubeStamp37.hl";
+connectAttr "manifestHub1.sp[36]" "cubeStamp37.spawnedBy";
+connectAttr "cube37.msg" "hyperLayout41.hyp[0].dn";
+connectAttr "cube37Shape.msg" "hyperLayout41.hyp[1].dn";
+connectAttr "cube38.t" "cubeStamp38.boc[0]";
+connectAttr "cube38.tx" "cubeStamp38.boc[1]";
+connectAttr "cube38.ty" "cubeStamp38.boc[2]";
+connectAttr "cube38.tz" "cubeStamp38.boc[3]";
+connectAttr "cube38.r" "cubeStamp38.boc[4]";
+connectAttr "cube38.rx" "cubeStamp38.boc[5]";
+connectAttr "cube38.ry" "cubeStamp38.boc[6]";
+connectAttr "cube38.rz" "cubeStamp38.boc[7]";
+connectAttr "cube38.s" "cubeStamp38.boc[8]";
+connectAttr "cube38.sx" "cubeStamp38.boc[9]";
+connectAttr "cube38.sy" "cubeStamp38.boc[10]";
+connectAttr "cube38.sz" "cubeStamp38.boc[11]";
+connectAttr "hyperLayout42.msg" "cubeStamp38.hl";
+connectAttr "manifestHub1.sp[37]" "cubeStamp38.spawnedBy";
+connectAttr "cube38.msg" "hyperLayout42.hyp[0].dn";
+connectAttr "cube38Shape.msg" "hyperLayout42.hyp[1].dn";
+connectAttr "cube39.t" "cubeStamp39.boc[0]";
+connectAttr "cube39.tx" "cubeStamp39.boc[1]";
+connectAttr "cube39.ty" "cubeStamp39.boc[2]";
+connectAttr "cube39.tz" "cubeStamp39.boc[3]";
+connectAttr "cube39.r" "cubeStamp39.boc[4]";
+connectAttr "cube39.rx" "cubeStamp39.boc[5]";
+connectAttr "cube39.ry" "cubeStamp39.boc[6]";
+connectAttr "cube39.rz" "cubeStamp39.boc[7]";
+connectAttr "cube39.s" "cubeStamp39.boc[8]";
+connectAttr "cube39.sx" "cubeStamp39.boc[9]";
+connectAttr "cube39.sy" "cubeStamp39.boc[10]";
+connectAttr "cube39.sz" "cubeStamp39.boc[11]";
+connectAttr "hyperLayout43.msg" "cubeStamp39.hl";
+connectAttr "manifestHub1.sp[38]" "cubeStamp39.spawnedBy";
+connectAttr "cube39.msg" "hyperLayout43.hyp[0].dn";
+connectAttr "cube39Shape.msg" "hyperLayout43.hyp[1].dn";
+connectAttr "cube40.t" "cubeStamp40.boc[0]";
+connectAttr "cube40.tx" "cubeStamp40.boc[1]";
+connectAttr "cube40.ty" "cubeStamp40.boc[2]";
+connectAttr "cube40.tz" "cubeStamp40.boc[3]";
+connectAttr "cube40.r" "cubeStamp40.boc[4]";
+connectAttr "cube40.rx" "cubeStamp40.boc[5]";
+connectAttr "cube40.ry" "cubeStamp40.boc[6]";
+connectAttr "cube40.rz" "cubeStamp40.boc[7]";
+connectAttr "cube40.s" "cubeStamp40.boc[8]";
+connectAttr "cube40.sx" "cubeStamp40.boc[9]";
+connectAttr "cube40.sy" "cubeStamp40.boc[10]";
+connectAttr "cube40.sz" "cubeStamp40.boc[11]";
+connectAttr "hyperLayout44.msg" "cubeStamp40.hl";
+connectAttr "manifestHub1.sp[39]" "cubeStamp40.spawnedBy";
+connectAttr "cube40.msg" "hyperLayout44.hyp[0].dn";
+connectAttr "cube40Shape.msg" "hyperLayout44.hyp[1].dn";
+connectAttr "cube41.t" "cubeStamp41.boc[0]";
+connectAttr "cube41.tx" "cubeStamp41.boc[1]";
+connectAttr "cube41.ty" "cubeStamp41.boc[2]";
+connectAttr "cube41.tz" "cubeStamp41.boc[3]";
+connectAttr "cube41.r" "cubeStamp41.boc[4]";
+connectAttr "cube41.rx" "cubeStamp41.boc[5]";
+connectAttr "cube41.ry" "cubeStamp41.boc[6]";
+connectAttr "cube41.rz" "cubeStamp41.boc[7]";
+connectAttr "cube41.s" "cubeStamp41.boc[8]";
+connectAttr "cube41.sx" "cubeStamp41.boc[9]";
+connectAttr "cube41.sy" "cubeStamp41.boc[10]";
+connectAttr "cube41.sz" "cubeStamp41.boc[11]";
+connectAttr "hyperLayout45.msg" "cubeStamp41.hl";
+connectAttr "manifestHub1.sp[40]" "cubeStamp41.spawnedBy";
+connectAttr "cube41.msg" "hyperLayout45.hyp[0].dn";
+connectAttr "cube41Shape.msg" "hyperLayout45.hyp[1].dn";
+connectAttr "cube42.t" "cubeStamp42.boc[0]";
+connectAttr "cube42.tx" "cubeStamp42.boc[1]";
+connectAttr "cube42.ty" "cubeStamp42.boc[2]";
+connectAttr "cube42.tz" "cubeStamp42.boc[3]";
+connectAttr "cube42.r" "cubeStamp42.boc[4]";
+connectAttr "cube42.rx" "cubeStamp42.boc[5]";
+connectAttr "cube42.ry" "cubeStamp42.boc[6]";
+connectAttr "cube42.rz" "cubeStamp42.boc[7]";
+connectAttr "cube42.s" "cubeStamp42.boc[8]";
+connectAttr "cube42.sx" "cubeStamp42.boc[9]";
+connectAttr "cube42.sy" "cubeStamp42.boc[10]";
+connectAttr "cube42.sz" "cubeStamp42.boc[11]";
+connectAttr "hyperLayout46.msg" "cubeStamp42.hl";
+connectAttr "manifestHub1.sp[41]" "cubeStamp42.spawnedBy";
+connectAttr "cube42.msg" "hyperLayout46.hyp[0].dn";
+connectAttr "cube42Shape.msg" "hyperLayout46.hyp[1].dn";
+connectAttr "cube43.t" "cubeStamp43.boc[0]";
+connectAttr "cube43.tx" "cubeStamp43.boc[1]";
+connectAttr "cube43.ty" "cubeStamp43.boc[2]";
+connectAttr "cube43.tz" "cubeStamp43.boc[3]";
+connectAttr "cube43.r" "cubeStamp43.boc[4]";
+connectAttr "cube43.rx" "cubeStamp43.boc[5]";
+connectAttr "cube43.ry" "cubeStamp43.boc[6]";
+connectAttr "cube43.rz" "cubeStamp43.boc[7]";
+connectAttr "cube43.s" "cubeStamp43.boc[8]";
+connectAttr "cube43.sx" "cubeStamp43.boc[9]";
+connectAttr "cube43.sy" "cubeStamp43.boc[10]";
+connectAttr "cube43.sz" "cubeStamp43.boc[11]";
+connectAttr "hyperLayout47.msg" "cubeStamp43.hl";
+connectAttr "manifestHub1.sp[42]" "cubeStamp43.spawnedBy";
+connectAttr "cube43.msg" "hyperLayout47.hyp[0].dn";
+connectAttr "cube43Shape.msg" "hyperLayout47.hyp[1].dn";
+connectAttr "cube44.t" "cubeStamp44.boc[0]";
+connectAttr "cube44.tx" "cubeStamp44.boc[1]";
+connectAttr "cube44.ty" "cubeStamp44.boc[2]";
+connectAttr "cube44.tz" "cubeStamp44.boc[3]";
+connectAttr "cube44.r" "cubeStamp44.boc[4]";
+connectAttr "cube44.rx" "cubeStamp44.boc[5]";
+connectAttr "cube44.ry" "cubeStamp44.boc[6]";
+connectAttr "cube44.rz" "cubeStamp44.boc[7]";
+connectAttr "cube44.s" "cubeStamp44.boc[8]";
+connectAttr "cube44.sx" "cubeStamp44.boc[9]";
+connectAttr "cube44.sy" "cubeStamp44.boc[10]";
+connectAttr "cube44.sz" "cubeStamp44.boc[11]";
+connectAttr "hyperLayout48.msg" "cubeStamp44.hl";
+connectAttr "manifestHub1.sp[43]" "cubeStamp44.spawnedBy";
+connectAttr "cube44.msg" "hyperLayout48.hyp[0].dn";
+connectAttr "cube44Shape.msg" "hyperLayout48.hyp[1].dn";
+connectAttr "cube45.t" "cubeStamp45.boc[0]";
+connectAttr "cube45.tx" "cubeStamp45.boc[1]";
+connectAttr "cube45.ty" "cubeStamp45.boc[2]";
+connectAttr "cube45.tz" "cubeStamp45.boc[3]";
+connectAttr "cube45.r" "cubeStamp45.boc[4]";
+connectAttr "cube45.rx" "cubeStamp45.boc[5]";
+connectAttr "cube45.ry" "cubeStamp45.boc[6]";
+connectAttr "cube45.rz" "cubeStamp45.boc[7]";
+connectAttr "cube45.s" "cubeStamp45.boc[8]";
+connectAttr "cube45.sx" "cubeStamp45.boc[9]";
+connectAttr "cube45.sy" "cubeStamp45.boc[10]";
+connectAttr "cube45.sz" "cubeStamp45.boc[11]";
+connectAttr "hyperLayout49.msg" "cubeStamp45.hl";
+connectAttr "manifestHub1.sp[44]" "cubeStamp45.spawnedBy";
+connectAttr "cube45.msg" "hyperLayout49.hyp[0].dn";
+connectAttr "cube45Shape.msg" "hyperLayout49.hyp[1].dn";
+connectAttr "cube46.t" "cubeStamp46.boc[0]";
+connectAttr "cube46.tx" "cubeStamp46.boc[1]";
+connectAttr "cube46.ty" "cubeStamp46.boc[2]";
+connectAttr "cube46.tz" "cubeStamp46.boc[3]";
+connectAttr "cube46.r" "cubeStamp46.boc[4]";
+connectAttr "cube46.rx" "cubeStamp46.boc[5]";
+connectAttr "cube46.ry" "cubeStamp46.boc[6]";
+connectAttr "cube46.rz" "cubeStamp46.boc[7]";
+connectAttr "cube46.s" "cubeStamp46.boc[8]";
+connectAttr "cube46.sx" "cubeStamp46.boc[9]";
+connectAttr "cube46.sy" "cubeStamp46.boc[10]";
+connectAttr "cube46.sz" "cubeStamp46.boc[11]";
+connectAttr "hyperLayout50.msg" "cubeStamp46.hl";
+connectAttr "manifestHub1.sp[45]" "cubeStamp46.spawnedBy";
+connectAttr "cube46.msg" "hyperLayout50.hyp[0].dn";
+connectAttr "cube46Shape.msg" "hyperLayout50.hyp[1].dn";
+connectAttr "cube47.t" "cubeStamp47.boc[0]";
+connectAttr "cube47.tx" "cubeStamp47.boc[1]";
+connectAttr "cube47.ty" "cubeStamp47.boc[2]";
+connectAttr "cube47.tz" "cubeStamp47.boc[3]";
+connectAttr "cube47.r" "cubeStamp47.boc[4]";
+connectAttr "cube47.rx" "cubeStamp47.boc[5]";
+connectAttr "cube47.ry" "cubeStamp47.boc[6]";
+connectAttr "cube47.rz" "cubeStamp47.boc[7]";
+connectAttr "cube47.s" "cubeStamp47.boc[8]";
+connectAttr "cube47.sx" "cubeStamp47.boc[9]";
+connectAttr "cube47.sy" "cubeStamp47.boc[10]";
+connectAttr "cube47.sz" "cubeStamp47.boc[11]";
+connectAttr "hyperLayout51.msg" "cubeStamp47.hl";
+connectAttr "manifestHub1.sp[46]" "cubeStamp47.spawnedBy";
+connectAttr "cube47.msg" "hyperLayout51.hyp[0].dn";
+connectAttr "cube47Shape.msg" "hyperLayout51.hyp[1].dn";
+connectAttr "cube48.t" "cubeStamp48.boc[0]";
+connectAttr "cube48.tx" "cubeStamp48.boc[1]";
+connectAttr "cube48.ty" "cubeStamp48.boc[2]";
+connectAttr "cube48.tz" "cubeStamp48.boc[3]";
+connectAttr "cube48.r" "cubeStamp48.boc[4]";
+connectAttr "cube48.rx" "cubeStamp48.boc[5]";
+connectAttr "cube48.ry" "cubeStamp48.boc[6]";
+connectAttr "cube48.rz" "cubeStamp48.boc[7]";
+connectAttr "cube48.s" "cubeStamp48.boc[8]";
+connectAttr "cube48.sx" "cubeStamp48.boc[9]";
+connectAttr "cube48.sy" "cubeStamp48.boc[10]";
+connectAttr "cube48.sz" "cubeStamp48.boc[11]";
+connectAttr "hyperLayout52.msg" "cubeStamp48.hl";
+connectAttr "manifestHub1.sp[47]" "cubeStamp48.spawnedBy";
+connectAttr "cube48.msg" "hyperLayout52.hyp[0].dn";
+connectAttr "cube48Shape.msg" "hyperLayout52.hyp[1].dn";
+connectAttr "cube49.t" "cubeStamp49.boc[0]";
+connectAttr "cube49.tx" "cubeStamp49.boc[1]";
+connectAttr "cube49.ty" "cubeStamp49.boc[2]";
+connectAttr "cube49.tz" "cubeStamp49.boc[3]";
+connectAttr "cube49.r" "cubeStamp49.boc[4]";
+connectAttr "cube49.rx" "cubeStamp49.boc[5]";
+connectAttr "cube49.ry" "cubeStamp49.boc[6]";
+connectAttr "cube49.rz" "cubeStamp49.boc[7]";
+connectAttr "cube49.s" "cubeStamp49.boc[8]";
+connectAttr "cube49.sx" "cubeStamp49.boc[9]";
+connectAttr "cube49.sy" "cubeStamp49.boc[10]";
+connectAttr "cube49.sz" "cubeStamp49.boc[11]";
+connectAttr "hyperLayout53.msg" "cubeStamp49.hl";
+connectAttr "manifestHub1.sp[48]" "cubeStamp49.spawnedBy";
+connectAttr "cube49.msg" "hyperLayout53.hyp[0].dn";
+connectAttr "cube49Shape.msg" "hyperLayout53.hyp[1].dn";
+connectAttr "cube50.t" "cubeStamp50.boc[0]";
+connectAttr "cube50.tx" "cubeStamp50.boc[1]";
+connectAttr "cube50.ty" "cubeStamp50.boc[2]";
+connectAttr "cube50.tz" "cubeStamp50.boc[3]";
+connectAttr "cube50.r" "cubeStamp50.boc[4]";
+connectAttr "cube50.rx" "cubeStamp50.boc[5]";
+connectAttr "cube50.ry" "cubeStamp50.boc[6]";
+connectAttr "cube50.rz" "cubeStamp50.boc[7]";
+connectAttr "cube50.s" "cubeStamp50.boc[8]";
+connectAttr "cube50.sx" "cubeStamp50.boc[9]";
+connectAttr "cube50.sy" "cubeStamp50.boc[10]";
+connectAttr "cube50.sz" "cubeStamp50.boc[11]";
+connectAttr "hyperLayout54.msg" "cubeStamp50.hl";
+connectAttr "manifestHub1.sp[49]" "cubeStamp50.spawnedBy";
+connectAttr "cube50.msg" "hyperLayout54.hyp[0].dn";
+connectAttr "cube50Shape.msg" "hyperLayout54.hyp[1].dn";
+connectAttr "cube51.t" "cubeStamp51.boc[0]";
+connectAttr "cube51.tx" "cubeStamp51.boc[1]";
+connectAttr "cube51.ty" "cubeStamp51.boc[2]";
+connectAttr "cube51.tz" "cubeStamp51.boc[3]";
+connectAttr "cube51.r" "cubeStamp51.boc[4]";
+connectAttr "cube51.rx" "cubeStamp51.boc[5]";
+connectAttr "cube51.ry" "cubeStamp51.boc[6]";
+connectAttr "cube51.rz" "cubeStamp51.boc[7]";
+connectAttr "cube51.s" "cubeStamp51.boc[8]";
+connectAttr "cube51.sx" "cubeStamp51.boc[9]";
+connectAttr "cube51.sy" "cubeStamp51.boc[10]";
+connectAttr "cube51.sz" "cubeStamp51.boc[11]";
+connectAttr "hyperLayout55.msg" "cubeStamp51.hl";
+connectAttr "manifestHub1.sp[50]" "cubeStamp51.spawnedBy";
+connectAttr "cube51.msg" "hyperLayout55.hyp[0].dn";
+connectAttr "cube51Shape.msg" "hyperLayout55.hyp[1].dn";
+connectAttr "cube52.t" "cubeStamp52.boc[0]";
+connectAttr "cube52.tx" "cubeStamp52.boc[1]";
+connectAttr "cube52.ty" "cubeStamp52.boc[2]";
+connectAttr "cube52.tz" "cubeStamp52.boc[3]";
+connectAttr "cube52.r" "cubeStamp52.boc[4]";
+connectAttr "cube52.rx" "cubeStamp52.boc[5]";
+connectAttr "cube52.ry" "cubeStamp52.boc[6]";
+connectAttr "cube52.rz" "cubeStamp52.boc[7]";
+connectAttr "cube52.s" "cubeStamp52.boc[8]";
+connectAttr "cube52.sx" "cubeStamp52.boc[9]";
+connectAttr "cube52.sy" "cubeStamp52.boc[10]";
+connectAttr "cube52.sz" "cubeStamp52.boc[11]";
+connectAttr "hyperLayout56.msg" "cubeStamp52.hl";
+connectAttr "manifestHub1.sp[51]" "cubeStamp52.spawnedBy";
+connectAttr "cube52.msg" "hyperLayout56.hyp[0].dn";
+connectAttr "cube52Shape.msg" "hyperLayout56.hyp[1].dn";
+connectAttr "cube53.t" "cubeStamp53.boc[0]";
+connectAttr "cube53.tx" "cubeStamp53.boc[1]";
+connectAttr "cube53.ty" "cubeStamp53.boc[2]";
+connectAttr "cube53.tz" "cubeStamp53.boc[3]";
+connectAttr "cube53.r" "cubeStamp53.boc[4]";
+connectAttr "cube53.rx" "cubeStamp53.boc[5]";
+connectAttr "cube53.ry" "cubeStamp53.boc[6]";
+connectAttr "cube53.rz" "cubeStamp53.boc[7]";
+connectAttr "cube53.s" "cubeStamp53.boc[8]";
+connectAttr "cube53.sx" "cubeStamp53.boc[9]";
+connectAttr "cube53.sy" "cubeStamp53.boc[10]";
+connectAttr "cube53.sz" "cubeStamp53.boc[11]";
+connectAttr "hyperLayout57.msg" "cubeStamp53.hl";
+connectAttr "manifestHub1.sp[52]" "cubeStamp53.spawnedBy";
+connectAttr "cube53.msg" "hyperLayout57.hyp[0].dn";
+connectAttr "cube53Shape.msg" "hyperLayout57.hyp[1].dn";
+connectAttr "cube54.t" "cubeStamp54.boc[0]";
+connectAttr "cube54.tx" "cubeStamp54.boc[1]";
+connectAttr "cube54.ty" "cubeStamp54.boc[2]";
+connectAttr "cube54.tz" "cubeStamp54.boc[3]";
+connectAttr "cube54.r" "cubeStamp54.boc[4]";
+connectAttr "cube54.rx" "cubeStamp54.boc[5]";
+connectAttr "cube54.ry" "cubeStamp54.boc[6]";
+connectAttr "cube54.rz" "cubeStamp54.boc[7]";
+connectAttr "cube54.s" "cubeStamp54.boc[8]";
+connectAttr "cube54.sx" "cubeStamp54.boc[9]";
+connectAttr "cube54.sy" "cubeStamp54.boc[10]";
+connectAttr "cube54.sz" "cubeStamp54.boc[11]";
+connectAttr "hyperLayout58.msg" "cubeStamp54.hl";
+connectAttr "manifestHub1.sp[53]" "cubeStamp54.spawnedBy";
+connectAttr "cube54.msg" "hyperLayout58.hyp[0].dn";
+connectAttr "cube54Shape.msg" "hyperLayout58.hyp[1].dn";
+connectAttr "cube55.t" "cubeStamp55.boc[0]";
+connectAttr "cube55.tx" "cubeStamp55.boc[1]";
+connectAttr "cube55.ty" "cubeStamp55.boc[2]";
+connectAttr "cube55.tz" "cubeStamp55.boc[3]";
+connectAttr "cube55.r" "cubeStamp55.boc[4]";
+connectAttr "cube55.rx" "cubeStamp55.boc[5]";
+connectAttr "cube55.ry" "cubeStamp55.boc[6]";
+connectAttr "cube55.rz" "cubeStamp55.boc[7]";
+connectAttr "cube55.s" "cubeStamp55.boc[8]";
+connectAttr "cube55.sx" "cubeStamp55.boc[9]";
+connectAttr "cube55.sy" "cubeStamp55.boc[10]";
+connectAttr "cube55.sz" "cubeStamp55.boc[11]";
+connectAttr "hyperLayout59.msg" "cubeStamp55.hl";
+connectAttr "manifestHub1.sp[54]" "cubeStamp55.spawnedBy";
+connectAttr "cube55.msg" "hyperLayout59.hyp[0].dn";
+connectAttr "cube55Shape.msg" "hyperLayout59.hyp[1].dn";
+connectAttr "cube56.t" "cubeStamp56.boc[0]";
+connectAttr "cube56.tx" "cubeStamp56.boc[1]";
+connectAttr "cube56.ty" "cubeStamp56.boc[2]";
+connectAttr "cube56.tz" "cubeStamp56.boc[3]";
+connectAttr "cube56.r" "cubeStamp56.boc[4]";
+connectAttr "cube56.rx" "cubeStamp56.boc[5]";
+connectAttr "cube56.ry" "cubeStamp56.boc[6]";
+connectAttr "cube56.rz" "cubeStamp56.boc[7]";
+connectAttr "cube56.s" "cubeStamp56.boc[8]";
+connectAttr "cube56.sx" "cubeStamp56.boc[9]";
+connectAttr "cube56.sy" "cubeStamp56.boc[10]";
+connectAttr "cube56.sz" "cubeStamp56.boc[11]";
+connectAttr "hyperLayout60.msg" "cubeStamp56.hl";
+connectAttr "manifestHub1.sp[55]" "cubeStamp56.spawnedBy";
+connectAttr "cube56.msg" "hyperLayout60.hyp[0].dn";
+connectAttr "cube56Shape.msg" "hyperLayout60.hyp[1].dn";
+connectAttr "cube57.t" "cubeStamp57.boc[0]";
+connectAttr "cube57.tx" "cubeStamp57.boc[1]";
+connectAttr "cube57.ty" "cubeStamp57.boc[2]";
+connectAttr "cube57.tz" "cubeStamp57.boc[3]";
+connectAttr "cube57.r" "cubeStamp57.boc[4]";
+connectAttr "cube57.rx" "cubeStamp57.boc[5]";
+connectAttr "cube57.ry" "cubeStamp57.boc[6]";
+connectAttr "cube57.rz" "cubeStamp57.boc[7]";
+connectAttr "cube57.s" "cubeStamp57.boc[8]";
+connectAttr "cube57.sx" "cubeStamp57.boc[9]";
+connectAttr "cube57.sy" "cubeStamp57.boc[10]";
+connectAttr "cube57.sz" "cubeStamp57.boc[11]";
+connectAttr "hyperLayout61.msg" "cubeStamp57.hl";
+connectAttr "manifestHub1.sp[56]" "cubeStamp57.spawnedBy";
+connectAttr "cube57.msg" "hyperLayout61.hyp[0].dn";
+connectAttr "cube57Shape.msg" "hyperLayout61.hyp[1].dn";
+connectAttr "cube58.t" "cubeStamp58.boc[0]";
+connectAttr "cube58.tx" "cubeStamp58.boc[1]";
+connectAttr "cube58.ty" "cubeStamp58.boc[2]";
+connectAttr "cube58.tz" "cubeStamp58.boc[3]";
+connectAttr "cube58.r" "cubeStamp58.boc[4]";
+connectAttr "cube58.rx" "cubeStamp58.boc[5]";
+connectAttr "cube58.ry" "cubeStamp58.boc[6]";
+connectAttr "cube58.rz" "cubeStamp58.boc[7]";
+connectAttr "cube58.s" "cubeStamp58.boc[8]";
+connectAttr "cube58.sx" "cubeStamp58.boc[9]";
+connectAttr "cube58.sy" "cubeStamp58.boc[10]";
+connectAttr "cube58.sz" "cubeStamp58.boc[11]";
+connectAttr "hyperLayout62.msg" "cubeStamp58.hl";
+connectAttr "manifestHub1.sp[57]" "cubeStamp58.spawnedBy";
+connectAttr "cube58.msg" "hyperLayout62.hyp[0].dn";
+connectAttr "cube58Shape.msg" "hyperLayout62.hyp[1].dn";
+connectAttr "cube59.t" "cubeStamp59.boc[0]";
+connectAttr "cube59.tx" "cubeStamp59.boc[1]";
+connectAttr "cube59.ty" "cubeStamp59.boc[2]";
+connectAttr "cube59.tz" "cubeStamp59.boc[3]";
+connectAttr "cube59.r" "cubeStamp59.boc[4]";
+connectAttr "cube59.rx" "cubeStamp59.boc[5]";
+connectAttr "cube59.ry" "cubeStamp59.boc[6]";
+connectAttr "cube59.rz" "cubeStamp59.boc[7]";
+connectAttr "cube59.s" "cubeStamp59.boc[8]";
+connectAttr "cube59.sx" "cubeStamp59.boc[9]";
+connectAttr "cube59.sy" "cubeStamp59.boc[10]";
+connectAttr "cube59.sz" "cubeStamp59.boc[11]";
+connectAttr "hyperLayout63.msg" "cubeStamp59.hl";
+connectAttr "manifestHub1.sp[58]" "cubeStamp59.spawnedBy";
+connectAttr "cube59.msg" "hyperLayout63.hyp[0].dn";
+connectAttr "cube59Shape.msg" "hyperLayout63.hyp[1].dn";
 connectAttr "nParticleCloudSE.pa" ":renderPartition.st" -na;
 connectAttr "cubeShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube1Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube2Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube3Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube4Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube5Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube6Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube7Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube8Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube9Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube10Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube11Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube12Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube13Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube14Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube15Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube16Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube17Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube18Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube19Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube20Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube21Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube22Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube23Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube24Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube25Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube26Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube27Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube28Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube29Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube30Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube31Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube32Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube33Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube34Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube35Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube36Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube37Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube38Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube39Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube40Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube41Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube42Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube43Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube44Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube45Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube46Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube47Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube48Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube49Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube50Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube51Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube52Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube53Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube54Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube55Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube56Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube57Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube58Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "cube59Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "npCloudBlinn.msg" ":defaultShaderList1.s" -na;
 connectAttr "npCloudVolume.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;

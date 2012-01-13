@@ -21,7 +21,8 @@ class manifestHub(OpenMayaMPx.MPxNode):
 		OpenMayaMPx.MPxNode.__init__(self)
 	
 	def postConstructor(self):
-		pass
+		self.dirtyPlugCB = OpenMaya.MNodeMessage.addNodeDirtyPlugCallback(self.thisMObject(), dirtyPlugCB)
+		self.attributeChangedCB = OpenMaya.MNodeMessage.addAttributeChangedCallback(self.thisMObject(), attributeChangedCB)
 	
 	def compute(self, plug, data):
 		if plug == manifestHub.aTranslate:
@@ -69,6 +70,7 @@ def nodeInitializer():
 	typedAttr.setWritable(True)
 	typedAttr.setReadable(False)
 	typedAttr.setDisconnectBehavior(OpenMaya.MFnAttribute.kReset)
+	typedAttr.setDefault(OpenMaya.MFnVectorArrayData().create())
 	manifestHub.addAttribute(manifestHub.aPositions)
 	
 	manifestHub.aTranslate = numericAttr.createPoint("translate", "t")
@@ -80,49 +82,74 @@ def nodeInitializer():
 	manifestHub.attributeAffects(manifestHub.aPositions, manifestHub.aTranslate)
 
 
+def spawn(hub):
+	positions = hub.positions.get()
+	
+	numPositions = 0
+	if positions != None:
+		numPositions = len(positions);
+	
+	#print "%d positions found\n" % numPositions
+	
+	# Do we need to add or remove any spawned geometry?
+	spawnIndices = hub.spawned.getArrayIndices()
+	numSpawned = len(spawnIndices)
+	
+	# TODO: Make this more robust
+	if numPositions > numSpawned:
+		# Get stamps
+		stamps = {}
+		for stampIndex in hub.stamp.getArrayIndices():
+			stamps[stampIndex] = hub.stamp.elementByLogicalIndex(stampIndex).inputs()[0]
+			
+			if len(stamps) == 0:
+				break;
+			
+			# print "Spawning %d stamps\n" % (numPositions - numSpawned)
+			for i in range(numSpawned, numPositions):
+				nodesCreated = PyMEL.general.duplicate(stamps[0], inputConnections=True)
+				
+				# TODO: We assume the first element is the container. More stringent checking is required
+				newContainer = nodesCreated[0]
+				newContainer.addAttr( 'spawnedBy', at=float )
+				hub.spawned.elementByLogicalIndex(i).connect(newContainer.spawnedBy)
+				hub.translate.elementByLogicalIndex(i).connect(newContainer.translate)
+		
+	elif numPositions < numSpawned:
+		# print "Deleting %d stamps\n" % (numSpawned - numPositions)
+		for i in range(numPositions, numSpawned):
+			spawnPlug = hub.spawned.elementByLogicalIndex(i)
+			for spawned in spawnPlug.outputs():
+				PyMEL.general.delete(spawned)
+			
+			spawnPlug.remove()
+			hub.translate.elementByLogicalIndex(i).remove()
+
 # Time callback
 def timeChangedCB(time, clientData):
 	hubNodes = PyMEL.ls(type=kManifestHubNodeName)
 	for hub in hubNodes:
-		positions = hub.positions.get()
+		spawn(hub)
+
+
+def dirtyPlugCB(nodeObject, plug, clientData):
+	if plug == manifestHub.aPositions:
+		#print "%s is DIIIIRRRTY!!!\n" % PyMEL.PyNode(plug).name()
 		
-		numPositions = 0
-		if positions != None:
-			numPositions = len(positions);
-		
-		# Do we need to add or remove any spawned geometry?
-		spawnIndices = hub.spawned.getArrayIndices()
-		numSpawned = len(spawnIndices)
-		
-		# TODO: Make this more robust
-		if numPositions > numSpawned:
-			# Get stamps
-			stamps = {}
-			for stampIndex in hub.stamp.getArrayIndices():
-				stamps[stampIndex] = hub.stamp.elementByLogicalIndex(stampIndex).inputs()[0]
-				
-				if len(stamps) == 0:
-					break;
-				
-				# print "Spawning %d stamps\n" % (numPositions - numSpawned)
-				for i in range(numSpawned, numPositions):
-					nodesCreated = PyMEL.general.duplicate(stamps[0], inputConnections=True)
-					
-					# TODO: We assume the first element is the container. More stringent checking is required
-					newContainer = nodesCreated[0]
-					newContainer.addAttr( 'spawnedBy', at=float )
-					hub.spawned.elementByLogicalIndex(i).connect(newContainer.spawnedBy)
-					hub.translate.elementByLogicalIndex(i).connect(newContainer.translate)
+		hub = PyMEL.PyNode(nodeObject)
+		spawn(hub)
+
+def attributeChangedCB(msg, plug, otherPlug, clientData):
+	if plug == manifestHub.aPositions:
+		if msg & OpenMaya.MNodeMessage.kConnectionBroken:
+			#print "%s connection broken\n" % PyMEL.PyNode(plug).name()
+			PyMEL.PyNode(plug).set([])
 			
-		elif numPositions < numSpawned:
-			# print "Deleting %d stamps\n" % (numSpawned - numPositions)
-			for i in range(numPositions, numSpawned):
-				spawnPlug = hub.spawned.elementByLogicalIndex(i)
-				for spawned in spawnPlug.outputs():
-					PyMEL.general.delete(spawned)
-				
-				spawnPlug.remove()
-				hub.translate.elementByLogicalIndex(i).remove()
+		elif msg & OpenMaya.MNodeMessage.kAttributeSet:
+			#print "%s attribute set\n" % PyMEL.PyNode(plug).name()
+			
+			hub = PyMEL.PyNode(plug).node()
+			spawn(hub)
 
 # Plug-in initialization and uninitialization
 def initializePlugin(mobject):
@@ -130,7 +157,7 @@ def initializePlugin(mobject):
 	try:
 		mplugin.registerNode( kManifestHubNodeName, kManifestHubNodeId, nodeCreator, nodeInitializer)
 		
-		manifestHub.timeChangedCallbackId = OpenMaya.MDGMessage.addTimeChangeCallback(timeChangedCB)
+		#manifestHub.timeChangedCallbackId = OpenMaya.MDGMessage.addTimeChangeCallback(timeChangedCB)
 	except:
 		sys.stderr.write( "Failed to register node: %s" % kManifestHubNodeName)
 		raise
@@ -139,7 +166,7 @@ def initializePlugin(mobject):
 def uninitializePlugin(mobject):
 	mplugin = OpenMayaMPx.MFnPlugin(mobject)
 	try:
-		OpenMaya.MDGMessage.removeCallback(manifestHub.timeChangedCallbackId);
+		#OpenMaya.MDGMessage.removeCallback(manifestHub.timeChangedCallbackId);
 		
 		mplugin.deregisterNode( kManifestHubNodeId )
 	except:
