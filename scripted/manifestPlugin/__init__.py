@@ -5,15 +5,19 @@ import maya.OpenMayaMPx as OpenMayaMPx
 exec('import manifestHub' ) in globals()
 exec('reload(manifestHub)' ) in globals()
 
+exec('import cyclone' ) in globals()
+exec('reload(cyclone)' ) in globals()
+
 # Plug-in initialization and uninitialization
 def initializePlugin(mobject):
 	mplugin = OpenMayaMPx.MFnPlugin(mobject)
 	try:
-		mplugin.registerNode( manifestHub.kManifestHubNodeName, manifestHub.kManifestHubNodeId, manifestHub.nodeCreator, manifestHub.nodeInitializer)
+		mplugin.registerNode( manifestHub.kNodeName, manifestHub.kNodeId, manifestHub.nodeCreator, manifestHub.nodeInitializer)
+		mplugin.registerNode( cyclone.kNodeName, cyclone.kNodeId, cyclone.nodeCreator, cyclone.nodeInitializer)
 		
 		#manifestHub.timeChangedCallbackId = OpenMaya.MDGMessage.addTimeChangeCallback(timeChangedCB)
 	except:
-		sys.stderr.write( "Failed to register node: %s" % manifestHub.kManifestHubNodeName)
+		sys.stderr.write( "Failed to register node" )
 		raise
 
 
@@ -22,7 +26,8 @@ def uninitializePlugin(mobject):
 	try:
 		#OpenMaya.MDGMessage.removeCallback(manifestHub.timeChangedCallbackId);
 		
-		mplugin.deregisterNode( manifestHub.kManifestHubNodeId )
+		mplugin.deregisterNode( cyclone.kNodeId )
+		mplugin.deregisterNode( manifestHub.kNodeId )
 	except:
-		sys.stderr.write( "Failed to deregister node: %s" % manifestHub.kManifestHubNodeId)
+		sys.stderr.write( "Failed to deregister node" )
 		raise

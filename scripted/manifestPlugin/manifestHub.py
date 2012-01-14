@@ -6,8 +6,8 @@ import maya.OpenMaya as OpenMaya
 import maya.OpenMayaMPx as OpenMayaMPx
 import pymel.core as PyMEL  
 
-kManifestHubNodeName = "manifestHub"
-kManifestHubNodeId = OpenMaya.MTypeId(0x10000) # Must be < 0x80000
+kNodeName = "manifestHub"
+kNodeId = OpenMaya.MTypeId(0x10000) # Must be < 0x80000
 
 class manifestHub(OpenMayaMPx.MPxNode):
 	aStamp = OpenMaya.MObject()
@@ -45,7 +45,6 @@ class manifestHub(OpenMayaMPx.MPxNode):
 			return OpenMaya.kUnknownParameter
 
 def nodeCreator():
-	print "Create 1\n"
 	return OpenMayaMPx.asMPxPtr( manifestHub() )	
 
 def nodeInitializer():
