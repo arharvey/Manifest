@@ -208,17 +208,24 @@ def spawn(hub):
 	elif numPositions < numSpawned:
 		print "Deleting %d stamps" % (numSpawned - numPositions)
 		for i in range(numPositions, numSpawned):
+			# We begin a delicate dance of disconnecting attributes and deleting nodes
+			# For some reason, deleting the last remaining spawned node will
+			# also trigger the removal of the manifestHub. This is a mystery.
+			# However, if we first disconnect the attributes *then* delete the
+			# spawned nodes we are apparently ok... ???
 			spawnPlug = hub.spawned.elementByLogicalIndex(i)
-			for spawned in spawnPlug.outputs():
-				PyMEL.general.delete(spawned)
+			spawned = spawnPlug.outputs()
 			
-			print "Deleted object [%d], removing connections" % i
+			spawnPlug.remove(b=True)
+			hub.rotate.elementByLogicalIndex(i).remove(b=True)
+			hub.translate.elementByLogicalIndex(i).remove(b=True)
 			
-			spawnPlug.remove()
-			hub.rotate.elementByLogicalIndex(i).remove()
-			hub.translate.elementByLogicalIndex(i).remove()
+			print "Removed object [%d] connections" % i
 			
-			print "Removed object connections"
+			for spawnedNode in spawned:
+				PyMEL.general.delete(spawnedNode)
+			
+			print "Deleted object [%d]" % i
 
 
 def processSpawnPending():
