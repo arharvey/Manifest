@@ -31,6 +31,10 @@ class manifestHub(OpenMayaMPx.MPxNode):
 		OpenMayaMPx.MPxNode.__init__(self)
 	
 	def postConstructor(self):
+		OpenMayaMPx.MPxNode.postConstructor(self)
+		self.setExistWithoutInConnections(True)
+		self.setExistWithoutOutConnections(True)
+		
 		self.preRemovalCB = OpenMaya.MNodeMessage.addNodePreRemovalCallback(self.thisMObject(), preRemovalCB)
 		self.dirtyPlugCB = OpenMaya.MNodeMessage.addNodeDirtyPlugCallback(self.thisMObject(), dirtyPlugCB)
 		self.attributeChangedCB = OpenMaya.MNodeMessage.addAttributeChangedCallback(self.thisMObject(), attributeChangedCB)
@@ -208,24 +212,17 @@ def spawn(hub):
 	elif numPositions < numSpawned:
 		print "Deleting %d stamps" % (numSpawned - numPositions)
 		for i in range(numPositions, numSpawned):
-			# We begin a delicate dance of disconnecting attributes and deleting nodes
-			# For some reason, deleting the last remaining spawned node will
-			# also trigger the removal of the manifestHub. This is a mystery.
-			# However, if we first disconnect the attributes *then* delete the
-			# spawned nodes we are apparently ok... ???
-			spawnPlug = hub.spawned.elementByLogicalIndex(i)
-			spawned = spawnPlug.outputs()
-			
-			spawnPlug.remove(b=True)
-			hub.rotate.elementByLogicalIndex(i).remove(b=True)
-			hub.translate.elementByLogicalIndex(i).remove(b=True)
-			
-			print "Removed object [%d] connections" % i
-			
-			for spawnedNode in spawned:
-				PyMEL.general.delete(spawnedNode)
+			spawnPlug = hub.spawned.elementByLogicalIndex(i)	
+			for spawned in spawnPlug.outputs():
+				PyMEL.general.delete(spawned)
 			
 			print "Deleted object [%d]" % i
+			
+			spawnPlug.remove()
+			hub.rotate.elementByLogicalIndex(i).remove()
+			hub.translate.elementByLogicalIndex(i).remove()
+			
+			print "Removed object [%d] connections" % i
 
 
 def processSpawnPending():

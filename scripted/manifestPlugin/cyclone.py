@@ -26,6 +26,11 @@ class cyclone(OpenMayaMPx.MPxNode):
 	def __init__(self):
 		OpenMayaMPx.MPxNode.__init__(self)
 	
+	def postConstructor(self):
+		OpenMayaMPx.MPxNode.postConstructor(self)
+		self.setExistWithoutInConnections(True)
+		self.setExistWithoutOutConnections(True)
+	
 	def compute(self, plug, data):
 		#print "Computing %s" % plug.name()
 		if plug == cyclone.aPositions or plug == cyclone.aRotation:
