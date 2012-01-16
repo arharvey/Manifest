@@ -35,12 +35,14 @@ class manifestHub(OpenMayaMPx.MPxNode):
 		self.setExistWithoutInConnections(True)
 		self.setExistWithoutOutConnections(True)
 		
-		self.preRemovalCB = OpenMaya.MNodeMessage.addNodePreRemovalCallback(self.thisMObject(), preRemovalCB)
+		self.preRemovalCB = OpenMaya.MNodeMessage.addNodePreRemovalCallback(self.thisMObject(), preRemovalCB, self)
 		self.dirtyPlugCB = OpenMaya.MNodeMessage.addNodeDirtyPlugCallback(self.thisMObject(), dirtyPlugCB)
 		self.attributeChangedCB = OpenMaya.MNodeMessage.addAttributeChangedCallback(self.thisMObject(), attributeChangedCB)
+		#self.beforeNewCB = OpenMaya.MSceneMessage.addCallback(OpenMaya.MSceneMessage.kBeforeNew, manifestHub.cleanUp, self)
+		#self.beforeOpenCB = OpenMaya.MSceneMessage.addCallback(OpenMaya.MSceneMessage.kBeforeOpen, manifestHub.cleanUp, self)
 	
 	def compute(self, plug, data):
-		print "Computing %s" % plug.name()
+		#print "Computing %s" % plug.name()
 		if plug == manifestHub.aTranslate:
 			hTranslateArray = data.outputArrayValue(manifestHub.aTranslate)
 			
@@ -97,6 +99,25 @@ class manifestHub(OpenMayaMPx.MPxNode):
 				
 		else:
 			return OpenMaya.kUnknownParameter
+			
+	def cleanUp(self):
+		hub = PyMEL.PyNode(self.thisMObject())
+		#print "%s cleanup" % hub.name()	
+	
+		# Remove node from the spawn pending list
+		if manifestHub.spawnPending.has_key(hub):
+			del manifestHub.spawnPending[hub]
+
+		# Remove this node's callbacks
+		if len(manifestHub.spawnPending) == 0:
+			removeIdleHandler()
+	
+		#OpenMaya.MMessage.removeCallback(self.beforeOpenCB)
+		#OpenMaya.MMessage.removeCallback(self.beforeNewCB)
+		OpenMaya.MMessage.removeCallback(self.attributeChangedCB)
+		OpenMaya.MMessage.removeCallback(self.dirtyPlugCB)
+		OpenMaya.MMessage.removeCallback(self.preRemovalCB)
+		
 
 # ---------------------------------------------------------------------------
 
@@ -175,7 +196,7 @@ def nodeInitializer():
 # Spawning
 
 def spawn(hub):
-	print "Spawning..."
+	#print "Spawning..."
 	positions = hub.positions.get()
 	
 	numPositions = 0
@@ -186,7 +207,7 @@ def spawn(hub):
 	spawnIndices = hub.spawned.getArrayIndices()
 	numSpawned = len(spawnIndices)
 	
-	print "%d positions and %d spawn found" % (numPositions, numSpawned)
+	#print "%d positions and %d spawn found" % (numPositions, numSpawned)
 	
 	# TODO: Make this more robust
 	if numPositions > numSpawned:
@@ -198,7 +219,7 @@ def spawn(hub):
 			if len(stamps) == 0:
 				break;
 			
-			print "Spawning %d stamps" % (numPositions - numSpawned)
+			#print "Spawning %d stamps" % (numPositions - numSpawned)
 			for i in range(numSpawned, numPositions):
 				nodesCreated = PyMEL.general.duplicate(stamps[0], inputConnections=True, instanceLeaf=True)
 				
@@ -210,19 +231,19 @@ def spawn(hub):
 				hub.rotate.elementByLogicalIndex(i).connect(newContainer.rotate)
 		
 	elif numPositions < numSpawned:
-		print "Deleting %d stamps" % (numSpawned - numPositions)
+		#print "Deleting %d stamps" % (numSpawned - numPositions)
 		for i in range(numPositions, numSpawned):
 			spawnPlug = hub.spawned.elementByLogicalIndex(i)	
 			for spawned in spawnPlug.outputs():
 				PyMEL.general.delete(spawned)
 			
-			print "Deleted object [%d]" % i
+			#print "Deleted object [%d]" % i
 			
 			spawnPlug.remove()
 			hub.rotate.elementByLogicalIndex(i).remove()
 			hub.translate.elementByLogicalIndex(i).remove()
 			
-			print "Removed object [%d] connections" % i
+			#print "Removed object [%d] connections" % i
 
 
 def processSpawnPending():
@@ -263,7 +284,7 @@ def idleCB(clientData):
 # Callbacks for this node
 
 def dirtyPlugCB(nodeObject, plug, clientData):
-	print "%s is dirty" % PyMEL.PyNode(plug).name()
+	#print "%s is dirty" % PyMEL.PyNode(plug).name()
 	if plug == manifestHub.aPositions:
 		hub = PyMEL.PyNode(nodeObject)
 		manifestHub.spawnPending[hub] = True
@@ -274,23 +295,18 @@ def attributeChangedCB(msg, plug, otherPlug, clientData):
 	if plug == manifestHub.aPositions:
 		# The msg argument is actually a collection of bit fields
 		if msg & OpenMaya.MNodeMessage.kConnectionBroken:
-			print "%s connection broken" % PyMEL.PyNode(plug).name()
+			#print "%s connection broken" % PyMEL.PyNode(plug).name()
 			PyMEL.PyNode(plug).set([])
 		
 		elif msg & OpenMaya.MNodeMessage.kAttributeSet:
-			print "%s attribute set" % PyMEL.PyNode(plug).name()
+			#print "%s attribute set" % PyMEL.PyNode(plug).name()
 			
 			hub = PyMEL.PyNode(plug).node()
 			manifestHub.spawnPending[hub] = True
 			addIdleHandler()
 		
 			
-def preRemovalCB(nodeObject, clientData):
-	hub = PyMEL.PyNode(nodeObject)
-	print "%s pre removal" % hub.name()	
-	# Remove node from the spawn pending list
-	if manifestHub.spawnPending.has_key(hub):
-		del manifestHub.spawnPending[hub]
-		
-	if len(manifestHub.spawnPending) == 0:
-		removeIdleHandler()
+def preRemovalCB(_, clientData):
+	hubMPxNode = clientData
+	hubMPxNode.cleanUp()
+
