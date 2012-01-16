@@ -15,7 +15,7 @@ def initializePlugin(mobject):
 		mplugin.registerNode( manifestHub.kNodeName, manifestHub.kNodeId, manifestHub.nodeCreator, manifestHub.nodeInitializer)
 		mplugin.registerNode( cyclone.kNodeName, cyclone.kNodeId, cyclone.nodeCreator, cyclone.nodeInitializer)
 		
-		#manifestHub.timeChangedCallbackId = OpenMaya.MDGMessage.addTimeChangeCallback(timeChangedCB)
+		manifestHub.manifestHub.timeChangedCallbackId = OpenMaya.MDGMessage.addTimeChangeCallback(manifestHub.timeChangedCB)
 	except:
 		sys.stderr.write( "Failed to register node" )
 		raise
@@ -24,7 +24,8 @@ def initializePlugin(mobject):
 def uninitializePlugin(mobject):
 	mplugin = OpenMayaMPx.MFnPlugin(mobject)
 	try:
-		#OpenMaya.MDGMessage.removeCallback(manifestHub.timeChangedCallbackId);
+		manifestHub.removeIdleHandler()
+		OpenMaya.MDGMessage.removeCallback(manifestHub.manifestHub.timeChangedCallbackId);
 		
 		mplugin.deregisterNode( cyclone.kNodeId )
 		mplugin.deregisterNode( manifestHub.kNodeId )
