@@ -1,0 +1,11 @@
+MAYA_DIRECTORY = '/Applications/Autodesk/maya2012'
+MAYA_INCLUDE_PATH = MAYA_DIRECTORY+'/devkit/include/'
+MAYA_LIB_PATH = MAYA_DIRECTORY+'/Maya.app/Contents/MacOS'
+
+env = Environment()
+env.Append(CPPPATH = [MAYA_INCLUDE_PATH])
+env.Append(LIBPATH = [MAYA_LIB_PATH])
+env.Append(LIBS = ['OpenMaya','Foundation','OpenMayaFX','OpenMayaUI'])
+
+target = env.Program(target="cyclone", source=['cyclone.cpp'])
+Default(target)
