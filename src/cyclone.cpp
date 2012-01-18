@@ -45,6 +45,8 @@ MObject cyclone::aDistribution;
 MObject cyclone::aDensityCurve;
 MObject cyclone::aRadius;
 MObject cyclone::aRadiusCurve;
+MObject cyclone::aRedistributeUsingRadius;
+MObject cyclone::aEnableSpin;
 MObject cyclone::aSpin;
 MObject cyclone::aSpinCurve;
 MObject cyclone::aRadialSpinCurve;
@@ -85,6 +87,8 @@ cyclone::compute( const MPlug& plug, MDataBlock& data )
 		MRampAttribute densityCurve(thisMObject(), aDensityCurve);
 		float maxRadius = data.inputValue(aRadius).asFloat();
 		MRampAttribute radiusCurve(thisMObject(), aRadiusCurve);
+		bool redistributeUsingRadius = data.inputValue(aRedistributeUsingRadius).asBool();
+		bool enableSpin = data.inputValue(aEnableSpin).asBool();
 		MAngle spin = data.inputValue(aSpin).asAngle().asRadians();
 		MRampAttribute spinCurve(thisMObject(), aSpinCurve);
 		MRampAttribute radialSpinCurve(thisMObject(), aRadialSpinCurve);
@@ -137,7 +141,7 @@ cyclone::compute( const MPlug& plug, MDataBlock& data )
 		for(unsigned i = 0; i < N; i++)
 		{
 			float U = frand();
-			float tNorm = densityRand.get(U);
+			float tNorm = redistributeUsingRadius ? densityRand.get(U) : U;
 			
 			float t = tNorm * numSpans;
 			if(distribution == cyclone::kLength)
@@ -156,7 +160,11 @@ cyclone::compute( const MPlug& plug, MDataBlock& data )
 			float radiusNorm = radialScale*sqrt(frand()); // The sqrt helps produce a more uniform distribution
 			radialSpinCurve.getValueAtPosition(radiusNorm, radialSpinScale);
 			
-			MQuaternion q(frand()*2.0*M_PI + spin.asRadians()*spinScale*radialSpinScale, tangent);
+			float angularOffset = frand()*2.0*M_PI;
+			if(enableSpin)
+				angularOffset += spin.asRadians()*spinScale*radialSpinScale;
+			
+			MQuaternion q(angularOffset, tangent);
 			normal = normal.rotateBy(q);
 			MVector binormal = tangent ^ normal;
 			
@@ -238,6 +246,12 @@ cyclone::initialize()
 	aRadiusCurve = MRampAttribute::createCurveRamp("radiusCurve","rc");
 	addAttribute(aRadiusCurve);
 	
+	aRedistributeUsingRadius = numericAttr.create("redistributeUsingRadius", "rbr", MFnNumericData::kBoolean, true);
+	addAttribute(aRedistributeUsingRadius);
+	
+	aEnableSpin = numericAttr.create("enableSpin", "esp", MFnNumericData::kBoolean, true);
+	addAttribute(aEnableSpin);
+	
 	aSpin = unitAttr.create("spin", "sp", MFnUnitAttribute::kAngle, 0.0);
 	addAttribute(aSpin);
 	
@@ -268,6 +282,8 @@ cyclone::initialize()
 	attributeAffects(aDensityCurve, aPosition);
 	attributeAffects(aRadius, aPosition);
 	attributeAffects(aRadiusCurve, aPosition);
+	attributeAffects(aRedistributeUsingRadius, aPosition);
+	attributeAffects(aEnableSpin, aPosition);
 	attributeAffects(aSpin, aPosition);
 	attributeAffects(aSpinCurve, aPosition);
 	attributeAffects(aRadialSpinCurve, aPosition);
@@ -278,6 +294,8 @@ cyclone::initialize()
 	attributeAffects(aDistribution, aRotation);
 	attributeAffects(aDensityCurve, aRotation);
 	attributeAffects(aRadiusCurve, aRotation);
+	attributeAffects(aRedistributeUsingRadius, aRotation);
+	attributeAffects(aEnableSpin, aRotation);
 	attributeAffects(aSpin, aRotation);
 	attributeAffects(aSpinCurve, aRotation);
 	attributeAffects(aRadialSpinCurve, aRotation);

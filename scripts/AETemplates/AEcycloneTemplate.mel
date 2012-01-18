@@ -7,16 +7,23 @@ global proc AEcycloneTemplate ( string $nodeName )
 		
 		editorTemplate -beginLayout "Cyclone" -collapse 0;
 			
+				editorTemplate -addControl "density";
+				editorTemplate -addControl "radius";
+				editorTemplate -addControl "distribution";
+				editorTemplate -addControl "redistributeUsingRadius";
+				
+				AEaddRampControl ($nodeName+".densityCurve");
+				AEaddRampControl ($nodeName+".radiusCurve");
+				
+			editorTemplate -beginLayout "Spin" -collapse 1;
+			editorTemplate -addControl "enableSpin";
+				AEaddRampControl ($nodeName+".spinCurve");
+				AEaddRampControl ($nodeName+".radialSpinCurve");
+				editorTemplate -addControl "spin";
+			editorTemplate -endLayout;
+			
 			editorTemplate -addControl "randomSeed";
-			editorTemplate -addControl "density";
-			editorTemplate -addControl "distribution";
-			editorTemplate -addControl "radius";
-			editorTemplate -addControl "spin";
-			AEaddRampControl ($nodeName+".densityCurve");
-			AEaddRampControl ($nodeName+".radiusCurve");
-			AEaddRampControl ($nodeName+".spinCurve");
-			AEaddRampControl ($nodeName+".radialSpinCurve");
-		editorTemplate -endLayout
+		editorTemplate -endLayout;
 
 		AEdependNodeTemplate $nodeName;
 

@@ -36,6 +36,8 @@ public:
 	static	MObject		aDensityCurve;
 	static	MObject		aRadius;
 	static	MObject		aRadiusCurve;
+	static	MObject		aRedistributeUsingRadius;
+	static	MObject		aEnableSpin;
 	static	MObject		aSpin;
 	static	MObject		aSpinCurve;
 	static	MObject		aRadialSpinCurve;

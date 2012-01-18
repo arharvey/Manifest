@@ -278,7 +278,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 997}}</string>
+							<string>{{0, 0}, {186, 999}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -290,14 +290,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {203, 1015}}</string>
+						<string>{{0, 0}, {203, 1017}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>0 122 1600 1056 0 0 1600 1178 </string>
+						<string>0 120 1600 1058 0 0 1600 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -327,13 +327,13 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>27E2AF5014C6FFB400581400</string>
+										<string>27E2AF8314C7414800581400</string>
 										<key>history</key>
 										<array>
 											<string>27E2AF2C14C6757800581400</string>
 											<string>27E2AF4A14C6FB1800581400</string>
-											<string>27E2AF4B14C6FB1800581400</string>
-											<string>27E2AF4C14C6FB1800581400</string>
+											<string>27E2AF7414C73C0100581400</string>
+											<string>27E2AF7514C73C0100581400</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -345,14 +345,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1392, 821}}</string>
+								<string>{{0, 0}, {1392, 823}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 122 1600 1056 0 0 1600 1178 </string>
+								<string>0 120 1600 1058 0 0 1600 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>821pt</string>
+							<string>823pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -365,9 +365,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 826}, {1392, 189}}</string>
+								<string>{{0, 828}, {1392, 189}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 122 1600 1056 0 0 1600 1178 </string>
+								<string>0 120 1600 1058 0 0 1600 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -535,7 +535,7 @@
 		<string>/Users/andrewharvey/Documents/maya/plug-ins/manifest/src/cyclone.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>0 122 1600 1056 0 0 1600 1178 </string>
+	<string>0 120 1600 1058 0 0 1600 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -556,7 +556,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ContinuousRandomVariable.h</string>
+								<string>cyclone.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

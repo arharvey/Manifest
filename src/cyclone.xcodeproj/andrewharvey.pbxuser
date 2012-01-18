@@ -160,6 +160,33 @@
 			27E2AF4C14C6FB1800581400 /* PBXTextBookmark */ = 27E2AF4C14C6FB1800581400 /* PBXTextBookmark */;
 			27E2AF4D14C6FB1800581400 /* PBXTextBookmark */ = 27E2AF4D14C6FB1800581400 /* PBXTextBookmark */;
 			27E2AF5014C6FFB400581400 /* PBXTextBookmark */ = 27E2AF5014C6FFB400581400 /* PBXTextBookmark */;
+			27E2AF5114C7363F00581400 /* PBXTextBookmark */ = 27E2AF5114C7363F00581400 /* PBXTextBookmark */;
+			27E2AF5214C7363F00581400 /* PBXTextBookmark */ = 27E2AF5214C7363F00581400 /* PBXTextBookmark */;
+			27E2AF5314C7363F00581400 /* PBXTextBookmark */ = 27E2AF5314C7363F00581400 /* PBXTextBookmark */;
+			27E2AF5414C736E000581400 /* PBXTextBookmark */ = 27E2AF5414C736E000581400 /* PBXTextBookmark */;
+			27E2AF5514C736E000581400 /* PBXTextBookmark */ = 27E2AF5514C736E000581400 /* PBXTextBookmark */;
+			27E2AF5614C736E000581400 /* PBXTextBookmark */ = 27E2AF5614C736E000581400 /* PBXTextBookmark */;
+			27E2AF5714C739C400581400 /* PBXTextBookmark */ = 27E2AF5714C739C400581400 /* PBXTextBookmark */;
+			27E2AF5814C739C400581400 /* PBXTextBookmark */ = 27E2AF5814C739C400581400 /* PBXTextBookmark */;
+			27E2AF5914C739C400581400 /* PBXTextBookmark */ = 27E2AF5914C739C400581400 /* PBXTextBookmark */;
+			27E2AF5A14C73A2E00581400 /* PBXTextBookmark */ = 27E2AF5A14C73A2E00581400 /* PBXTextBookmark */;
+			27E2AF5B14C73A4B00581400 /* PBXTextBookmark */ = 27E2AF5B14C73A4B00581400 /* PBXTextBookmark */;
+			27E2AF5C14C73B5100581400 /* PBXTextBookmark */ = 27E2AF5C14C73B5100581400 /* PBXTextBookmark */;
+			27E2AF6114C73B9A00581400 /* PBXTextBookmark */ = 27E2AF6114C73B9A00581400 /* PBXTextBookmark */;
+			27E2AF6214C73B9A00581400 /* XCBuildMessageTextBookmark */ = 27E2AF6214C73B9A00581400 /* XCBuildMessageTextBookmark */;
+			27E2AF6314C73B9A00581400 /* PBXTextBookmark */ = 27E2AF6314C73B9A00581400 /* PBXTextBookmark */;
+			27E2AF6A14C73BD500581400 /* XCBuildMessageTextBookmark */ = 27E2AF6A14C73BD500581400 /* XCBuildMessageTextBookmark */;
+			27E2AF6B14C73BD500581400 /* PBXTextBookmark */ = 27E2AF6B14C73BD500581400 /* PBXTextBookmark */;
+			27E2AF6E14C73BE600581400 /* XCBuildMessageTextBookmark */ = 27E2AF6E14C73BE600581400 /* XCBuildMessageTextBookmark */;
+			27E2AF6F14C73BE600581400 /* PBXTextBookmark */ = 27E2AF6F14C73BE600581400 /* PBXTextBookmark */;
+			27E2AF7414C73C0100581400 /* PBXTextBookmark */ = 27E2AF7414C73C0100581400 /* PBXTextBookmark */;
+			27E2AF7514C73C0100581400 /* XCBuildMessageTextBookmark */ = 27E2AF7514C73C0100581400 /* XCBuildMessageTextBookmark */;
+			27E2AF7614C73C0100581400 /* PBXTextBookmark */ = 27E2AF7614C73C0100581400 /* PBXTextBookmark */;
+			27E2AF7714C73F1800581400 /* PBXTextBookmark */ = 27E2AF7714C73F1800581400 /* PBXTextBookmark */;
+			27E2AF7814C73FA000581400 /* PBXTextBookmark */ = 27E2AF7814C73FA000581400 /* PBXTextBookmark */;
+			27E2AF7D14C7402100581400 /* PBXTextBookmark */ = 27E2AF7D14C7402100581400 /* PBXTextBookmark */;
+			27E2AF8014C7411700581400 /* PBXTextBookmark */ = 27E2AF8014C7411700581400 /* PBXTextBookmark */;
+			27E2AF8314C7414800581400 /* PBXTextBookmark */ = 27E2AF8314C7414800581400 /* PBXTextBookmark */;
 			27F28FFE14C5D4DC0087D7D5 = 27F28FFE14C5D4DC0087D7D5 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 27410CF214C4FBCC001D9CDA /* Source Control */;
@@ -182,17 +209,17 @@
 	};
 	27410CF414C4FBD8001D9CDA /* cyclone.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1331, 4095}}";
-			sepNavSelRange = "{3986, 0}";
-			sepNavVisRange = "{2682, 2269}";
+			sepNavIntBoundsRect = "{{0, 0}, {1331, 4186}}";
+			sepNavSelRange = "{7114, 0}";
+			sepNavVisRange = "{5909, 2134}";
 			sepNavWindowFrame = "{{15, 790}, {646, 383}}";
 		};
 	};
 	27410CF614C4FBE7001D9CDA /* cyclone.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1331, 789}}";
-			sepNavSelRange = "{380, 0}";
-			sepNavVisRange = "{0, 1003}";
+			sepNavIntBoundsRect = "{{0, 0}, {1331, 791}}";
+			sepNavSelRange = "{895, 0}";
+			sepNavVisRange = "{0, 1076}";
 		};
 	};
 	27410D3814C4FE2C001D9CDA /* PBXTextBookmark */ = {
@@ -210,7 +237,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 202";
 		rLen = 0;
-		rLoc = 8102;
+		rLoc = 8805;
 		rType = 0;
 		vrLen = 1539;
 		vrLoc = 4120;
@@ -220,7 +247,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 205";
 		rLen = 0;
-		rLoc = 8407;
+		rLoc = 9209;
 		rType = 0;
 		vrLen = 1873;
 		vrLoc = 3322;
@@ -240,7 +267,7 @@
 		fRef = 27410CF614C4FBE7001D9CDA /* cyclone.h */;
 		name = "cyclone.h: 36";
 		rLen = 1;
-		rLoc = 822;
+		rLoc = 895;
 		rType = 0;
 		vrLen = 880;
 		vrLoc = 0;
@@ -260,7 +287,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 179";
 		rLen = 0;
-		rLoc = 6726;
+		rLoc = 7055;
 		rType = 0;
 		vrLen = 1844;
 		vrLoc = 3345;
@@ -270,7 +297,7 @@
 		fRef = 27410CF614C4FBE7001D9CDA /* cyclone.h */;
 		name = "cyclone.h: 35";
 		rLen = 0;
-		rLoc = 910;
+		rLoc = 983;
 		rType = 0;
 		vrLen = 823;
 		vrLoc = 0;
@@ -280,7 +307,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 208";
 		rLen = 0;
-		rLoc = 8256;
+		rLoc = 9058;
 		rType = 0;
 		vrLen = 1880;
 		vrLoc = 3600;
@@ -290,7 +317,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 199";
 		rLen = 0;
-		rLoc = 7578;
+		rLoc = 8182;
 		rType = 0;
 		vrLen = 1887;
 		vrLoc = 3712;
@@ -300,7 +327,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 117";
 		rLen = 0;
-		rLoc = 4671;
+		rLoc = 5000;
 		rType = 0;
 		vrLen = 1701;
 		vrLoc = 1767;
@@ -310,7 +337,7 @@
 		fRef = 27410CF614C4FBE7001D9CDA /* cyclone.h */;
 		name = "cyclone.h: 37";
 		rLen = 0;
-		rLoc = 895;
+		rLoc = 968;
 		rType = 0;
 		vrLen = 887;
 		vrLoc = 0;
@@ -320,7 +347,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 81";
 		rLen = 0;
-		rLoc = 2172;
+		rLoc = 2389;
 		rType = 0;
 		vrLen = 1497;
 		vrLoc = 972;
@@ -330,7 +357,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 126";
 		rLen = 0;
-		rLoc = 4746;
+		rLoc = 5075;
 		rType = 0;
 		vrLen = 1824;
 		vrLoc = 2116;
@@ -360,7 +387,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 191";
 		rLen = 0;
-		rLoc = 6501;
+		rLoc = 6830;
 		rType = 0;
 		vrLen = 2150;
 		vrLoc = 4463;
@@ -370,16 +397,16 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 191";
 		rLen = 0;
-		rLoc = 6501;
+		rLoc = 6830;
 		rType = 0;
 		vrLen = 2151;
 		vrLoc = 4463;
 	};
 	27E2AEBD14C6370F00581400 /* ContinuousRandomVariable.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1331, 789}}";
-			sepNavSelRange = "{403, 16}";
-			sepNavVisRange = "{0, 733}";
+			sepNavIntBoundsRect = "{{0, 0}, {868, 494}}";
+			sepNavSelRange = "{467, 0}";
+			sepNavVisRange = "{34, 607}";
 			sepNavWindowFrame = "{{15, 790}, {646, 383}}";
 		};
 	};
@@ -414,7 +441,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 191";
 		rLen = 0;
-		rLoc = 6501;
+		rLoc = 6830;
 		rType = 0;
 		vrLen = 2151;
 		vrLoc = 4463;
@@ -533,7 +560,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 109";
 		rLen = 0;
-		rLoc = 3187;
+		rLoc = 3404;
 		rType = 0;
 		vrLen = 1983;
 		vrLoc = 1721;
@@ -543,7 +570,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 110";
 		rLen = 0;
-		rLoc = 3159;
+		rLoc = 3376;
 		rType = 0;
 		vrLen = 1968;
 		vrLoc = 1721;
@@ -553,7 +580,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 121";
 		rLen = 0;
-		rLoc = 3982;
+		rLoc = 4229;
 		rType = 0;
 		vrLen = 1868;
 		vrLoc = 1964;
@@ -563,7 +590,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 120";
 		rLen = 0;
-		rLoc = 3885;
+		rLoc = 4132;
 		rType = 0;
 		vrLen = 1948;
 		vrLoc = 2153;
@@ -583,7 +610,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 109";
 		rLen = 0;
-		rLoc = 2818;
+		rLoc = 3035;
 		rType = 0;
 		vrLen = 1937;
 		vrLoc = 1295;
@@ -593,7 +620,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 109";
 		rLen = 0;
-		rLoc = 2818;
+		rLoc = 3035;
 		rType = 0;
 		vrLen = 1937;
 		vrLoc = 1295;
@@ -603,7 +630,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 121";
 		rLen = 0;
-		rLoc = 3243;
+		rLoc = 3460;
 		rType = 0;
 		vrLen = 2102;
 		vrLoc = 2545;
@@ -613,7 +640,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 124";
 		rLen = 0;
-		rLoc = 3322;
+		rLoc = 3539;
 		rType = 0;
 		vrLen = 2038;
 		vrLoc = 2165;
@@ -623,7 +650,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 116";
 		rLen = 0;
-		rLoc = 3040;
+		rLoc = 3257;
 		rType = 0;
 		vrLen = 2088;
 		vrLoc = 2165;
@@ -633,7 +660,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 126";
 		rLen = 0;
-		rLoc = 3322;
+		rLoc = 3539;
 		rType = 0;
 		vrLen = 2088;
 		vrLoc = 2165;
@@ -643,7 +670,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 124";
 		rLen = 0;
-		rLoc = 3708;
+		rLoc = 3925;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 798;
@@ -713,7 +740,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 124";
 		rLen = 0;
-		rLoc = 3473;
+		rLoc = 3690;
 		rType = 0;
 		vrLen = 2183;
 		vrLoc = 2237;
@@ -723,7 +750,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 124";
 		rLen = 0;
-		rLoc = 3708;
+		rLoc = 3925;
 		rType = 0;
 		vrLen = 2193;
 		vrLoc = 2282;
@@ -733,7 +760,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 118";
 		rLen = 0;
-		rLoc = 3139;
+		rLoc = 3356;
 		rType = 0;
 		vrLen = 2193;
 		vrLoc = 2282;
@@ -783,7 +810,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 118";
 		rLen = 0;
-		rLoc = 3139;
+		rLoc = 3356;
 		rType = 0;
 		vrLen = 2193;
 		vrLoc = 2282;
@@ -793,7 +820,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 125";
 		rLen = 0;
-		rLoc = 3708;
+		rLoc = 3925;
 		rType = 0;
 		vrLen = 2193;
 		vrLoc = 2282;
@@ -813,7 +840,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 125";
 		rLen = 0;
-		rLoc = 3708;
+		rLoc = 3925;
 		rType = 0;
 		vrLen = 1726;
 		vrLoc = 3367;
@@ -823,7 +850,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 114";
 		rLen = 0;
-		rLoc = 2940;
+		rLoc = 3157;
 		rType = 0;
 		vrLen = 2246;
 		vrLoc = 1805;
@@ -833,7 +860,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 259";
 		rLen = 0;
-		rLoc = 8254;
+		rLoc = 8957;
 		rType = 0;
 		vrLen = 1873;
 		vrLoc = 6221;
@@ -843,7 +870,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 126";
 		rLen = 0;
-		rLoc = 3614;
+		rLoc = 3831;
 		rType = 0;
 		vrLen = 2250;
 		vrLoc = 2204;
@@ -853,7 +880,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 131";
 		rLen = 0;
-		rLoc = 3708;
+		rLoc = 3925;
 		rType = 0;
 		vrLen = 2181;
 		vrLoc = 2204;
@@ -863,7 +890,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 131";
 		rLen = 0;
-		rLoc = 3708;
+		rLoc = 3925;
 		rType = 0;
 		vrLen = 2181;
 		vrLoc = 2204;
@@ -933,7 +960,7 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 132";
 		rLen = 0;
-		rLoc = 3708;
+		rLoc = 3925;
 		rType = 0;
 		vrLen = 1592;
 		vrLoc = 5212;
@@ -943,17 +970,283 @@
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 145";
 		rLen = 0;
-		rLoc = 3986;
+		rLoc = 4233;
 		rType = 0;
 		vrLen = 2269;
 		vrLoc = 2682;
+	};
+	27E2AF5114C7363F00581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 130";
+		rLen = 0;
+		rLoc = 3759;
+		rType = 0;
+		vrLen = 2076;
+		vrLoc = 2255;
+	};
+	27E2AF5214C7363F00581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF614C4FBE7001D9CDA /* cyclone.h */;
+		name = "cyclone.h: 21";
+		rLen = 0;
+		rLoc = 380;
+		rType = 0;
+		vrLen = 1003;
+		vrLoc = 0;
+	};
+	27E2AF5314C7363F00581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF614C4FBE7001D9CDA /* cyclone.h */;
+		name = "cyclone.h: 35";
+		rLen = 0;
+		rLoc = 733;
+		rType = 0;
+		vrLen = 1062;
+		vrLoc = 0;
+	};
+	27E2AF5414C736E000581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF614C4FBE7001D9CDA /* cyclone.h */;
+		name = "cyclone.h: 39";
+		rLen = 0;
+		rLoc = 864;
+		rType = 0;
+		vrLen = 1062;
+		vrLoc = 0;
+	};
+	27E2AF5514C736E000581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 130";
+		rLen = 0;
+		rLoc = 3759;
+		rType = 0;
+		vrLen = 2034;
+		vrLoc = 2297;
+	};
+	27E2AF5614C736E000581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 47";
+		rLen = 0;
+		rLoc = 1075;
+		rType = 0;
+		vrLen = 1972;
+		vrLoc = 5582;
+	};
+	27E2AF5714C739C400581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF614C4FBE7001D9CDA /* cyclone.h */;
+		name = "cyclone.h: 39";
+		rLen = 0;
+		rLoc = 864;
+		rType = 0;
+		vrLen = 1076;
+		vrLoc = 0;
+	};
+	27E2AF5814C739C400581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 48";
+		rLen = 24;
+		rLoc = 1093;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 236;
+	};
+	27E2AF5914C739C400581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 166";
+		rLen = 0;
+		rLoc = 4882;
+		rType = 0;
+		vrLen = 2067;
+		vrLoc = 3530;
+	};
+	27E2AF5A14C73A2E00581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 164";
+		rLen = 0;
+		rLoc = 4813;
+		rType = 0;
+		vrLen = 2067;
+		vrLoc = 3530;
+	};
+	27E2AF5B14C73A4B00581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 164";
+		rLen = 0;
+		rLoc = 4813;
+		rType = 0;
+		vrLen = 2067;
+		vrLoc = 3530;
+	};
+	27E2AF5C14C73B5100581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 291";
+		rLen = 0;
+		rLoc = 8742;
+		rType = 0;
+		vrLen = 1698;
+		vrLoc = 5743;
+	};
+	27E2AF6114C73B9A00581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27E2AEBD14C6370F00581400 /* ContinuousRandomVariable.h */;
+		name = "ContinuousRandomVariable.h: 25";
+		rLen = 0;
+		rLoc = 467;
+		rType = 0;
+		vrLen = 607;
+		vrLoc = 34;
+	};
+	27E2AF6214C73B9A00581400 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'redistributeUsingRadius' was not declared in this scope";
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 89;
+		rType = 1;
+	};
+	27E2AF6314C73B9A00581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 90";
+		rLen = 0;
+		rLoc = 2069;
+		rType = 0;
+		vrLen = 1210;
+		vrLoc = 1651;
+	};
+	27E2AF6A14C73BD500581400 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Compile /Users/andrewharvey/Documents/maya/plug-ins/manifest/src/cyclone.cpp";
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 0;
+		rLoc = 24;
+		rType = 1;
+	};
+	27E2AF6B14C73BD500581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 25";
+		rLen = 0;
+		rLoc = 615;
+		rType = 0;
+		vrLen = 671;
+		vrLoc = 201;
+	};
+	27E2AF6E14C73BE600581400 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Unused variable 'redistributeUsingRadius'";
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 89;
+		rType = 1;
+	};
+	27E2AF6F14C73BE600581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 90";
+		rLen = 0;
+		rLoc = 2069;
+		rType = 0;
+		vrLen = 1162;
+		vrLoc = 1518;
+	};
+	27E2AF7414C73C0100581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF614C4FBE7001D9CDA /* cyclone.h */;
+		name = "cyclone.h: 40";
+		rLen = 0;
+		rLoc = 895;
+		rType = 0;
+		vrLen = 1076;
+		vrLoc = 0;
+	};
+	27E2AF7514C73C0100581400 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Unused variable 'redistributeUsingRadius'";
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 89;
+		rType = 1;
+	};
+	27E2AF7614C73C0100581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 144";
+		rLen = 0;
+		rLoc = 4055;
+		rType = 0;
+		vrLen = 2113;
+		vrLoc = 3461;
+	};
+	27E2AF7714C73F1800581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 253";
+		rLen = 0;
+		rLoc = 7328;
+		rType = 0;
+		vrLen = 2267;
+		vrLoc = 6033;
+	};
+	27E2AF7814C73FA000581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 252";
+		rLen = 0;
+		rLoc = 7267;
+		rType = 0;
+		vrLen = 2268;
+		vrLoc = 6033;
+	};
+	27E2AF7D14C7402100581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 252";
+		rLen = 0;
+		rLoc = 7267;
+		rType = 0;
+		vrLen = 1612;
+		vrLoc = 8178;
+	};
+	27E2AF8014C7411700581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 249";
+		rLen = 0;
+		rLoc = 7119;
+		rType = 0;
+		vrLen = 2134;
+		vrLoc = 5909;
+	};
+	27E2AF8314C7414800581400 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 249";
+		rLen = 0;
+		rLoc = 7114;
+		rType = 0;
+		vrLen = 2134;
+		vrLoc = 5909;
 	};
 	27F28FFE14C5D4DC0087D7D5 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 199";
 		rLen = 0;
-		rLoc = 8001;
+		rLoc = 8704;
 		rType = 0;
 		vrLen = 1515;
 		vrLoc = 4144;

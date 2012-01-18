@@ -1,6 +1,6 @@
 //Maya ASCII 2012 scene
 //Name: manifestCurveSimple.ma
-//Last modified: Wed, Jan 18, 2012 04:26:16 pm
+//Last modified: Wed, Jan 18, 2012 06:14:52 PM
 //Codeset: UTF-8
 requires maya "2012";
 requires "manifest.py" "Unknown";
@@ -7324,7 +7324,7 @@ createNode cyclone -n "cyclone1";
 	setAttr ".dist" 1;
 	setAttr ".dc[0]"  0 1 1;
 	setAttr ".r" 3.0999999046325684;
-	setAttr -s 5 ".rc[0:4]"  0 0 1 0.60869563 0.23999999 1 1 0 
+	setAttr -s 5 ".rc[0:4]"  0 0 1 0.61739129 0.23999999 1 1 0 
 		1 0.2 1 1 0.86956519 0.1 1;
 	setAttr -s 2 ".sc[0:1]"  0 1 1 1 0.25999999 1;
 	setAttr -s 3 ".rsc[0:2]"  0.017391304 0.1 3 0.98225808 1 3 0.52173913
@@ -7366,8 +7366,6 @@ select -ne :hardwareRenderGlobals;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".fn" -type "string" "im";
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 select -ne :hyperGraphInfo;
 	setAttr -s 2 ".b";
 connectAttr "manifestHub5.sp[0]" "cubeStamp1.spawnedBy";
