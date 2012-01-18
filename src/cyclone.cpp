@@ -40,8 +40,11 @@ frand()
 
 MObject cyclone::aCurve;
 MObject cyclone::aRandomSeed;
+MObject	cyclone::aStart;
+MObject	cyclone::aEnd;
 MObject cyclone::aDensity;
 MObject cyclone::aDistribution;
+MObject cyclone::aUp;
 MObject cyclone::aDensityCurve;
 MObject cyclone::aRadius;
 MObject cyclone::aRadiusCurve;
@@ -84,6 +87,9 @@ cyclone::compute( const MPlug& plug, MDataBlock& data )
 		int randomSeed = data.inputValue(aRandomSeed).asInt();
 		float density = data.inputValue(aDensity).asFloat();
 		short distribution = data.inputValue(aDistribution).asShort();
+		float start = data.inputValue(aStart).asFloat();
+		float end = data.inputValue(aEnd).asFloat();
+		MVector up = data.inputValue(aUp).asVector().normal();
 		MRampAttribute densityCurve(thisMObject(), aDensityCurve);
 		float maxRadius = data.inputValue(aRadius).asFloat();
 		MRampAttribute radiusCurve(thisMObject(), aRadiusCurve);
@@ -142,15 +148,14 @@ cyclone::compute( const MPlug& plug, MDataBlock& data )
 		{
 			float U = frand();
 			float tNorm = redistributeUsingRadius ? densityRand.get(U) : U;
-			
-			float t = tNorm * numSpans;
-			if(distribution == cyclone::kLength)
-				t = fnCurve.findParamFromLength(tNorm*curveLength);
+
+			float tt = start + tNorm*(end-start);
+			float t = distribution == cyclone::kLength ? fnCurve.findParamFromLength(tt*curveLength) : tt*numSpans;
 			
 			MPoint pt;
 			fnCurve.getPointAtParam(t, pt);
 			MVector tangent = fnCurve.tangent(t).normal();
-			MVector normal = fnCurve.normal(t).normal();
+			MVector normal = (tangent ^ up).normal() ^ tangent; //fnCurve.normal(t).normal();
 			
 			// Position
 			float radialScale = 1.0, spinScale = 1.0, radialSpinScale = 1.0;
@@ -229,12 +234,27 @@ cyclone::initialize()
 	
 	aDensity = numericAttr.create("density", "den", MFnNumericData::kFloat, 10.0);
 	numericAttr.setMin(0.0);
+	numericAttr.setSoftMax(500);
 	addAttribute(aDensity);
 	
 	aDistribution = enumAttr.create("distribution", "dist", cyclone::kParameter);
 	enumAttr.addField("parameter", cyclone::kParameter);
 	enumAttr.addField("length", cyclone::kLength);
 	addAttribute(aDistribution);
+	
+	aStart = numericAttr.create("start", "st", MFnNumericData::kFloat, 0.0);
+	numericAttr.setMin(0.0);
+	numericAttr.setMax(1.0);
+	addAttribute(aStart);
+	
+	aEnd = numericAttr.create("end", "en", MFnNumericData::kFloat, 1.0);
+	numericAttr.setMin(0.0);
+	numericAttr.setMax(1.0);
+	addAttribute(aEnd);
+	
+	aUp = numericAttr.createPoint("up", "u");
+	numericAttr.setDefault(0.0, 1.0, 0.0);
+	addAttribute(aUp);
 	
 	aDensityCurve = MRampAttribute::createCurveRamp("densityCurve","dc");
 	addAttribute(aDensityCurve);
@@ -279,6 +299,9 @@ cyclone::initialize()
 	attributeAffects(aRandomSeed, aPosition);
 	attributeAffects(aDensity, aPosition);
 	attributeAffects(aDistribution, aPosition);
+	attributeAffects(aStart, aPosition);
+	attributeAffects(aEnd, aPosition);
+	attributeAffects(aUp, aPosition);
 	attributeAffects(aDensityCurve, aPosition);
 	attributeAffects(aRadius, aPosition);
 	attributeAffects(aRadiusCurve, aPosition);
@@ -292,6 +315,9 @@ cyclone::initialize()
 	attributeAffects(aRandomSeed, aRotation);
 	attributeAffects(aDensity, aRotation);
 	attributeAffects(aDistribution, aRotation);
+	attributeAffects(aStart, aRotation);
+	attributeAffects(aEnd, aRotation);
+	attributeAffects(aUp, aRotation);
 	attributeAffects(aDensityCurve, aRotation);
 	attributeAffects(aRadiusCurve, aRotation);
 	attributeAffects(aRedistributeUsingRadius, aRotation);

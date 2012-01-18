@@ -31,6 +31,9 @@ public:
 public:
 	static	MObject		aCurve;
 	static	MObject		aRandomSeed;
+	static	MObject		aStart;
+	static	MObject		aEnd;
+	static	MObject		aUp;
 	static	MObject		aDensity;
 	static	MObject		aDistribution;
 	static	MObject		aDensityCurve;

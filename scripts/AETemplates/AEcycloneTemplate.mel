@@ -11,6 +11,9 @@ global proc AEcycloneTemplate ( string $nodeName )
 				editorTemplate -addControl "radius";
 				editorTemplate -addControl "distribution";
 				editorTemplate -addControl "redistributeUsingRadius";
+				editorTemplate -addControl "start";
+				editorTemplate -addControl "end";
+				editorTemplate -addControl "up";
 				
 				AEaddRampControl ($nodeName+".densityCurve");
 				AEaddRampControl ($nodeName+".radiusCurve");
