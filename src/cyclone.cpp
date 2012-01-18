@@ -8,6 +8,7 @@
 #include <maya/MFnNumericAttribute.h>
 #include <maya/MFnTypedAttribute.h>
 #include <maya/MFnUnitAttribute.h>
+#include <maya/MFnEnumAttribute.h>
 #include <maya/MFnPlugin.h>
 #include <maya/MFnNurbsCurve.h>
 #include <maya/MString.h> 
@@ -40,6 +41,7 @@ frand()
 MObject cyclone::aCurve;
 MObject cyclone::aRandomSeed;
 MObject cyclone::aDensity;
+MObject cyclone::aDistribution;
 MObject cyclone::aDensityCurve;
 MObject cyclone::aRadius;
 MObject cyclone::aRadiusCurve;
@@ -79,6 +81,7 @@ cyclone::compute( const MPlug& plug, MDataBlock& data )
 		MFnNurbsCurve fnCurve(data.inputValue(aCurve).asNurbsCurve());
 		int randomSeed = data.inputValue(aRandomSeed).asInt();
 		float density = data.inputValue(aDensity).asFloat();
+		short distribution = data.inputValue(aDistribution).asShort();
 		MRampAttribute densityCurve(thisMObject(), aDensityCurve);
 		float maxRadius = data.inputValue(aRadius).asFloat();
 		MRampAttribute radiusCurve(thisMObject(), aRadiusCurve);
@@ -118,17 +121,27 @@ cyclone::compute( const MPlug& plug, MDataBlock& data )
 		PDFSampleArray densityPDF;
 		densityPDF.resize(numDensityCurveEntries);
 		for(unsigned int i = 0; i < numDensityCurveEntries; i++)
-			densityPDF[i] = PDFSample(densityCurvePositions[i]*numSpans, densityCurveValues[i]);
+			densityPDF[i] = PDFSample(densityCurvePositions[i], densityCurveValues[i]);
 		
 		// There is no guarantee we will get the density curve entries in the right order
 		sort(densityPDF.begin(), densityPDF.end(), PDFSample::sortByXPredicate);
 		
 		ContinuousRandomVariable densityRand(densityPDF);
 		
+		/*for(int i = 0; i < densityPDF.size(); i++)
+			cout << i << ": " << densityPDF[i].x << " " << densityPDF[i].f << " " << densityPDF[i].F << endl;
+		cout << endl;*/
+		
+		float curveLength = fnCurve.length();
+		
 		for(unsigned i = 0; i < N; i++)
 		{
-			float t = densityRand.get(frand());
-			float tNorm = t / numSpans;
+			float U = frand();
+			float tNorm = densityRand.get(U);
+			
+			float t = tNorm * numSpans;
+			if(distribution == cyclone::kLength)
+				t = fnCurve.findParamFromLength(tNorm*curveLength);
 			
 			MPoint pt;
 			fnCurve.getPointAtParam(t, pt);
@@ -193,6 +206,7 @@ cyclone::initialize()
 	MFnTypedAttribute typedAttr;
 	MFnNumericAttribute numericAttr;
 	MFnUnitAttribute unitAttr;
+	MFnEnumAttribute enumAttr;
 	
 	aCurve = typedAttr.create("curve", "cur", MFnData::kNurbsCurve);
 	typedAttr.setWritable(true);
@@ -208,6 +222,11 @@ cyclone::initialize()
 	aDensity = numericAttr.create("density", "den", MFnNumericData::kFloat, 10.0);
 	numericAttr.setMin(0.0);
 	addAttribute(aDensity);
+	
+	aDistribution = enumAttr.create("distribution", "dist", cyclone::kParameter);
+	enumAttr.addField("parameter", cyclone::kParameter);
+	enumAttr.addField("length", cyclone::kLength);
+	addAttribute(aDistribution);
 	
 	aDensityCurve = MRampAttribute::createCurveRamp("densityCurve","dc");
 	addAttribute(aDensityCurve);
@@ -245,6 +264,7 @@ cyclone::initialize()
 	attributeAffects(aCurve, aPosition);
 	attributeAffects(aRandomSeed, aPosition);
 	attributeAffects(aDensity, aPosition);
+	attributeAffects(aDistribution, aPosition);
 	attributeAffects(aDensityCurve, aPosition);
 	attributeAffects(aRadius, aPosition);
 	attributeAffects(aRadiusCurve, aPosition);
@@ -255,6 +275,7 @@ cyclone::initialize()
 	attributeAffects(aCurve, aRotation);
 	attributeAffects(aRandomSeed, aRotation);
 	attributeAffects(aDensity, aRotation);
+	attributeAffects(aDistribution, aRotation);
 	attributeAffects(aDensityCurve, aRotation);
 	attributeAffects(aRadiusCurve, aRotation);
 	attributeAffects(aSpin, aRotation);

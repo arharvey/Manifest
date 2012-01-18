@@ -9,6 +9,7 @@ global proc AEcycloneTemplate ( string $nodeName )
 			
 			editorTemplate -addControl "randomSeed";
 			editorTemplate -addControl "density";
+			editorTemplate -addControl "distribution";
 			editorTemplate -addControl "radius";
 			editorTemplate -addControl "spin";
 			AEaddRampControl ($nodeName+".densityCurve");

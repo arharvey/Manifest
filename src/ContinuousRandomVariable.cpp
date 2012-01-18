@@ -109,7 +109,7 @@ ContinuousRandomVariable::calcCDF()
 	{
 		const float coef = 1.0/m_pdf[N-1].F;
 		
-		for(int i = 1; i < N; i++)
+		for(int i = 0; i < N; i++)
 		{
 			m_pdf[i].f *= coef;
 			m_pdf[i].F *= coef;

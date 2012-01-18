@@ -18,6 +18,8 @@
 class cyclone : public MPxNode
 {
 public:
+	enum Distribution {kParameter = 0, kLength = 1};
+	
 						cyclone();
 	virtual				~cyclone();
 	virtual	void		postConstructor();
@@ -30,6 +32,7 @@ public:
 	static	MObject		aCurve;
 	static	MObject		aRandomSeed;
 	static	MObject		aDensity;
+	static	MObject		aDistribution;
 	static	MObject		aDensityCurve;
 	static	MObject		aRadius;
 	static	MObject		aRadiusCurve;
