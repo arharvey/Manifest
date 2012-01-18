@@ -22,8 +22,13 @@
 #include <maya/MEulerRotation.h>
 #include <maya/MQuaternion.h>
 #include <maya/MMatrix.h>
+#include <maya/MRampAttribute.h>
+#include <maya/MFloatArray.h>
+#include <maya/MIntArray.h>
+#include <maya/MGlobal.h>
 
 #include "cyclone.h"
+#include "ContinuousRandomVariable.h"
 
 float
 frand()
@@ -35,8 +40,12 @@ frand()
 MObject cyclone::aCurve;
 MObject cyclone::aRandomSeed;
 MObject cyclone::aDensity;
+MObject cyclone::aDensityCurve;
 MObject cyclone::aRadius;
+MObject cyclone::aRadiusCurve;
 MObject cyclone::aSpin;
+MObject cyclone::aSpinCurve;
+MObject cyclone::aRadialSpinCurve;
 
 MObject cyclone::aPosition;
 MObject cyclone::aRotation;
@@ -70,8 +79,12 @@ cyclone::compute( const MPlug& plug, MDataBlock& data )
 		MFnNurbsCurve fnCurve(data.inputValue(aCurve).asNurbsCurve());
 		int randomSeed = data.inputValue(aRandomSeed).asInt();
 		float density = data.inputValue(aDensity).asFloat();
-		float radius = data.inputValue(aRadius).asFloat();
+		MRampAttribute densityCurve(thisMObject(), aDensityCurve);
+		float maxRadius = data.inputValue(aRadius).asFloat();
+		MRampAttribute radiusCurve(thisMObject(), aRadiusCurve);
 		MAngle spin = data.inputValue(aSpin).asAngle().asRadians();
+		MRampAttribute spinCurve(thisMObject(), aSpinCurve);
+		MRampAttribute radialSpinCurve(thisMObject(), aRadialSpinCurve);
 		
 		// Number of particles to calculate
 		unsigned N = (unsigned)density;
@@ -93,9 +106,29 @@ cyclone::compute( const MPlug& plug, MDataBlock& data )
 		
 		srand(randomSeed);
 		
+		// Prepare our density's probability distribution function
+		float numSpans = (float)fnCurve.numSpans();
+		
+		MIntArray densityCurveIndices, densityCurveInterps;
+		MFloatArray densityCurvePositions, densityCurveValues;
+		radiusCurve.getEntries(densityCurveIndices, densityCurvePositions, densityCurveValues, densityCurveInterps);
+		
+		unsigned int numDensityCurveEntries = radiusCurve.getNumEntries();
+
+		PDFSampleArray densityPDF;
+		densityPDF.resize(numDensityCurveEntries);
+		for(unsigned int i = 0; i < numDensityCurveEntries; i++)
+			densityPDF[i] = PDFSample(densityCurvePositions[i]*numSpans, densityCurveValues[i]);
+		
+		// There is no guarantee we will get the density curve entries in the right order
+		sort(densityPDF.begin(), densityPDF.end(), PDFSample::sortByXPredicate);
+		
+		ContinuousRandomVariable densityRand(densityPDF);
+		
 		for(unsigned i = 0; i < N; i++)
 		{
-			float t = frand()*(float)fnCurve.numSpans();
+			float t = densityRand.get(frand());
+			float tNorm = t / numSpans;
 			
 			MPoint pt;
 			fnCurve.getPointAtParam(t, pt);
@@ -103,11 +136,18 @@ cyclone::compute( const MPlug& plug, MDataBlock& data )
 			MVector normal = fnCurve.normal(t).normal();
 			
 			// Position
-			MQuaternion q(frand()*2.0*M_PI + spin.asRadians(), tangent);
+			float radialScale = 1.0, spinScale = 1.0, radialSpinScale = 1.0;
+			radiusCurve.getValueAtPosition(tNorm, radialScale);
+			spinCurve.getValueAtPosition(tNorm, spinScale);
+			
+			float radiusNorm = radialScale*sqrt(frand()); // The sqrt helps produce a more uniform distribution
+			radialSpinCurve.getValueAtPosition(radiusNorm, radialSpinScale);
+			
+			MQuaternion q(frand()*2.0*M_PI + spin.asRadians()*spinScale*radialSpinScale, tangent);
 			normal = normal.rotateBy(q);
 			MVector binormal = tangent ^ normal;
-		
-			pt += normal*(radius*frand());
+			
+			pt += normal*(maxRadius*radiusNorm);
 			float p[] = {pt.x, pt.y, pt.z};
 			position.set(p, i);
 			
@@ -169,13 +209,24 @@ cyclone::initialize()
 	numericAttr.setMin(0.0);
 	addAttribute(aDensity);
 	
+	aDensityCurve = MRampAttribute::createCurveRamp("densityCurve","dc");
+	addAttribute(aDensityCurve);
+	
 	aRadius = numericAttr.create("radius", "r", MFnNumericData::kFloat, 5.0);
 	numericAttr.setMin(0.0);
 	addAttribute(aRadius);
 	
+	aRadiusCurve = MRampAttribute::createCurveRamp("radiusCurve","rc");
+	addAttribute(aRadiusCurve);
+	
 	aSpin = unitAttr.create("spin", "sp", MFnUnitAttribute::kAngle, 0.0);
 	addAttribute(aSpin);
 	
+	aSpinCurve = MRampAttribute::createCurveRamp("spinCurve","sc");
+	addAttribute(aSpinCurve);
+
+	aRadialSpinCurve = MRampAttribute::createCurveRamp("radialSpinCurve","rsc");
+	addAttribute(aRadialSpinCurve);
 	
 	aPosition = typedAttr.create("positions", "pos", MFnData::kVectorArray);
 	typedAttr.setWritable(false);
@@ -194,13 +245,21 @@ cyclone::initialize()
 	attributeAffects(aCurve, aPosition);
 	attributeAffects(aRandomSeed, aPosition);
 	attributeAffects(aDensity, aPosition);
+	attributeAffects(aDensityCurve, aPosition);
 	attributeAffects(aRadius, aPosition);
+	attributeAffects(aRadiusCurve, aPosition);
 	attributeAffects(aSpin, aPosition);
+	attributeAffects(aSpinCurve, aPosition);
+	attributeAffects(aRadialSpinCurve, aPosition);
 	
 	attributeAffects(aCurve, aRotation);
 	attributeAffects(aRandomSeed, aRotation);
 	attributeAffects(aDensity, aRotation);
+	attributeAffects(aDensityCurve, aRotation);
+	attributeAffects(aRadiusCurve, aRotation);
 	attributeAffects(aSpin, aRotation);
+	attributeAffects(aSpinCurve, aRotation);
+	attributeAffects(aRadialSpinCurve, aRotation);
 	
 	return MS::kSuccess;
 }

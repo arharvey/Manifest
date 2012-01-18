@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		27410CF514C4FBD8001D9CDA /* cyclone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */; };
 		27410CF714C4FBE7001D9CDA /* cyclone.h in Headers */ = {isa = PBXBuildFile; fileRef = 27410CF614C4FBE7001D9CDA /* cyclone.h */; };
+		27E2AEBF14C6370F00581400 /* ContinuousRandomVariable.h in Headers */ = {isa = PBXBuildFile; fileRef = 27E2AEBD14C6370F00581400 /* ContinuousRandomVariable.h */; };
+		27E2AEC014C6370F00581400 /* ContinuousRandomVariable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27E2AEBE14C6370F00581400 /* ContinuousRandomVariable.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		27410CF414C4FBD8001D9CDA /* cyclone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cyclone.cpp; sourceTree = "<group>"; };
 		27410CF614C4FBE7001D9CDA /* cyclone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cyclone.h; sourceTree = "<group>"; };
+		27E2AEBD14C6370F00581400 /* ContinuousRandomVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinuousRandomVariable.h; sourceTree = "<group>"; };
+		27E2AEBE14C6370F00581400 /* ContinuousRandomVariable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ContinuousRandomVariable.cpp; sourceTree = "<group>"; };
 		D2AAC0630554660B00DB518D /* cyclone.bundle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = cyclone.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -43,6 +47,8 @@
 			isa = PBXGroup;
 			children = (
 				27410CF614C4FBE7001D9CDA /* cyclone.h */,
+				27E2AEBD14C6370F00581400 /* ContinuousRandomVariable.h */,
+				27E2AEBE14C6370F00581400 /* ContinuousRandomVariable.cpp */,
 				27410CF414C4FBD8001D9CDA /* cyclone.cpp */,
 			);
 			name = Source;
@@ -78,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27410CF714C4FBE7001D9CDA /* cyclone.h in Headers */,
+				27E2AEBF14C6370F00581400 /* ContinuousRandomVariable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27410CF514C4FBD8001D9CDA /* cyclone.cpp in Sources */,
+				27E2AEC014C6370F00581400 /* ContinuousRandomVariable.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,13 +30,18 @@ public:
 	static	MObject		aCurve;
 	static	MObject		aRandomSeed;
 	static	MObject		aDensity;
+	static	MObject		aDensityCurve;
 	static	MObject		aRadius;
+	static	MObject		aRadiusCurve;
 	static	MObject		aSpin;
+	static	MObject		aSpinCurve;
+	static	MObject		aRadialSpinCurve;
 	
 	static	MObject		aPosition;
 	static	MObject		aRotation;
 	
 	static	MTypeId		id;
 };
+
 
 #endif

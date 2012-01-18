@@ -1,0 +1,25 @@
+// AETemplate for cyclone node
+//
+
+global proc AEcycloneTemplate ( string $nodeName )
+{
+	editorTemplate -beginScrollLayout;
+		
+		editorTemplate -beginLayout "Cyclone" -collapse 0;
+			
+			editorTemplate -addControl "randomSeed";
+			editorTemplate -addControl "density";
+			editorTemplate -addControl "radius";
+			editorTemplate -addControl "spin";
+			AEaddRampControl ($nodeName+".densityCurve");
+			AEaddRampControl ($nodeName+".radiusCurve");
+			AEaddRampControl ($nodeName+".spinCurve");
+			AEaddRampControl ($nodeName+".radialSpinCurve");
+		editorTemplate -endLayout
+
+		AEdependNodeTemplate $nodeName;
+
+		editorTemplate -addExtraControls;
+	editorTemplate -endScrollLayout;
+
+}
