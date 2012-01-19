@@ -11,7 +11,7 @@ kNodeId = OpenMaya.MTypeId(0x10000) # Must be < 0x80000
 
 # ---------------------------------------------------------------------------
 
-class manifestHub(OpenMayaMPx.MPxNode):
+class manifestHub(OpenMayaMPx.MPxTransform):
 	aStamp = OpenMaya.MObject()
 	aPositions = OpenMaya.MObject()
 	aRotation = OpenMaya.MObject()
@@ -28,10 +28,10 @@ class manifestHub(OpenMayaMPx.MPxNode):
 	spawnPending = {}
 	
 	def __init__(self):
-		OpenMayaMPx.MPxNode.__init__(self)
+		OpenMayaMPx.MPxTransform.__init__(self)
 	
 	def postConstructor(self):
-		OpenMayaMPx.MPxNode.postConstructor(self)
+		OpenMayaMPx.MPxTransform.postConstructor(self)
 		self.setExistWithoutInConnections(True)
 		self.setExistWithoutOutConnections(True)
 		
@@ -139,7 +139,7 @@ def nodeInitializer():
 	msgAttr.setDisconnectBehavior(OpenMaya.MFnAttribute.kDelete)
 	manifestHub.addAttribute(manifestHub.aStamp)
 	
-	manifestHub.aSpawned = msgAttr.create("spawned", "sp")
+	manifestHub.aSpawned = msgAttr.create("spawned", "spa")
 	msgAttr.setWritable(False)
 	msgAttr.setReadable(True)
 	msgAttr.setArray(True)
@@ -161,24 +161,24 @@ def nodeInitializer():
 	typedAttr.setDefault(OpenMaya.MFnVectorArrayData().create())
 	manifestHub.addAttribute(manifestHub.aRotation)
 	
-	manifestHub.aTranslate = numericAttr.createPoint("translate", "t")
+	manifestHub.aTranslate = numericAttr.createPoint("spawnTranslate", "spat")
 	numericAttr.setWritable(False)
 	numericAttr.setArray(True)
 	numericAttr.setUsesArrayDataBuilder(True)
 	numericAttr.setDisconnectBehavior(OpenMaya.MFnAttribute.kReset)
 	manifestHub.addAttribute(manifestHub.aTranslate)
 
-	manifestHub.aRotateX = unitAttr.create("rotateX", "rx", OpenMaya.MFnUnitAttribute.kAngle)
+	manifestHub.aRotateX = unitAttr.create("spawnRotateX", "sparx", OpenMaya.MFnUnitAttribute.kAngle)
 	unitAttr.setWritable(False)
 	manifestHub.addAttribute(manifestHub.aRotateX)
-	manifestHub.aRotateY = unitAttr.create("rotateY", "ry", OpenMaya.MFnUnitAttribute.kAngle)
+	manifestHub.aRotateY = unitAttr.create("spawnRotateY", "spary", OpenMaya.MFnUnitAttribute.kAngle)
 	unitAttr.setWritable(False)
 	manifestHub.addAttribute(manifestHub.aRotateY)
-	manifestHub.aRotateZ = unitAttr.create("rotateZ", "rz", OpenMaya.MFnUnitAttribute.kAngle)
+	manifestHub.aRotateZ = unitAttr.create("spawnRotateZ", "sparz", OpenMaya.MFnUnitAttribute.kAngle)
 	unitAttr.setWritable(False)
 	manifestHub.addAttribute(manifestHub.aRotateZ)
 	
-	manifestHub.aRotate = compAttr.create("rotate", "r")
+	manifestHub.aRotate = compAttr.create("spawnRotate", "spar")
 	compAttr.setWritable(False)
 	compAttr.setArray(True)
 	compAttr.setUsesArrayDataBuilder(True)
@@ -225,10 +225,12 @@ def spawn(hub):
 				
 				# TODO: We assume the first element is the container. More stringent checking is required
 				newContainer = nodesCreated[0]
+				PyMEL.general.parent(newContainer, hub)
+				
 				newContainer.addAttr( 'spawnedBy', at=float )
 				hub.spawned.elementByLogicalIndex(i).connect(newContainer.spawnedBy)
-				hub.translate.elementByLogicalIndex(i).connect(newContainer.translate)
-				hub.rotate.elementByLogicalIndex(i).connect(newContainer.rotate)
+				hub.spawnTranslate.elementByLogicalIndex(i).connect(newContainer.translate)
+				hub.spawnRotate.elementByLogicalIndex(i).connect(newContainer.rotate)
 		
 	elif numPositions < numSpawned:
 		#print "Deleting %d stamps" % (numSpawned - numPositions)
@@ -240,8 +242,8 @@ def spawn(hub):
 			#print "Deleted object [%d]" % i
 			
 			spawnPlug.remove()
-			hub.rotate.elementByLogicalIndex(i).remove()
-			hub.translate.elementByLogicalIndex(i).remove()
+			hub.spawnRotate.elementByLogicalIndex(i).remove()
+			hub.spawnTranslate.elementByLogicalIndex(i).remove()
 			
 			#print "Removed object [%d] connections" % i
 

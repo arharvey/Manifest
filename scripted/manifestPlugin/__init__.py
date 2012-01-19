@@ -12,7 +12,8 @@ exec('reload(manifestHub)' ) in globals()
 def initializePlugin(mobject):
 	mplugin = OpenMayaMPx.MFnPlugin(mobject)
 	try:
-		mplugin.registerNode( manifestHub.kNodeName, manifestHub.kNodeId, manifestHub.nodeCreator, manifestHub.nodeInitializer)
+		mplugin.registerTransform( manifestHub.kNodeName, manifestHub.kNodeId, manifestHub.nodeCreator, manifestHub.nodeInitializer, \
+									OpenMayaMPx.MPxTransformationMatrix().creator, OpenMayaMPx.MPxTransformationMatrix().baseTransformationMatrixId)
 		#mplugin.registerNode( cyclone.kNodeName, cyclone.kNodeId, cyclone.nodeCreator, cyclone.nodeInitializer)
 		
 		manifestHub.manifestHub.timeChangedCallbackId = OpenMaya.MDGMessage.addTimeChangeCallback(manifestHub.timeChangedCB)
