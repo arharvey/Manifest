@@ -82,6 +82,8 @@ cyclone::compute( const MPlug& plug, MDataBlock& data )
 {
 	if(plug == aPosition || plug == aRotation)
 	{
+		//cout << "Computing " << plug.name() << endl;
+		
 		// Gather inputs
 		MFnNurbsCurve fnCurve(data.inputValue(aCurve).asNurbsCurve());
 		int randomSeed = data.inputValue(aRandomSeed).asInt();

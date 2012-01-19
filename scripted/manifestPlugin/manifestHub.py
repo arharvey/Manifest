@@ -204,8 +204,8 @@ def spawn(hub):
 		numPositions = len(positions);
 	
 	# Do we need to add or remove any spawned geometry?
-	spawnIndices = hub.spawned.getArrayIndices()
-	numSpawned = len(spawnIndices)
+	#spawnIndices = hub.spawned.getArrayIndices()
+	numSpawned = hub.spawned.getNumElements() #len(spawnIndices)
 	
 	#print "%d positions and %d spawn found" % (numPositions, numSpawned)
 	

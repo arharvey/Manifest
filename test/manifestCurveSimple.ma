@@ -1,6 +1,6 @@
 //Maya ASCII 2012 scene
 //Name: manifestCurveSimple.ma
-//Last modified: Thu, Jan 19, 2012 01:15:54 PM
+//Last modified: Thu, Jan 19, 2012 03:36:27 PM
 //Codeset: UTF-8
 requires maya "2012";
 requires "manifest.py" "Unknown";
@@ -140,7 +140,7 @@ createNode mesh -n "cubeStampShape" -p "cubeStamp";
 	addAttr -ci true -sn "mdo" -ln "miMaxDisplaceOverride" -min 0 -max 1 -at "bool";
 	addAttr -ci true -sn "mmd" -ln "miMaxDisplace" -min 0 -smx 1 -at "float";
 	setAttr -k off ".v";
-	setAttr -s 201 ".iog";
+	setAttr -s 309 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -176,9 +176,9 @@ createNode mesh -n "cubeStampShape" -p "cubeStamp";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode manifestHub -n "manifestHub5";
-	setAttr -s 200 ".spa";
-	setAttr -s 200 ".spat";
-	setAttr -s 200 ".spar";
+	setAttr -s 308 ".spa";
+	setAttr -s 308 ".spat";
+	setAttr -s 308 ".spar";
 createNode transform -n "cubeStamp1" -p "manifestHub5";
 	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
 createNode transform -n "cubeStamp2" -p "manifestHub5";
@@ -579,6 +579,222 @@ createNode transform -n "cubeStamp199" -p "manifestHub5";
 	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
 createNode transform -n "cubeStamp200" -p "manifestHub5";
 	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp201" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp202" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp203" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp204" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp205" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp206" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp207" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp208" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp209" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp210" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp211" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp212" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp213" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp214" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp215" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp216" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp217" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp218" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp219" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp220" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp221" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp222" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp223" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp224" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp225" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp226" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp227" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp228" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp229" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp230" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp231" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp232" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp233" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp234" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp235" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp236" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp237" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp238" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp239" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp240" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp241" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp242" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp243" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp244" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp245" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp246" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp247" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp248" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp249" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp250" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp251" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp252" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp253" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp254" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp255" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp256" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp257" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp258" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp259" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp260" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp261" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp262" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp263" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp264" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp265" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp266" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp267" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp268" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp269" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp270" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp271" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp272" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp273" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp274" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp275" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp276" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp277" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp278" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp279" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp280" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp281" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp282" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp283" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp284" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp285" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp286" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp287" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp288" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp289" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp290" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp291" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp292" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp293" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp294" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp295" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp296" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp297" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp298" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp299" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp300" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp301" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp302" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp303" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp304" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp305" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp306" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp307" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
+createNode transform -n "cubeStamp308" -p "manifestHub5";
+	addAttr -ci true -sn "spawnedBy" -ln "spawnedBy" -at "double";
 createNode transform -n "persp1";
 	setAttr ".t" -type "double3" 28 21 28 ;
 	setAttr ".r" -type "double3" -27.938352729602379 44.999999999999972 -5.172681101354183e-14 ;
@@ -791,6 +1007,114 @@ parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp197" ;
 parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp198" ;
 parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp199" ;
 parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp200" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp201" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp202" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp203" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp204" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp205" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp206" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp207" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp208" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp209" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp210" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp211" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp212" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp213" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp214" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp215" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp216" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp217" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp218" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp219" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp220" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp221" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp222" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp223" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp224" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp225" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp226" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp227" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp228" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp229" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp230" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp231" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp232" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp233" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp234" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp235" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp236" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp237" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp238" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp239" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp240" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp241" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp242" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp243" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp244" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp245" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp246" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp247" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp248" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp249" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp250" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp251" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp252" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp253" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp254" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp255" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp256" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp257" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp258" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp259" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp260" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp261" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp262" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp263" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp264" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp265" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp266" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp267" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp268" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp269" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp270" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp271" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp272" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp273" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp274" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp275" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp276" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp277" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp278" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp279" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp280" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp281" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp282" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp283" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp284" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp285" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp286" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp287" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp288" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp289" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp290" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp291" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp292" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp293" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp294" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp295" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp296" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp297" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp298" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp299" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp300" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp301" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp302" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp303" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp304" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp305" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp306" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp307" ;
+parent -s -nc -r -add "|cubeStamp|cubeStampShape" "cubeStamp308" ;
 createNode lightLinker -s -n "lightLinker1";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
@@ -924,7 +1248,7 @@ createNode hyperLayout -n "hyperLayout4";
 	setAttr ".hyp[6].y" 246;
 	setAttr ".anf" yes;
 createNode cyclone -n "cyclone1";
-	setAttr ".den" 200;
+	setAttr ".den" 308.72482299804688;
 	setAttr ".dc[0]"  0 1 1;
 	setAttr ".r" 3.0999999046325684;
 	setAttr -s 5 ".rc[0:4]"  0 0 1 0.61739129 0.23999999 1 1 0 
@@ -947,12 +1271,12 @@ createNode animCurveTU -n "cyclone1_start";
 	setAttr -s 3 ".kit[0:2]"  2 18 18;
 	setAttr -s 3 ".kot[0:2]"  2 18 18;
 select -ne :time1;
-	setAttr ".o" 1;
-	setAttr ".unw" 1;
+	setAttr ".o" 18;
+	setAttr ".unw" 18;
 select -ne :renderPartition;
 	setAttr -s 2 ".st";
 select -ne :initialShadingGroup;
-	setAttr -s 202 ".dsm";
+	setAttr -s 310 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -1581,6 +1905,330 @@ connectAttr "manifestHub5.spar[198]" "cubeStamp199.r";
 connectAttr "manifestHub5.spa[199]" "cubeStamp200.spawnedBy";
 connectAttr "manifestHub5.spat[199]" "cubeStamp200.t";
 connectAttr "manifestHub5.spar[199]" "cubeStamp200.r";
+connectAttr "manifestHub5.spa[200]" "cubeStamp201.spawnedBy";
+connectAttr "manifestHub5.spat[200]" "cubeStamp201.t";
+connectAttr "manifestHub5.spar[200]" "cubeStamp201.r";
+connectAttr "manifestHub5.spa[201]" "cubeStamp202.spawnedBy";
+connectAttr "manifestHub5.spat[201]" "cubeStamp202.t";
+connectAttr "manifestHub5.spar[201]" "cubeStamp202.r";
+connectAttr "manifestHub5.spa[202]" "cubeStamp203.spawnedBy";
+connectAttr "manifestHub5.spat[202]" "cubeStamp203.t";
+connectAttr "manifestHub5.spar[202]" "cubeStamp203.r";
+connectAttr "manifestHub5.spa[203]" "cubeStamp204.spawnedBy";
+connectAttr "manifestHub5.spat[203]" "cubeStamp204.t";
+connectAttr "manifestHub5.spar[203]" "cubeStamp204.r";
+connectAttr "manifestHub5.spa[204]" "cubeStamp205.spawnedBy";
+connectAttr "manifestHub5.spat[204]" "cubeStamp205.t";
+connectAttr "manifestHub5.spar[204]" "cubeStamp205.r";
+connectAttr "manifestHub5.spa[205]" "cubeStamp206.spawnedBy";
+connectAttr "manifestHub5.spat[205]" "cubeStamp206.t";
+connectAttr "manifestHub5.spar[205]" "cubeStamp206.r";
+connectAttr "manifestHub5.spa[206]" "cubeStamp207.spawnedBy";
+connectAttr "manifestHub5.spat[206]" "cubeStamp207.t";
+connectAttr "manifestHub5.spar[206]" "cubeStamp207.r";
+connectAttr "manifestHub5.spa[207]" "cubeStamp208.spawnedBy";
+connectAttr "manifestHub5.spat[207]" "cubeStamp208.t";
+connectAttr "manifestHub5.spar[207]" "cubeStamp208.r";
+connectAttr "manifestHub5.spa[208]" "cubeStamp209.spawnedBy";
+connectAttr "manifestHub5.spat[208]" "cubeStamp209.t";
+connectAttr "manifestHub5.spar[208]" "cubeStamp209.r";
+connectAttr "manifestHub5.spa[209]" "cubeStamp210.spawnedBy";
+connectAttr "manifestHub5.spat[209]" "cubeStamp210.t";
+connectAttr "manifestHub5.spar[209]" "cubeStamp210.r";
+connectAttr "manifestHub5.spa[210]" "cubeStamp211.spawnedBy";
+connectAttr "manifestHub5.spat[210]" "cubeStamp211.t";
+connectAttr "manifestHub5.spar[210]" "cubeStamp211.r";
+connectAttr "manifestHub5.spa[211]" "cubeStamp212.spawnedBy";
+connectAttr "manifestHub5.spat[211]" "cubeStamp212.t";
+connectAttr "manifestHub5.spar[211]" "cubeStamp212.r";
+connectAttr "manifestHub5.spa[212]" "cubeStamp213.spawnedBy";
+connectAttr "manifestHub5.spat[212]" "cubeStamp213.t";
+connectAttr "manifestHub5.spar[212]" "cubeStamp213.r";
+connectAttr "manifestHub5.spa[213]" "cubeStamp214.spawnedBy";
+connectAttr "manifestHub5.spat[213]" "cubeStamp214.t";
+connectAttr "manifestHub5.spar[213]" "cubeStamp214.r";
+connectAttr "manifestHub5.spa[214]" "cubeStamp215.spawnedBy";
+connectAttr "manifestHub5.spat[214]" "cubeStamp215.t";
+connectAttr "manifestHub5.spar[214]" "cubeStamp215.r";
+connectAttr "manifestHub5.spa[215]" "cubeStamp216.spawnedBy";
+connectAttr "manifestHub5.spat[215]" "cubeStamp216.t";
+connectAttr "manifestHub5.spar[215]" "cubeStamp216.r";
+connectAttr "manifestHub5.spa[216]" "cubeStamp217.spawnedBy";
+connectAttr "manifestHub5.spat[216]" "cubeStamp217.t";
+connectAttr "manifestHub5.spar[216]" "cubeStamp217.r";
+connectAttr "manifestHub5.spa[217]" "cubeStamp218.spawnedBy";
+connectAttr "manifestHub5.spat[217]" "cubeStamp218.t";
+connectAttr "manifestHub5.spar[217]" "cubeStamp218.r";
+connectAttr "manifestHub5.spa[218]" "cubeStamp219.spawnedBy";
+connectAttr "manifestHub5.spat[218]" "cubeStamp219.t";
+connectAttr "manifestHub5.spar[218]" "cubeStamp219.r";
+connectAttr "manifestHub5.spa[219]" "cubeStamp220.spawnedBy";
+connectAttr "manifestHub5.spat[219]" "cubeStamp220.t";
+connectAttr "manifestHub5.spar[219]" "cubeStamp220.r";
+connectAttr "manifestHub5.spa[220]" "cubeStamp221.spawnedBy";
+connectAttr "manifestHub5.spat[220]" "cubeStamp221.t";
+connectAttr "manifestHub5.spar[220]" "cubeStamp221.r";
+connectAttr "manifestHub5.spa[221]" "cubeStamp222.spawnedBy";
+connectAttr "manifestHub5.spat[221]" "cubeStamp222.t";
+connectAttr "manifestHub5.spar[221]" "cubeStamp222.r";
+connectAttr "manifestHub5.spa[222]" "cubeStamp223.spawnedBy";
+connectAttr "manifestHub5.spat[222]" "cubeStamp223.t";
+connectAttr "manifestHub5.spar[222]" "cubeStamp223.r";
+connectAttr "manifestHub5.spa[223]" "cubeStamp224.spawnedBy";
+connectAttr "manifestHub5.spat[223]" "cubeStamp224.t";
+connectAttr "manifestHub5.spar[223]" "cubeStamp224.r";
+connectAttr "manifestHub5.spa[224]" "cubeStamp225.spawnedBy";
+connectAttr "manifestHub5.spat[224]" "cubeStamp225.t";
+connectAttr "manifestHub5.spar[224]" "cubeStamp225.r";
+connectAttr "manifestHub5.spa[225]" "cubeStamp226.spawnedBy";
+connectAttr "manifestHub5.spat[225]" "cubeStamp226.t";
+connectAttr "manifestHub5.spar[225]" "cubeStamp226.r";
+connectAttr "manifestHub5.spa[226]" "cubeStamp227.spawnedBy";
+connectAttr "manifestHub5.spat[226]" "cubeStamp227.t";
+connectAttr "manifestHub5.spar[226]" "cubeStamp227.r";
+connectAttr "manifestHub5.spa[227]" "cubeStamp228.spawnedBy";
+connectAttr "manifestHub5.spat[227]" "cubeStamp228.t";
+connectAttr "manifestHub5.spar[227]" "cubeStamp228.r";
+connectAttr "manifestHub5.spa[228]" "cubeStamp229.spawnedBy";
+connectAttr "manifestHub5.spat[228]" "cubeStamp229.t";
+connectAttr "manifestHub5.spar[228]" "cubeStamp229.r";
+connectAttr "manifestHub5.spa[229]" "cubeStamp230.spawnedBy";
+connectAttr "manifestHub5.spat[229]" "cubeStamp230.t";
+connectAttr "manifestHub5.spar[229]" "cubeStamp230.r";
+connectAttr "manifestHub5.spa[230]" "cubeStamp231.spawnedBy";
+connectAttr "manifestHub5.spat[230]" "cubeStamp231.t";
+connectAttr "manifestHub5.spar[230]" "cubeStamp231.r";
+connectAttr "manifestHub5.spa[231]" "cubeStamp232.spawnedBy";
+connectAttr "manifestHub5.spat[231]" "cubeStamp232.t";
+connectAttr "manifestHub5.spar[231]" "cubeStamp232.r";
+connectAttr "manifestHub5.spa[232]" "cubeStamp233.spawnedBy";
+connectAttr "manifestHub5.spat[232]" "cubeStamp233.t";
+connectAttr "manifestHub5.spar[232]" "cubeStamp233.r";
+connectAttr "manifestHub5.spa[233]" "cubeStamp234.spawnedBy";
+connectAttr "manifestHub5.spat[233]" "cubeStamp234.t";
+connectAttr "manifestHub5.spar[233]" "cubeStamp234.r";
+connectAttr "manifestHub5.spa[234]" "cubeStamp235.spawnedBy";
+connectAttr "manifestHub5.spat[234]" "cubeStamp235.t";
+connectAttr "manifestHub5.spar[234]" "cubeStamp235.r";
+connectAttr "manifestHub5.spa[235]" "cubeStamp236.spawnedBy";
+connectAttr "manifestHub5.spat[235]" "cubeStamp236.t";
+connectAttr "manifestHub5.spar[235]" "cubeStamp236.r";
+connectAttr "manifestHub5.spa[236]" "cubeStamp237.spawnedBy";
+connectAttr "manifestHub5.spat[236]" "cubeStamp237.t";
+connectAttr "manifestHub5.spar[236]" "cubeStamp237.r";
+connectAttr "manifestHub5.spa[237]" "cubeStamp238.spawnedBy";
+connectAttr "manifestHub5.spat[237]" "cubeStamp238.t";
+connectAttr "manifestHub5.spar[237]" "cubeStamp238.r";
+connectAttr "manifestHub5.spa[238]" "cubeStamp239.spawnedBy";
+connectAttr "manifestHub5.spat[238]" "cubeStamp239.t";
+connectAttr "manifestHub5.spar[238]" "cubeStamp239.r";
+connectAttr "manifestHub5.spa[239]" "cubeStamp240.spawnedBy";
+connectAttr "manifestHub5.spat[239]" "cubeStamp240.t";
+connectAttr "manifestHub5.spar[239]" "cubeStamp240.r";
+connectAttr "manifestHub5.spa[240]" "cubeStamp241.spawnedBy";
+connectAttr "manifestHub5.spat[240]" "cubeStamp241.t";
+connectAttr "manifestHub5.spar[240]" "cubeStamp241.r";
+connectAttr "manifestHub5.spa[241]" "cubeStamp242.spawnedBy";
+connectAttr "manifestHub5.spat[241]" "cubeStamp242.t";
+connectAttr "manifestHub5.spar[241]" "cubeStamp242.r";
+connectAttr "manifestHub5.spa[242]" "cubeStamp243.spawnedBy";
+connectAttr "manifestHub5.spat[242]" "cubeStamp243.t";
+connectAttr "manifestHub5.spar[242]" "cubeStamp243.r";
+connectAttr "manifestHub5.spa[243]" "cubeStamp244.spawnedBy";
+connectAttr "manifestHub5.spat[243]" "cubeStamp244.t";
+connectAttr "manifestHub5.spar[243]" "cubeStamp244.r";
+connectAttr "manifestHub5.spa[244]" "cubeStamp245.spawnedBy";
+connectAttr "manifestHub5.spat[244]" "cubeStamp245.t";
+connectAttr "manifestHub5.spar[244]" "cubeStamp245.r";
+connectAttr "manifestHub5.spa[245]" "cubeStamp246.spawnedBy";
+connectAttr "manifestHub5.spat[245]" "cubeStamp246.t";
+connectAttr "manifestHub5.spar[245]" "cubeStamp246.r";
+connectAttr "manifestHub5.spa[246]" "cubeStamp247.spawnedBy";
+connectAttr "manifestHub5.spat[246]" "cubeStamp247.t";
+connectAttr "manifestHub5.spar[246]" "cubeStamp247.r";
+connectAttr "manifestHub5.spa[247]" "cubeStamp248.spawnedBy";
+connectAttr "manifestHub5.spat[247]" "cubeStamp248.t";
+connectAttr "manifestHub5.spar[247]" "cubeStamp248.r";
+connectAttr "manifestHub5.spa[248]" "cubeStamp249.spawnedBy";
+connectAttr "manifestHub5.spat[248]" "cubeStamp249.t";
+connectAttr "manifestHub5.spar[248]" "cubeStamp249.r";
+connectAttr "manifestHub5.spa[249]" "cubeStamp250.spawnedBy";
+connectAttr "manifestHub5.spat[249]" "cubeStamp250.t";
+connectAttr "manifestHub5.spar[249]" "cubeStamp250.r";
+connectAttr "manifestHub5.spa[250]" "cubeStamp251.spawnedBy";
+connectAttr "manifestHub5.spat[250]" "cubeStamp251.t";
+connectAttr "manifestHub5.spar[250]" "cubeStamp251.r";
+connectAttr "manifestHub5.spa[251]" "cubeStamp252.spawnedBy";
+connectAttr "manifestHub5.spat[251]" "cubeStamp252.t";
+connectAttr "manifestHub5.spar[251]" "cubeStamp252.r";
+connectAttr "manifestHub5.spa[252]" "cubeStamp253.spawnedBy";
+connectAttr "manifestHub5.spat[252]" "cubeStamp253.t";
+connectAttr "manifestHub5.spar[252]" "cubeStamp253.r";
+connectAttr "manifestHub5.spa[253]" "cubeStamp254.spawnedBy";
+connectAttr "manifestHub5.spat[253]" "cubeStamp254.t";
+connectAttr "manifestHub5.spar[253]" "cubeStamp254.r";
+connectAttr "manifestHub5.spa[254]" "cubeStamp255.spawnedBy";
+connectAttr "manifestHub5.spat[254]" "cubeStamp255.t";
+connectAttr "manifestHub5.spar[254]" "cubeStamp255.r";
+connectAttr "manifestHub5.spa[255]" "cubeStamp256.spawnedBy";
+connectAttr "manifestHub5.spat[255]" "cubeStamp256.t";
+connectAttr "manifestHub5.spar[255]" "cubeStamp256.r";
+connectAttr "manifestHub5.spa[256]" "cubeStamp257.spawnedBy";
+connectAttr "manifestHub5.spat[256]" "cubeStamp257.t";
+connectAttr "manifestHub5.spar[256]" "cubeStamp257.r";
+connectAttr "manifestHub5.spa[257]" "cubeStamp258.spawnedBy";
+connectAttr "manifestHub5.spat[257]" "cubeStamp258.t";
+connectAttr "manifestHub5.spar[257]" "cubeStamp258.r";
+connectAttr "manifestHub5.spa[258]" "cubeStamp259.spawnedBy";
+connectAttr "manifestHub5.spat[258]" "cubeStamp259.t";
+connectAttr "manifestHub5.spar[258]" "cubeStamp259.r";
+connectAttr "manifestHub5.spa[259]" "cubeStamp260.spawnedBy";
+connectAttr "manifestHub5.spat[259]" "cubeStamp260.t";
+connectAttr "manifestHub5.spar[259]" "cubeStamp260.r";
+connectAttr "manifestHub5.spa[260]" "cubeStamp261.spawnedBy";
+connectAttr "manifestHub5.spat[260]" "cubeStamp261.t";
+connectAttr "manifestHub5.spar[260]" "cubeStamp261.r";
+connectAttr "manifestHub5.spa[261]" "cubeStamp262.spawnedBy";
+connectAttr "manifestHub5.spat[261]" "cubeStamp262.t";
+connectAttr "manifestHub5.spar[261]" "cubeStamp262.r";
+connectAttr "manifestHub5.spa[262]" "cubeStamp263.spawnedBy";
+connectAttr "manifestHub5.spat[262]" "cubeStamp263.t";
+connectAttr "manifestHub5.spar[262]" "cubeStamp263.r";
+connectAttr "manifestHub5.spa[263]" "cubeStamp264.spawnedBy";
+connectAttr "manifestHub5.spat[263]" "cubeStamp264.t";
+connectAttr "manifestHub5.spar[263]" "cubeStamp264.r";
+connectAttr "manifestHub5.spa[264]" "cubeStamp265.spawnedBy";
+connectAttr "manifestHub5.spat[264]" "cubeStamp265.t";
+connectAttr "manifestHub5.spar[264]" "cubeStamp265.r";
+connectAttr "manifestHub5.spa[265]" "cubeStamp266.spawnedBy";
+connectAttr "manifestHub5.spat[265]" "cubeStamp266.t";
+connectAttr "manifestHub5.spar[265]" "cubeStamp266.r";
+connectAttr "manifestHub5.spa[266]" "cubeStamp267.spawnedBy";
+connectAttr "manifestHub5.spat[266]" "cubeStamp267.t";
+connectAttr "manifestHub5.spar[266]" "cubeStamp267.r";
+connectAttr "manifestHub5.spa[267]" "cubeStamp268.spawnedBy";
+connectAttr "manifestHub5.spat[267]" "cubeStamp268.t";
+connectAttr "manifestHub5.spar[267]" "cubeStamp268.r";
+connectAttr "manifestHub5.spa[268]" "cubeStamp269.spawnedBy";
+connectAttr "manifestHub5.spat[268]" "cubeStamp269.t";
+connectAttr "manifestHub5.spar[268]" "cubeStamp269.r";
+connectAttr "manifestHub5.spa[269]" "cubeStamp270.spawnedBy";
+connectAttr "manifestHub5.spat[269]" "cubeStamp270.t";
+connectAttr "manifestHub5.spar[269]" "cubeStamp270.r";
+connectAttr "manifestHub5.spa[270]" "cubeStamp271.spawnedBy";
+connectAttr "manifestHub5.spat[270]" "cubeStamp271.t";
+connectAttr "manifestHub5.spar[270]" "cubeStamp271.r";
+connectAttr "manifestHub5.spa[271]" "cubeStamp272.spawnedBy";
+connectAttr "manifestHub5.spat[271]" "cubeStamp272.t";
+connectAttr "manifestHub5.spar[271]" "cubeStamp272.r";
+connectAttr "manifestHub5.spa[272]" "cubeStamp273.spawnedBy";
+connectAttr "manifestHub5.spat[272]" "cubeStamp273.t";
+connectAttr "manifestHub5.spar[272]" "cubeStamp273.r";
+connectAttr "manifestHub5.spa[273]" "cubeStamp274.spawnedBy";
+connectAttr "manifestHub5.spat[273]" "cubeStamp274.t";
+connectAttr "manifestHub5.spar[273]" "cubeStamp274.r";
+connectAttr "manifestHub5.spa[274]" "cubeStamp275.spawnedBy";
+connectAttr "manifestHub5.spat[274]" "cubeStamp275.t";
+connectAttr "manifestHub5.spar[274]" "cubeStamp275.r";
+connectAttr "manifestHub5.spa[275]" "cubeStamp276.spawnedBy";
+connectAttr "manifestHub5.spat[275]" "cubeStamp276.t";
+connectAttr "manifestHub5.spar[275]" "cubeStamp276.r";
+connectAttr "manifestHub5.spa[276]" "cubeStamp277.spawnedBy";
+connectAttr "manifestHub5.spat[276]" "cubeStamp277.t";
+connectAttr "manifestHub5.spar[276]" "cubeStamp277.r";
+connectAttr "manifestHub5.spa[277]" "cubeStamp278.spawnedBy";
+connectAttr "manifestHub5.spat[277]" "cubeStamp278.t";
+connectAttr "manifestHub5.spar[277]" "cubeStamp278.r";
+connectAttr "manifestHub5.spa[278]" "cubeStamp279.spawnedBy";
+connectAttr "manifestHub5.spat[278]" "cubeStamp279.t";
+connectAttr "manifestHub5.spar[278]" "cubeStamp279.r";
+connectAttr "manifestHub5.spa[279]" "cubeStamp280.spawnedBy";
+connectAttr "manifestHub5.spat[279]" "cubeStamp280.t";
+connectAttr "manifestHub5.spar[279]" "cubeStamp280.r";
+connectAttr "manifestHub5.spa[280]" "cubeStamp281.spawnedBy";
+connectAttr "manifestHub5.spat[280]" "cubeStamp281.t";
+connectAttr "manifestHub5.spar[280]" "cubeStamp281.r";
+connectAttr "manifestHub5.spa[281]" "cubeStamp282.spawnedBy";
+connectAttr "manifestHub5.spat[281]" "cubeStamp282.t";
+connectAttr "manifestHub5.spar[281]" "cubeStamp282.r";
+connectAttr "manifestHub5.spa[282]" "cubeStamp283.spawnedBy";
+connectAttr "manifestHub5.spat[282]" "cubeStamp283.t";
+connectAttr "manifestHub5.spar[282]" "cubeStamp283.r";
+connectAttr "manifestHub5.spa[283]" "cubeStamp284.spawnedBy";
+connectAttr "manifestHub5.spat[283]" "cubeStamp284.t";
+connectAttr "manifestHub5.spar[283]" "cubeStamp284.r";
+connectAttr "manifestHub5.spa[284]" "cubeStamp285.spawnedBy";
+connectAttr "manifestHub5.spat[284]" "cubeStamp285.t";
+connectAttr "manifestHub5.spar[284]" "cubeStamp285.r";
+connectAttr "manifestHub5.spa[285]" "cubeStamp286.spawnedBy";
+connectAttr "manifestHub5.spat[285]" "cubeStamp286.t";
+connectAttr "manifestHub5.spar[285]" "cubeStamp286.r";
+connectAttr "manifestHub5.spa[286]" "cubeStamp287.spawnedBy";
+connectAttr "manifestHub5.spat[286]" "cubeStamp287.t";
+connectAttr "manifestHub5.spar[286]" "cubeStamp287.r";
+connectAttr "manifestHub5.spa[287]" "cubeStamp288.spawnedBy";
+connectAttr "manifestHub5.spat[287]" "cubeStamp288.t";
+connectAttr "manifestHub5.spar[287]" "cubeStamp288.r";
+connectAttr "manifestHub5.spa[288]" "cubeStamp289.spawnedBy";
+connectAttr "manifestHub5.spat[288]" "cubeStamp289.t";
+connectAttr "manifestHub5.spar[288]" "cubeStamp289.r";
+connectAttr "manifestHub5.spa[289]" "cubeStamp290.spawnedBy";
+connectAttr "manifestHub5.spat[289]" "cubeStamp290.t";
+connectAttr "manifestHub5.spar[289]" "cubeStamp290.r";
+connectAttr "manifestHub5.spa[290]" "cubeStamp291.spawnedBy";
+connectAttr "manifestHub5.spat[290]" "cubeStamp291.t";
+connectAttr "manifestHub5.spar[290]" "cubeStamp291.r";
+connectAttr "manifestHub5.spa[291]" "cubeStamp292.spawnedBy";
+connectAttr "manifestHub5.spat[291]" "cubeStamp292.t";
+connectAttr "manifestHub5.spar[291]" "cubeStamp292.r";
+connectAttr "manifestHub5.spa[292]" "cubeStamp293.spawnedBy";
+connectAttr "manifestHub5.spat[292]" "cubeStamp293.t";
+connectAttr "manifestHub5.spar[292]" "cubeStamp293.r";
+connectAttr "manifestHub5.spa[293]" "cubeStamp294.spawnedBy";
+connectAttr "manifestHub5.spat[293]" "cubeStamp294.t";
+connectAttr "manifestHub5.spar[293]" "cubeStamp294.r";
+connectAttr "manifestHub5.spa[294]" "cubeStamp295.spawnedBy";
+connectAttr "manifestHub5.spat[294]" "cubeStamp295.t";
+connectAttr "manifestHub5.spar[294]" "cubeStamp295.r";
+connectAttr "manifestHub5.spa[295]" "cubeStamp296.spawnedBy";
+connectAttr "manifestHub5.spat[295]" "cubeStamp296.t";
+connectAttr "manifestHub5.spar[295]" "cubeStamp296.r";
+connectAttr "manifestHub5.spa[296]" "cubeStamp297.spawnedBy";
+connectAttr "manifestHub5.spat[296]" "cubeStamp297.t";
+connectAttr "manifestHub5.spar[296]" "cubeStamp297.r";
+connectAttr "manifestHub5.spa[297]" "cubeStamp298.spawnedBy";
+connectAttr "manifestHub5.spat[297]" "cubeStamp298.t";
+connectAttr "manifestHub5.spar[297]" "cubeStamp298.r";
+connectAttr "manifestHub5.spa[298]" "cubeStamp299.spawnedBy";
+connectAttr "manifestHub5.spat[298]" "cubeStamp299.t";
+connectAttr "manifestHub5.spar[298]" "cubeStamp299.r";
+connectAttr "manifestHub5.spa[299]" "cubeStamp300.spawnedBy";
+connectAttr "manifestHub5.spat[299]" "cubeStamp300.t";
+connectAttr "manifestHub5.spar[299]" "cubeStamp300.r";
+connectAttr "manifestHub5.spa[300]" "cubeStamp301.spawnedBy";
+connectAttr "manifestHub5.spat[300]" "cubeStamp301.t";
+connectAttr "manifestHub5.spar[300]" "cubeStamp301.r";
+connectAttr "manifestHub5.spa[301]" "cubeStamp302.spawnedBy";
+connectAttr "manifestHub5.spat[301]" "cubeStamp302.t";
+connectAttr "manifestHub5.spar[301]" "cubeStamp302.r";
+connectAttr "manifestHub5.spa[302]" "cubeStamp303.spawnedBy";
+connectAttr "manifestHub5.spat[302]" "cubeStamp303.t";
+connectAttr "manifestHub5.spar[302]" "cubeStamp303.r";
+connectAttr "manifestHub5.spa[303]" "cubeStamp304.spawnedBy";
+connectAttr "manifestHub5.spat[303]" "cubeStamp304.t";
+connectAttr "manifestHub5.spar[303]" "cubeStamp304.r";
+connectAttr "manifestHub5.spa[304]" "cubeStamp305.spawnedBy";
+connectAttr "manifestHub5.spat[304]" "cubeStamp305.t";
+connectAttr "manifestHub5.spar[304]" "cubeStamp305.r";
+connectAttr "manifestHub5.spa[305]" "cubeStamp306.spawnedBy";
+connectAttr "manifestHub5.spat[305]" "cubeStamp306.t";
+connectAttr "manifestHub5.spar[305]" "cubeStamp306.r";
+connectAttr "manifestHub5.spa[306]" "cubeStamp307.spawnedBy";
+connectAttr "manifestHub5.spat[306]" "cubeStamp307.t";
+connectAttr "manifestHub5.spar[306]" "cubeStamp307.r";
+connectAttr "manifestHub5.spa[307]" "cubeStamp308.spawnedBy";
+connectAttr "manifestHub5.spat[307]" "cubeStamp308.t";
+connectAttr "manifestHub5.spar[307]" "cubeStamp308.r";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -2000,6 +2648,222 @@ connectAttr "|manifestHub5|cubeStamp198|cubeStampShape.iog" ":initialShadingGrou
 connectAttr "|manifestHub5|cubeStamp199|cubeStampShape.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "|manifestHub5|cubeStamp200|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp201|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp202|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp203|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp204|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp205|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp206|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp207|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp208|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp209|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp210|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp211|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp212|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp213|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp214|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp215|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp216|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp217|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp218|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp219|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp220|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp221|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp222|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp223|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp224|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp225|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp226|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp227|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp228|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp229|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp230|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp231|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp232|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp233|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp234|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp235|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp236|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp237|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp238|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp239|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp240|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp241|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp242|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp243|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp244|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp245|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp246|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp247|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp248|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp249|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp250|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp251|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp252|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp253|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp254|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp255|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp256|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp257|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp258|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp259|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp260|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp261|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp262|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp263|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp264|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp265|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp266|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp267|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp268|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp269|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp270|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp271|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp272|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp273|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp274|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp275|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp276|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp277|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp278|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp279|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp280|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp281|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp282|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp283|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp284|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp285|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp286|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp287|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp288|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp289|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp290|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp291|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp292|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp293|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp294|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp295|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp296|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp297|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp298|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp299|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp300|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp301|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp302|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp303|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp304|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp305|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp306|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp307|cubeStampShape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|manifestHub5|cubeStamp308|cubeStampShape.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "hyperView1.msg" ":hyperGraphInfo.b[0]";

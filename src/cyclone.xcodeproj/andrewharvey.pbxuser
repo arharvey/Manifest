@@ -82,14 +82,14 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 348512149;
-			PBXWorkspaceStateSaveDate = 348512149;
+			PBXPerProjectTemplateStateSaveDate = 348677515;
+			PBXWorkspaceStateSaveDate = 348677515;
 		};
 		perUserProjectItems = {
+			277023F214C8701D005681E5 /* PBXTextBookmark */ = 277023F214C8701D005681E5 /* PBXTextBookmark */;
 			27E2AF2C14C6757800581400 /* PBXTextBookmark */ = 27E2AF2C14C6757800581400 /* PBXTextBookmark */;
 			27E2AF4A14C6FB1800581400 /* PBXTextBookmark */ = 27E2AF4A14C6FB1800581400 /* PBXTextBookmark */;
 			27E2AF9714C75B2D00581400 /* PBXTextBookmark */ = 27E2AF9714C75B2D00581400 /* PBXTextBookmark */;
-			27E2AF9814C75B2D00581400 /* PBXTextBookmark */ = 27E2AF9814C75B2D00581400 /* PBXTextBookmark */;
 			27E2AFA114C79A7600581400 /* PBXTextBookmark */ = 27E2AFA114C79A7600581400 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 27410CF214C4FBCC001D9CDA /* Source Control */;
@@ -112,9 +112,9 @@
 	};
 	27410CF414C4FBD8001D9CDA /* cyclone.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {868, 4823}}";
-			sepNavSelRange = "{2294, 0}";
-			sepNavVisRange = "{2494, 841}";
+			sepNavIntBoundsRect = "{{0, 0}, {1331, 4823}}";
+			sepNavSelRange = "{1772, 0}";
+			sepNavVisRange = "{1422, 1942}";
 			sepNavWindowFrame = "{{15, 790}, {646, 383}}";
 		};
 	};
@@ -124,6 +124,16 @@
 			sepNavSelRange = "{741, 0}";
 			sepNavVisRange = "{0, 1146}";
 		};
+	};
+	277023F214C8701D005681E5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 87";
+		rLen = 0;
+		rLoc = 1772;
+		rType = 0;
+		vrLen = 1942;
+		vrLoc = 1422;
 	};
 	27E2AEBD14C6370F00581400 /* ContinuousRandomVariable.h */ = {
 		uiCtxt = {
@@ -170,22 +180,12 @@
 		vrLen = 1146;
 		vrLoc = 0;
 	};
-	27E2AF9814C75B2D00581400 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
-		name = "cyclone.cpp: 47";
-		rLen = 0;
-		rLoc = 1056;
-		rType = 0;
-		vrLen = 2003;
-		vrLoc = 1420;
-	};
 	27E2AFA114C79A7600581400 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
 		name = "cyclone.cpp: 162";
 		rLen = 0;
-		rLoc = 4793;
+		rLoc = 4845;
 		rType = 0;
 		vrLen = 2333;
 		vrLoc = 3255;
