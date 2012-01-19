@@ -220,17 +220,24 @@ def spawn(hub):
 				break;
 			
 			#print "Spawning %d stamps" % (numPositions - numSpawned)
-			for i in range(numSpawned, numPositions):
-				nodesCreated = PyMEL.general.duplicate(stamps[0], inputConnections=True, instanceLeaf=True)
-				
-				# TODO: We assume the first element is the container. More stringent checking is required
-				newContainer = nodesCreated[0]
-				PyMEL.general.parent(newContainer, hub)
-				
-				newContainer.addAttr( 'spawnedBy', at=float )
-				hub.spawned.elementByLogicalIndex(i).connect(newContainer.spawnedBy)
-				hub.spawnTranslate.elementByLogicalIndex(i).connect(newContainer.translate)
-				hub.spawnRotate.elementByLogicalIndex(i).connect(newContainer.rotate)
+			try:
+				dm = OpenMaya.MDagModifier();
+				for i in range(numSpawned, numPositions):
+					nodesCreated = PyMEL.general.duplicate(stamps[0], inputConnections=True, instanceLeaf=True)
+					
+					# TODO: We assume the first element is the container. More stringent checking is required
+					newContainer = nodesCreated[0]
+					objContainer = newContainer.__apimdagpath__().node()
+					objHub = hub.__apimdagpath__().node()
+					dm.reparentNode(objContainer, objHub)
+					dm.doIt()
+					
+					newContainer.addAttr( 'spawnedBy', at=float )
+					hub.spawned.elementByLogicalIndex(i).connect(newContainer.spawnedBy)
+					hub.spawnTranslate.elementByLogicalIndex(i).connect(newContainer.translate)
+					hub.spawnRotate.elementByLogicalIndex(i).connect(newContainer.rotate)	
+			except :
+				sys.stderr.write( "Error while spawning from %s" % hub.name())
 		
 	elif numPositions < numSpawned:
 		#print "Deleting %d stamps" % (numSpawned - numPositions)
