@@ -1,0 +1,17 @@
+// AETemplate for cyclone node
+//
+
+global proc AEmanifestHubTemplate ( string $nodeName )
+{
+	editorTemplate -beginScrollLayout;
+
+		AEtransformTemplate $nodeName;
+		
+		editorTemplate -beginLayout "Manifest Hub" -collapse 0;
+			
+		editorTemplate -endLayout;
+
+		editorTemplate -addExtraControls;
+	editorTemplate -endScrollLayout;
+
+}

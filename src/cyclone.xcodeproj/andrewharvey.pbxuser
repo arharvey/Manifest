@@ -27,7 +27,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					1153,
+					1013,
 					20,
 					48,
 					43,
@@ -65,7 +65,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					1113,
+					973,
 					60,
 					20,
 					48,
@@ -82,19 +82,52 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 348677515;
-			PBXWorkspaceStateSaveDate = 348677515;
+			PBXPerProjectTemplateStateSaveDate = 353281259;
+			PBXWorkspaceStateSaveDate = 353281259;
 		};
 		perUserProjectItems = {
-			277023F214C8701D005681E5 /* PBXTextBookmark */ = 277023F214C8701D005681E5 /* PBXTextBookmark */;
-			27E2AF2C14C6757800581400 /* PBXTextBookmark */ = 27E2AF2C14C6757800581400 /* PBXTextBookmark */;
-			27E2AF4A14C6FB1800581400 /* PBXTextBookmark */ = 27E2AF4A14C6FB1800581400 /* PBXTextBookmark */;
-			27E2AF9714C75B2D00581400 /* PBXTextBookmark */ = 27E2AF9714C75B2D00581400 /* PBXTextBookmark */;
-			27E2AFA114C79A7600581400 /* PBXTextBookmark */ = 27E2AFA114C79A7600581400 /* PBXTextBookmark */;
+			27213B4D150EA507009FD74C /* PBXTextBookmark */ = 27213B4D150EA507009FD74C /* PBXTextBookmark */;
+			27213B4E150EA507009FD74C /* PBXTextBookmark */ = 27213B4E150EA507009FD74C /* PBXTextBookmark */;
+			27213B4F150EA507009FD74C /* PBXTextBookmark */ = 27213B4F150EA507009FD74C /* PBXTextBookmark */;
+			277023F214C8701D005681E5 = 277023F214C8701D005681E5 /* PBXTextBookmark */;
+			277D0EC414D6E5C00052B2CF = 277D0EC414D6E5C00052B2CF /* PBXTextBookmark */;
+			27E2AF2C14C6757800581400 = 27E2AF2C14C6757800581400 /* PBXTextBookmark */;
+			27E2AF4A14C6FB1800581400 = 27E2AF4A14C6FB1800581400 /* PBXTextBookmark */;
+			27E2AF9714C75B2D00581400 = 27E2AF9714C75B2D00581400 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 27410CF214C4FBCC001D9CDA /* Source Control */;
 		userBuildSettings = {
 		};
+	};
+	27213B4D150EA507009FD74C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 87";
+		rLen = 0;
+		rLoc = 1772;
+		rType = 0;
+		vrLen = 1408;
+		vrLoc = 1422;
+	};
+	27213B4E150EA507009FD74C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF614C4FBE7001D9CDA /* cyclone.h */;
+		name = "cyclone.h: 36";
+		rLen = 0;
+		rLoc = 741;
+		rType = 0;
+		vrLen = 936;
+		vrLoc = 0;
+	};
+	27213B4F150EA507009FD74C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF614C4FBE7001D9CDA /* cyclone.h */;
+		name = "cyclone.h: 36";
+		rLen = 0;
+		rLoc = 741;
+		rType = 0;
+		vrLen = 936;
+		vrLoc = 0;
 	};
 	27410CF214C4FBCC001D9CDA /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -112,17 +145,17 @@
 	};
 	27410CF414C4FBD8001D9CDA /* cyclone.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1331, 4823}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1191, 4875}}";
 			sepNavSelRange = "{1772, 0}";
-			sepNavVisRange = "{1422, 1942}";
+			sepNavVisRange = "{1422, 1408}";
 			sepNavWindowFrame = "{{15, 790}, {646, 383}}";
 		};
 	};
 	27410CF614C4FBE7001D9CDA /* cyclone.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1331, 791}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1191, 715}}";
 			sepNavSelRange = "{741, 0}";
-			sepNavVisRange = "{0, 1146}";
+			sepNavVisRange = "{0, 936}";
 		};
 	};
 	277023F214C8701D005681E5 /* PBXTextBookmark */ = {
@@ -133,6 +166,16 @@
 		rLoc = 1772;
 		rType = 0;
 		vrLen = 1942;
+		vrLoc = 1422;
+	};
+	277D0EC414D6E5C00052B2CF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
+		name = "cyclone.cpp: 87";
+		rLen = 0;
+		rLoc = 1772;
+		rType = 0;
+		vrLen = 1441;
 		vrLoc = 1422;
 	};
 	27E2AEBD14C6370F00581400 /* ContinuousRandomVariable.h */ = {
@@ -179,16 +222,6 @@
 		rType = 0;
 		vrLen = 1146;
 		vrLoc = 0;
-	};
-	27E2AFA114C79A7600581400 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 27410CF414C4FBD8001D9CDA /* cyclone.cpp */;
-		name = "cyclone.cpp: 162";
-		rLen = 0;
-		rLoc = 4845;
-		rType = 0;
-		vrLen = 2333;
-		vrLoc = 3255;
 	};
 	D2AAC0620554660B00DB518D /* cyclone */ = {
 		activeExec = 0;

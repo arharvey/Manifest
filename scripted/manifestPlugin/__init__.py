@@ -16,7 +16,8 @@ def initializePlugin(mobject):
 									OpenMayaMPx.MPxTransformationMatrix().creator, OpenMayaMPx.MPxTransformationMatrix().baseTransformationMatrixId)
 		#mplugin.registerNode( cyclone.kNodeName, cyclone.kNodeId, cyclone.nodeCreator, cyclone.nodeInitializer)
 		
-		manifestHub.manifestHub.timeChangedCallbackId = OpenMaya.MDGMessage.addTimeChangeCallback(manifestHub.timeChangedCB)
+		manifestHub.manifestHub.timeChangedCallbackId = OpenMaya.MDGMessage.addForceUpdateCallback(manifestHub.timeChangedCB)
+		#OpenMaya.MDGMessage.addTimeChangeCallback(manifestHub.timeChangedCB)
 	except:
 		sys.stderr.write( "Failed to register node" )
 		raise

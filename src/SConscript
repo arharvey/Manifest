@@ -1,11 +1,23 @@
-MAYA_DIRECTORY = '/Applications/Autodesk/maya2012'
-MAYA_INCLUDE_PATH = MAYA_DIRECTORY+'/devkit/include/'
-MAYA_LIB_PATH = MAYA_DIRECTORY+'/Maya.app/Contents/MacOS'
+import os
+
+pluginName = 'cyclone.bundle'
+
+HOME = os.environ['HOME']
+
+# Paths for Maya on Mac OSX
+MAYA_PATH = '/Applications/Autodesk/maya2012'
+MAYA_INCLUDE_PATH = MAYA_PATH+'/devkit/include/'
+MAYA_LIB_PATH = MAYA_PATH+'/Maya.app/Contents/MacOS'
+MAYA_PLUG_IN_INSTALL_PATH = HOME+'/Library/Preferences/Autodesk/maya/2012-x64/plug-ins'
 
 env = Environment()
-env.Append(CPPPATH = [MAYA_INCLUDE_PATH])
-env.Append(LIBPATH = [MAYA_LIB_PATH])
+env.Append(CCFLAGS = ['-I'+MAYA_INCLUDE_PATH, '-includemaya/OpenMayaMac.h'])
+env.Append(CCFLAGS = ['-DMAC_PLUGIN', '-D_BOOL', '-DREQUIRE_IOSTREAM'])
 env.Append(LIBS = ['OpenMaya','Foundation','OpenMayaFX','OpenMayaUI'])
+env.Append(LIBPATH = [MAYA_LIB_PATH])
 
-target = env.Program(target="cyclone", source=['cyclone.cpp'])
-Default(target)
+env.SharedLibrary(pluginName, Glob('*.cpp'), SHLIBPREFIX='')
+
+install_plugin = env.Install(MAYA_PLUG_IN_INSTALL_PATH, pluginName)
+env.Alias('install', [install_plugin])
+
